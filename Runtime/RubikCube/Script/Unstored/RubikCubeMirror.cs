@@ -20,6 +20,6 @@ public class RubikCubeMirror : MonoBehaviour
 
     private void OnValidate()
     {
-        CreateFirstPattern();
+//        CreateFirstPattern();
     }
 }

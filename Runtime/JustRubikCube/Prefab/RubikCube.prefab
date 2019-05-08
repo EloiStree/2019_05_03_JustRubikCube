@@ -297,7 +297,6 @@ GameObject:
   - component: {fileID: 3219740102687429592}
   - component: {fileID: 3219740102687429599}
   - component: {fileID: 3219740102687429598}
-  - component: {fileID: 3219740102687429594}
   m_Layer: 0
   m_Name: RubikFaceCollider -X
   m_TagString: Untagged
@@ -393,20 +392,6 @@ MonoBehaviour:
   m_linkedSpot: {fileID: 3219740103412378345}
   m_belongToFace: 5
   m_faceDirection: 7
---- !u!114 &3219740102687429594
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3219740102687429596}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c731a6025692a6045b1a3d86a55ce77f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_spot: {fileID: 3219740103412378345}
-  m_face: {fileID: 3219740102687429598}
 --- !u!1 &3219740102689670835
 GameObject:
   m_ObjectHideFlags: 0
@@ -625,7 +610,6 @@ GameObject:
   - component: {fileID: 3219740102723439849}
   - component: {fileID: 3219740102723439848}
   - component: {fileID: 3219740102723439855}
-  - component: {fileID: 3219740102723439851}
   m_Layer: 0
   m_Name: RubikFaceCollider +X
   m_TagString: Untagged
@@ -721,20 +705,6 @@ MonoBehaviour:
   m_linkedSpot: {fileID: 3219740104798909550}
   m_belongToFace: 4
   m_faceDirection: 5
---- !u!114 &3219740102723439851
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3219740102723439853}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c731a6025692a6045b1a3d86a55ce77f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_spot: {fileID: 3219740104798909550}
-  m_face: {fileID: 3219740102723439855}
 --- !u!1 &3219740102729084358
 GameObject:
   m_ObjectHideFlags: 0
@@ -748,7 +718,6 @@ GameObject:
   - component: {fileID: 3219740102729084354}
   - component: {fileID: 3219740102729084353}
   - component: {fileID: 3219740102729084352}
-  - component: {fileID: 3219740102729084364}
   m_Layer: 0
   m_Name: RubikFaceCollider +Y
   m_TagString: Untagged
@@ -844,20 +813,6 @@ MonoBehaviour:
   m_linkedSpot: {fileID: 3219740103962939324}
   m_belongToFace: 0
   m_faceDirection: 5
---- !u!114 &3219740102729084364
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3219740102729084358}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c731a6025692a6045b1a3d86a55ce77f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_spot: {fileID: 3219740104643900333}
-  m_face: {fileID: 3219740102729084352}
 --- !u!1 &3219740102737375982
 GameObject:
   m_ObjectHideFlags: 0
@@ -1252,7 +1207,6 @@ GameObject:
   - component: {fileID: 3219740102848912282}
   - component: {fileID: 3219740102848912281}
   - component: {fileID: 3219740102848912280}
-  - component: {fileID: 3219740102848912292}
   m_Layer: 0
   m_Name: RubikFaceCollider -Y
   m_TagString: Untagged
@@ -1348,20 +1302,6 @@ MonoBehaviour:
   m_linkedSpot: {fileID: 3219740103504555246}
   m_belongToFace: 3
   m_faceDirection: 4
---- !u!114 &3219740102848912292
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3219740102848912286}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c731a6025692a6045b1a3d86a55ce77f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_spot: {fileID: 3219740103504555246}
-  m_face: {fileID: 3219740102848912280}
 --- !u!1 &3219740102869431243
 GameObject:
   m_ObjectHideFlags: 0
@@ -1375,7 +1315,6 @@ GameObject:
   - component: {fileID: 3219740102869431255}
   - component: {fileID: 3219740102869431254}
   - component: {fileID: 3219740102869431253}
-  - component: {fileID: 3219740102869431249}
   m_Layer: 0
   m_Name: RubikFaceCollider -Z
   m_TagString: Untagged
@@ -1471,20 +1410,6 @@ MonoBehaviour:
   m_linkedSpot: {fileID: 3219740103504555246}
   m_belongToFace: 0
   m_faceDirection: 2
---- !u!114 &3219740102869431249
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3219740102869431243}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c731a6025692a6045b1a3d86a55ce77f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_spot: {fileID: 3219740103504555246}
-  m_face: {fileID: 3219740102869431253}
 --- !u!1 &3219740102872309899
 GameObject:
   m_ObjectHideFlags: 0
@@ -1498,7 +1423,6 @@ GameObject:
   - component: {fileID: 3219740102872309911}
   - component: {fileID: 3219740102872309910}
   - component: {fileID: 3219740102872309909}
-  - component: {fileID: 3219740102872309905}
   m_Layer: 0
   m_Name: RubikFaceCollider +Z
   m_TagString: Untagged
@@ -1594,20 +1518,6 @@ MonoBehaviour:
   m_linkedSpot: {fileID: 3219740103962939324}
   m_belongToFace: 0
   m_faceDirection: 5
---- !u!114 &3219740102872309905
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3219740102872309899}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c731a6025692a6045b1a3d86a55ce77f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_spot: {fileID: 3219740103962939324}
-  m_face: {fileID: 3219740102872309909}
 --- !u!1 &3219740102879927338
 GameObject:
   m_ObjectHideFlags: 0
@@ -1621,7 +1531,6 @@ GameObject:
   - component: {fileID: 3219740102879927350}
   - component: {fileID: 3219740102879927349}
   - component: {fileID: 3219740102879927348}
-  - component: {fileID: 3219740102879927344}
   m_Layer: 0
   m_Name: RubikFaceCollider -Y
   m_TagString: Untagged
@@ -1717,20 +1626,6 @@ MonoBehaviour:
   m_linkedSpot: {fileID: 3219740102817126470}
   m_belongToFace: 3
   m_faceDirection: 3
---- !u!114 &3219740102879927344
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3219740102879927338}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c731a6025692a6045b1a3d86a55ce77f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_spot: {fileID: 3219740102817126470}
-  m_face: {fileID: 3219740102879927348}
 --- !u!1 &3219740102888573585
 GameObject:
   m_ObjectHideFlags: 0
@@ -1882,7 +1777,6 @@ GameObject:
   - component: {fileID: 3219740102894518862}
   - component: {fileID: 3219740102894518861}
   - component: {fileID: 3219740102894518860}
-  - component: {fileID: 3219740102894518856}
   m_Layer: 0
   m_Name: RubikFaceCollider +X
   m_TagString: Untagged
@@ -1978,20 +1872,6 @@ MonoBehaviour:
   m_linkedSpot: {fileID: 3219740104617566217}
   m_belongToFace: 4
   m_faceDirection: 7
---- !u!114 &3219740102894518856
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3219740102894518850}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c731a6025692a6045b1a3d86a55ce77f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_spot: {fileID: 3219740104617566217}
-  m_face: {fileID: 3219740102894518860}
 --- !u!1 &3219740102901690821
 GameObject:
   m_ObjectHideFlags: 0
@@ -2052,7 +1932,6 @@ GameObject:
   - component: {fileID: 3219740102901752914}
   - component: {fileID: 3219740102901752913}
   - component: {fileID: 3219740102901752912}
-  - component: {fileID: 3219740102901752924}
   m_Layer: 0
   m_Name: RubikFaceCollider +Y
   m_TagString: Untagged
@@ -2148,20 +2027,6 @@ MonoBehaviour:
   m_linkedSpot: {fileID: 3219740103315774288}
   m_belongToFace: 2
   m_faceDirection: 3
---- !u!114 &3219740102901752924
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3219740102901752918}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c731a6025692a6045b1a3d86a55ce77f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_spot: {fileID: 3219740103315774288}
-  m_face: {fileID: 3219740102901752912}
 --- !u!1 &3219740102923099189
 GameObject:
   m_ObjectHideFlags: 0
@@ -2175,7 +2040,6 @@ GameObject:
   - component: {fileID: 3219740102923099185}
   - component: {fileID: 3219740102923099184}
   - component: {fileID: 3219740102923099191}
-  - component: {fileID: 3219740102923099187}
   m_Layer: 0
   m_Name: RubikFaceCollider -X
   m_TagString: Untagged
@@ -2271,20 +2135,6 @@ MonoBehaviour:
   m_linkedSpot: {fileID: 3219740102817126470}
   m_belongToFace: 5
   m_faceDirection: 1
---- !u!114 &3219740102923099187
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3219740102923099189}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c731a6025692a6045b1a3d86a55ce77f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_spot: {fileID: 3219740102817126470}
-  m_face: {fileID: 3219740102923099191}
 --- !u!1 &3219740102930924365
 GameObject:
   m_ObjectHideFlags: 0
@@ -2298,7 +2148,6 @@ GameObject:
   - component: {fileID: 3219740102930924361}
   - component: {fileID: 3219740102930924360}
   - component: {fileID: 3219740102930924367}
-  - component: {fileID: 3219740102930924363}
   m_Layer: 0
   m_Name: RubikFaceCollider +Z
   m_TagString: Untagged
@@ -2394,20 +2243,6 @@ MonoBehaviour:
   m_linkedSpot: {fileID: 3219740104379771951}
   m_belongToFace: 1
   m_faceDirection: 4
---- !u!114 &3219740102930924363
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3219740102930924365}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c731a6025692a6045b1a3d86a55ce77f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_spot: {fileID: 3219740104379771951}
-  m_face: {fileID: 3219740102930924367}
 --- !u!1 &3219740102930948150
 GameObject:
   m_ObjectHideFlags: 0
@@ -2529,7 +2364,6 @@ GameObject:
   - component: {fileID: 3219740102954819407}
   - component: {fileID: 3219740102954819406}
   - component: {fileID: 3219740102954819405}
-  - component: {fileID: 3219740102954819401}
   m_Layer: 0
   m_Name: RubikFaceCollider -Z
   m_TagString: Untagged
@@ -2625,20 +2459,6 @@ MonoBehaviour:
   m_linkedSpot: {fileID: 3219740103621666060}
   m_belongToFace: 0
   m_faceDirection: 4
---- !u!114 &3219740102954819401
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3219740102954819395}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c731a6025692a6045b1a3d86a55ce77f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_spot: {fileID: 3219740103621666060}
-  m_face: {fileID: 3219740102954819405}
 --- !u!1 &3219740102967272815
 GameObject:
   m_ObjectHideFlags: 0
@@ -2652,7 +2472,6 @@ GameObject:
   - component: {fileID: 3219740102967272811}
   - component: {fileID: 3219740102967272810}
   - component: {fileID: 3219740102967272809}
-  - component: {fileID: 3219740102967272821}
   m_Layer: 0
   m_Name: RubikFaceCollider -Y
   m_TagString: Untagged
@@ -2748,20 +2567,6 @@ MonoBehaviour:
   m_linkedSpot: {fileID: 3219740103889556017}
   m_belongToFace: 3
   m_faceDirection: 1
---- !u!114 &3219740102967272821
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3219740102967272815}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c731a6025692a6045b1a3d86a55ce77f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_spot: {fileID: 3219740103889556017}
-  m_face: {fileID: 3219740102967272809}
 --- !u!1 &3219740102969377764
 GameObject:
   m_ObjectHideFlags: 0
@@ -2883,7 +2688,6 @@ GameObject:
   - component: {fileID: 3219740102972061316}
   - component: {fileID: 3219740102972061435}
   - component: {fileID: 3219740102972061434}
-  - component: {fileID: 3219740102972061318}
   m_Layer: 0
   m_Name: RubikFaceCollider +Y
   m_TagString: Untagged
@@ -2979,20 +2783,6 @@ MonoBehaviour:
   m_linkedSpot: {fileID: 3219740104543407368}
   m_belongToFace: 2
   m_faceDirection: 6
---- !u!114 &3219740102972061318
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3219740102972061432}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c731a6025692a6045b1a3d86a55ce77f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_spot: {fileID: 3219740104543407368}
-  m_face: {fileID: 3219740102972061434}
 --- !u!1 &3219740102992180886
 GameObject:
   m_ObjectHideFlags: 0
@@ -3054,7 +2844,6 @@ GameObject:
   - component: {fileID: 3219740102995481999}
   - component: {fileID: 3219740102995481998}
   - component: {fileID: 3219740102995481997}
-  - component: {fileID: 3219740102995481993}
   m_Layer: 0
   m_Name: RubikFaceCollider -Y
   m_TagString: Untagged
@@ -3150,20 +2939,6 @@ MonoBehaviour:
   m_linkedSpot: {fileID: 3219740102711110509}
   m_belongToFace: 3
   m_faceDirection: 9
---- !u!114 &3219740102995481993
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3219740102995481987}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c731a6025692a6045b1a3d86a55ce77f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_spot: {fileID: 3219740102711110509}
-  m_face: {fileID: 3219740102995481997}
 --- !u!1 &3219740103016926583
 GameObject:
   m_ObjectHideFlags: 0
@@ -3331,7 +3106,6 @@ GameObject:
   - component: {fileID: 3219740103043606266}
   - component: {fileID: 3219740103043606265}
   - component: {fileID: 3219740103043606264}
-  - component: {fileID: 3219740103043606148}
   m_Layer: 0
   m_Name: RubikFaceCollider +Z
   m_TagString: Untagged
@@ -3427,20 +3201,6 @@ MonoBehaviour:
   m_linkedSpot: {fileID: 3219740103047892821}
   m_belongToFace: 1
   m_faceDirection: 6
---- !u!114 &3219740103043606148
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3219740103043606270}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c731a6025692a6045b1a3d86a55ce77f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_spot: {fileID: 3219740103047892821}
-  m_face: {fileID: 3219740103043606264}
 --- !u!1 &3219740103045130125
 GameObject:
   m_ObjectHideFlags: 0
@@ -3704,7 +3464,6 @@ GameObject:
   - component: {fileID: 3219740103067137974}
   - component: {fileID: 3219740103067137973}
   - component: {fileID: 3219740103067137972}
-  - component: {fileID: 3219740103067137968}
   m_Layer: 0
   m_Name: RubikFaceCollider -Z
   m_TagString: Untagged
@@ -3800,20 +3559,6 @@ MonoBehaviour:
   m_linkedSpot: {fileID: 3219740103621755355}
   m_belongToFace: 0
   m_faceDirection: 6
---- !u!114 &3219740103067137968
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3219740103067137962}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c731a6025692a6045b1a3d86a55ce77f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_spot: {fileID: 3219740103621755355}
-  m_face: {fileID: 3219740103067137972}
 --- !u!1 &3219740103083075390
 GameObject:
   m_ObjectHideFlags: 0
@@ -4131,7 +3876,6 @@ GameObject:
   - component: {fileID: 3219740103128437816}
   - component: {fileID: 3219740103128437823}
   - component: {fileID: 3219740103128437822}
-  - component: {fileID: 3219740103128437818}
   m_Layer: 0
   m_Name: RubikFaceCollider -Z
   m_TagString: Untagged
@@ -4227,20 +3971,6 @@ MonoBehaviour:
   m_linkedSpot: {fileID: 3219740103889556017}
   m_belongToFace: 0
   m_faceDirection: 1
---- !u!114 &3219740103128437818
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3219740103128437820}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c731a6025692a6045b1a3d86a55ce77f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_spot: {fileID: 3219740103889556017}
-  m_face: {fileID: 3219740103128437822}
 --- !u!1 &3219740103129453961
 GameObject:
   m_ObjectHideFlags: 0
@@ -4295,7 +4025,6 @@ GameObject:
   - component: {fileID: 3219740103130253121}
   - component: {fileID: 3219740103130253120}
   - component: {fileID: 3219740103130253127}
-  - component: {fileID: 3219740103130253123}
   m_Layer: 0
   m_Name: RubikFaceCollider -X
   m_TagString: Untagged
@@ -4391,20 +4120,6 @@ MonoBehaviour:
   m_linkedSpot: {fileID: 3219740103621666060}
   m_belongToFace: 5
   m_faceDirection: 6
---- !u!114 &3219740103130253123
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3219740103130253125}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c731a6025692a6045b1a3d86a55ce77f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_spot: {fileID: 3219740103621666060}
-  m_face: {fileID: 3219740103130253127}
 --- !u!1 &3219740103136583758
 GameObject:
   m_ObjectHideFlags: 0
@@ -4418,7 +4133,6 @@ GameObject:
   - component: {fileID: 3219740103136583754}
   - component: {fileID: 3219740103136583753}
   - component: {fileID: 3219740103136583752}
-  - component: {fileID: 3219740103136583764}
   m_Layer: 0
   m_Name: RubikFaceCollider +X
   m_TagString: Untagged
@@ -4514,20 +4228,6 @@ MonoBehaviour:
   m_linkedSpot: {fileID: 3219740103621755355}
   m_belongToFace: 4
   m_faceDirection: 4
---- !u!114 &3219740103136583764
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3219740103136583758}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c731a6025692a6045b1a3d86a55ce77f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_spot: {fileID: 3219740103621755355}
-  m_face: {fileID: 3219740103136583752}
 --- !u!1 &3219740103136622140
 GameObject:
   m_ObjectHideFlags: 0
@@ -5249,7 +4949,6 @@ GameObject:
   - component: {fileID: 3219740103229528031}
   - component: {fileID: 3219740103229528030}
   - component: {fileID: 3219740103229528029}
-  - component: {fileID: 3219740103229528025}
   m_Layer: 0
   m_Name: RubikFaceCollider +Z
   m_TagString: Untagged
@@ -5345,20 +5044,6 @@ MonoBehaviour:
   m_linkedSpot: {fileID: 3219740102817126470}
   m_belongToFace: 1
   m_faceDirection: 3
---- !u!114 &3219740103229528025
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3219740103229528019}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c731a6025692a6045b1a3d86a55ce77f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_spot: {fileID: 3219740102817126470}
-  m_face: {fileID: 3219740103229528029}
 --- !u!1 &3219740103273251279
 GameObject:
   m_ObjectHideFlags: 0
@@ -5638,7 +5323,6 @@ GameObject:
   - component: {fileID: 3219740103323274709}
   - component: {fileID: 3219740103323274708}
   - component: {fileID: 3219740103323274699}
-  - component: {fileID: 3219740103323274711}
   m_Layer: 0
   m_Name: RubikFaceCollider -X
   m_TagString: Untagged
@@ -5734,20 +5418,6 @@ MonoBehaviour:
   m_linkedSpot: {fileID: 3219740103889556017}
   m_belongToFace: 5
   m_faceDirection: 3
---- !u!114 &3219740103323274711
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3219740103323274697}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c731a6025692a6045b1a3d86a55ce77f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_spot: {fileID: 3219740103889556017}
-  m_face: {fileID: 3219740103323274699}
 --- !u!1 &3219740103336291426
 GameObject:
   m_ObjectHideFlags: 0
@@ -6025,7 +5695,6 @@ GameObject:
   - component: {fileID: 3219740103360222202}
   - component: {fileID: 3219740103360222201}
   - component: {fileID: 3219740103360222200}
-  - component: {fileID: 3219740103360222084}
   m_Layer: 0
   m_Name: RubikFaceCollider -Y
   m_TagString: Untagged
@@ -6121,20 +5790,6 @@ MonoBehaviour:
   m_linkedSpot: {fileID: 3219740104342615976}
   m_belongToFace: 3
   m_faceDirection: 8
---- !u!114 &3219740103360222084
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3219740103360222206}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c731a6025692a6045b1a3d86a55ce77f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_spot: {fileID: 3219740104342615976}
-  m_face: {fileID: 3219740103360222200}
 --- !u!1 &3219740103364134093
 GameObject:
   m_ObjectHideFlags: 0
@@ -6483,7 +6138,6 @@ GameObject:
   - component: {fileID: 3219740103415119412}
   - component: {fileID: 3219740103415119403}
   - component: {fileID: 3219740103415119402}
-  - component: {fileID: 3219740103415119414}
   m_Layer: 0
   m_Name: RubikFaceCollider +Z
   m_TagString: Untagged
@@ -6579,20 +6233,6 @@ MonoBehaviour:
   m_linkedSpot: {fileID: 3219740104543407368}
   m_belongToFace: 1
   m_faceDirection: 8
---- !u!114 &3219740103415119414
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3219740103415119400}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c731a6025692a6045b1a3d86a55ce77f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_spot: {fileID: 3219740104543407368}
-  m_face: {fileID: 3219740103415119402}
 --- !u!1 &3219740103448348781
 GameObject:
   m_ObjectHideFlags: 0
@@ -6783,7 +6423,6 @@ GameObject:
   - component: {fileID: 3219740103466392570}
   - component: {fileID: 3219740103466392569}
   - component: {fileID: 3219740103466392568}
-  - component: {fileID: 3219740103466392452}
   m_Layer: 0
   m_Name: RubikFaceCollider +Y
   m_TagString: Untagged
@@ -6879,20 +6518,6 @@ MonoBehaviour:
   m_linkedSpot: {fileID: 3219740104015314715}
   m_belongToFace: 2
   m_faceDirection: 7
---- !u!114 &3219740103466392452
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3219740103466392574}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c731a6025692a6045b1a3d86a55ce77f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_spot: {fileID: 3219740104015314715}
-  m_face: {fileID: 3219740103466392568}
 --- !u!1 &3219740103480354369
 GameObject:
   m_ObjectHideFlags: 0
@@ -7543,7 +7168,6 @@ GameObject:
   - component: {fileID: 3219740103541760880}
   - component: {fileID: 3219740103541760887}
   - component: {fileID: 3219740103541760886}
-  - component: {fileID: 3219740103541760882}
   m_Layer: 0
   m_Name: RubikFaceCollider +X
   m_TagString: Untagged
@@ -7639,20 +7263,6 @@ MonoBehaviour:
   m_linkedSpot: {fileID: 3219740104342615976}
   m_belongToFace: 4
   m_faceDirection: 2
---- !u!114 &3219740103541760882
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3219740103541760884}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c731a6025692a6045b1a3d86a55ce77f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_spot: {fileID: 3219740104342615976}
-  m_face: {fileID: 3219740103541760886}
 --- !u!1 &3219740103549031286
 GameObject:
   m_ObjectHideFlags: 0
@@ -7715,7 +7325,6 @@ GameObject:
   - component: {fileID: 3219740103549883249}
   - component: {fileID: 3219740103549883248}
   - component: {fileID: 3219740103549883255}
-  - component: {fileID: 3219740103549883251}
   m_Layer: 0
   m_Name: RubikFaceCollider +Z
   m_TagString: Untagged
@@ -7811,20 +7420,6 @@ MonoBehaviour:
   m_linkedSpot: {fileID: 3219740103549031280}
   m_belongToFace: 1
   m_faceDirection: 2
---- !u!114 &3219740103549883251
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3219740103549883253}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c731a6025692a6045b1a3d86a55ce77f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_spot: {fileID: 3219740103549031280}
-  m_face: {fileID: 3219740103549883255}
 --- !u!1 &3219740103551683622
 GameObject:
   m_ObjectHideFlags: 0
@@ -8341,7 +7936,6 @@ GameObject:
   - component: {fileID: 3219740103609567926}
   - component: {fileID: 3219740103609567925}
   - component: {fileID: 3219740103609567924}
-  - component: {fileID: 3219740103609567920}
   m_Layer: 0
   m_Name: RubikFaceCollider -Z
   m_TagString: Untagged
@@ -8437,20 +8031,6 @@ MonoBehaviour:
   m_linkedSpot: {fileID: 3219740103962939324}
   m_belongToFace: 0
   m_faceDirection: 5
---- !u!114 &3219740103609567920
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3219740103609567914}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c731a6025692a6045b1a3d86a55ce77f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_spot: {fileID: 3219740102772193294}
-  m_face: {fileID: 3219740103609567924}
 --- !u!1 &3219740103612571954
 GameObject:
   m_ObjectHideFlags: 0
@@ -8464,7 +8044,6 @@ GameObject:
   - component: {fileID: 3219740103612571966}
   - component: {fileID: 3219740103612571965}
   - component: {fileID: 3219740103612571964}
-  - component: {fileID: 3219740103612571960}
   m_Layer: 0
   m_Name: RubikFaceCollider -X
   m_TagString: Untagged
@@ -8560,20 +8139,6 @@ MonoBehaviour:
   m_linkedSpot: {fileID: 3219740103047892821}
   m_belongToFace: 5
   m_faceDirection: 4
---- !u!114 &3219740103612571960
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3219740103612571954}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c731a6025692a6045b1a3d86a55ce77f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_spot: {fileID: 3219740103047892821}
-  m_face: {fileID: 3219740103612571964}
 --- !u!1 &3219740103615010187
 GameObject:
   m_ObjectHideFlags: 0
@@ -8824,7 +8389,6 @@ GameObject:
   - component: {fileID: 3219740103647370127}
   - component: {fileID: 3219740103647370126}
   - component: {fileID: 3219740103647370125}
-  - component: {fileID: 3219740103647370121}
   m_Layer: 0
   m_Name: RubikFaceCollider +Y
   m_TagString: Untagged
@@ -8920,20 +8484,6 @@ MonoBehaviour:
   m_linkedSpot: {fileID: 3219740104643900333}
   m_belongToFace: 2
   m_faceDirection: 5
---- !u!114 &3219740103647370121
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3219740103647370115}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c731a6025692a6045b1a3d86a55ce77f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_spot: {fileID: 3219740104643900333}
-  m_face: {fileID: 3219740103647370125}
 --- !u!1 &3219740103658959818
 GameObject:
   m_ObjectHideFlags: 0
@@ -9055,7 +8605,6 @@ GameObject:
   - component: {fileID: 3219740103665129999}
   - component: {fileID: 3219740103665129998}
   - component: {fileID: 3219740103665129997}
-  - component: {fileID: 3219740103665129993}
   m_Layer: 0
   m_Name: RubikFaceCollider +X
   m_TagString: Untagged
@@ -9151,20 +8700,6 @@ MonoBehaviour:
   m_linkedSpot: {fileID: 3219740102828261248}
   m_belongToFace: 4
   m_faceDirection: 8
---- !u!114 &3219740103665129993
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3219740103665129987}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c731a6025692a6045b1a3d86a55ce77f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_spot: {fileID: 3219740102828261248}
-  m_face: {fileID: 3219740103665129997}
 --- !u!1 &3219740103698431704
 GameObject:
   m_ObjectHideFlags: 0
@@ -9904,7 +9439,6 @@ GameObject:
   - component: {fileID: 3219740103764493171}
   - component: {fileID: 3219740103764493170}
   - component: {fileID: 3219740103764493169}
-  - component: {fileID: 3219740103764493181}
   m_Layer: 0
   m_Name: RubikFaceCollider +X
   m_TagString: Untagged
@@ -10000,20 +9534,6 @@ MonoBehaviour:
   m_linkedSpot: {fileID: 3219740103808202347}
   m_belongToFace: 4
   m_faceDirection: 1
---- !u!114 &3219740103764493181
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3219740103764493175}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c731a6025692a6045b1a3d86a55ce77f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_spot: {fileID: 3219740103808202347}
-  m_face: {fileID: 3219740103764493169}
 --- !u!1 &3219740103769634105
 GameObject:
   m_ObjectHideFlags: 0
@@ -10027,7 +9547,6 @@ GameObject:
   - component: {fileID: 3219740103769633989}
   - component: {fileID: 3219740103769633988}
   - component: {fileID: 3219740103769634107}
-  - component: {fileID: 3219740103769633991}
   m_Layer: 0
   m_Name: RubikFaceCollider -Z
   m_TagString: Untagged
@@ -10123,20 +9642,6 @@ MonoBehaviour:
   m_linkedSpot: {fileID: 3219740104015314715}
   m_belongToFace: 0
   m_faceDirection: 7
---- !u!114 &3219740103769633991
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3219740103769634105}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c731a6025692a6045b1a3d86a55ce77f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_spot: {fileID: 3219740104015314715}
-  m_face: {fileID: 3219740103769634107}
 --- !u!1 &3219740103790634537
 GameObject:
   m_ObjectHideFlags: 0
@@ -10416,7 +9921,6 @@ GameObject:
   - component: {fileID: 3219740103808213884}
   - component: {fileID: 3219740103808213875}
   - component: {fileID: 3219740103808213874}
-  - component: {fileID: 3219740103808213886}
   m_Layer: 0
   m_Name: RubikFaceCollider -X
   m_TagString: Untagged
@@ -10512,20 +10016,6 @@ MonoBehaviour:
   m_linkedSpot: {fileID: 3219740103364134095}
   m_belongToFace: 5
   m_faceDirection: 5
---- !u!114 &3219740103808213886
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3219740103808213872}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c731a6025692a6045b1a3d86a55ce77f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_spot: {fileID: 3219740103364134095}
-  m_face: {fileID: 3219740103808213874}
 --- !u!1 &3219740103817426610
 GameObject:
   m_ObjectHideFlags: 0
@@ -10704,7 +10194,6 @@ GameObject:
   - component: {fileID: 3219740103856218490}
   - component: {fileID: 3219740103856218489}
   - component: {fileID: 3219740103856218488}
-  - component: {fileID: 3219740103856218372}
   m_Layer: 0
   m_Name: RubikFaceCollider -Y
   m_TagString: Untagged
@@ -10800,20 +10289,6 @@ MonoBehaviour:
   m_linkedSpot: {fileID: 3219740103964184730}
   m_belongToFace: 3
   m_faceDirection: 2
---- !u!114 &3219740103856218372
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3219740103856218494}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c731a6025692a6045b1a3d86a55ce77f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_spot: {fileID: 3219740103964184730}
-  m_face: {fileID: 3219740103856218488}
 --- !u!1 &3219740103861774785
 GameObject:
   m_ObjectHideFlags: 0
@@ -10827,7 +10302,6 @@ GameObject:
   - component: {fileID: 3219740103861774797}
   - component: {fileID: 3219740103861774796}
   - component: {fileID: 3219740103861774787}
-  - component: {fileID: 3219740103861774799}
   m_Layer: 0
   m_Name: RubikFaceCollider +X
   m_TagString: Untagged
@@ -10923,20 +10397,6 @@ MonoBehaviour:
   m_linkedSpot: {fileID: 3219740103962939324}
   m_belongToFace: 0
   m_faceDirection: 5
---- !u!114 &3219740103861774799
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3219740103861774785}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c731a6025692a6045b1a3d86a55ce77f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_spot: {fileID: 3219740103962939324}
-  m_face: {fileID: 3219740103861774787}
 --- !u!1 &3219740103868514187
 GameObject:
   m_ObjectHideFlags: 0
@@ -11058,7 +10518,6 @@ GameObject:
   - component: {fileID: 3219740103872242246}
   - component: {fileID: 3219740103872242245}
   - component: {fileID: 3219740103872242244}
-  - component: {fileID: 3219740103872242240}
   m_Layer: 0
   m_Name: RubikFaceCollider -X
   m_TagString: Untagged
@@ -11154,20 +10613,6 @@ MonoBehaviour:
   m_linkedSpot: {fileID: 3219740104015314715}
   m_belongToFace: 5
   m_faceDirection: 9
---- !u!114 &3219740103872242240
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3219740103872242362}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c731a6025692a6045b1a3d86a55ce77f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_spot: {fileID: 3219740104015314715}
-  m_face: {fileID: 3219740103872242244}
 --- !u!1 &3219740103874033641
 GameObject:
   m_ObjectHideFlags: 0
@@ -11704,7 +11149,6 @@ GameObject:
   - component: {fileID: 3219740103909577039}
   - component: {fileID: 3219740103909577038}
   - component: {fileID: 3219740103909577037}
-  - component: {fileID: 3219740103909577033}
   m_Layer: 0
   m_Name: RubikFaceCollider +Y
   m_TagString: Untagged
@@ -11800,20 +11244,6 @@ MonoBehaviour:
   m_linkedSpot: {fileID: 3219740103412378345}
   m_belongToFace: 2
   m_faceDirection: 9
---- !u!114 &3219740103909577033
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3219740103909577027}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c731a6025692a6045b1a3d86a55ce77f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_spot: {fileID: 3219740103412378345}
-  m_face: {fileID: 3219740103909577037}
 --- !u!1 &3219740103917272234
 GameObject:
   m_ObjectHideFlags: 0
@@ -12297,7 +11727,6 @@ GameObject:
   - component: {fileID: 3219740103993128565}
   - component: {fileID: 3219740103993128564}
   - component: {fileID: 3219740103993128555}
-  - component: {fileID: 3219740103993128567}
   m_Layer: 0
   m_Name: RubikFaceCollider +Z
   m_TagString: Untagged
@@ -12393,20 +11822,6 @@ MonoBehaviour:
   m_linkedSpot: {fileID: 3219740103315774288}
   m_belongToFace: 1
   m_faceDirection: 7
---- !u!114 &3219740103993128567
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3219740103993128553}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c731a6025692a6045b1a3d86a55ce77f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_spot: {fileID: 3219740103315774288}
-  m_face: {fileID: 3219740103993128555}
 --- !u!1 &3219740104015314713
 GameObject:
   m_ObjectHideFlags: 0
@@ -13127,7 +12542,6 @@ GameObject:
   - component: {fileID: 3219740104139697735}
   - component: {fileID: 3219740104139697734}
   - component: {fileID: 3219740104139697733}
-  - component: {fileID: 3219740104139697729}
   m_Layer: 0
   m_Name: RubikFaceCollider -Y
   m_TagString: Untagged
@@ -13223,20 +12637,6 @@ MonoBehaviour:
   m_linkedSpot: {fileID: 3219740104593737683}
   m_belongToFace: 3
   m_faceDirection: 5
---- !u!114 &3219740104139697729
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3219740104139697851}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c731a6025692a6045b1a3d86a55ce77f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_spot: {fileID: 3219740104593737683}
-  m_face: {fileID: 3219740104139697733}
 --- !u!1 &3219740104142389291
 GameObject:
   m_ObjectHideFlags: 0
@@ -13466,7 +12866,6 @@ GameObject:
   - component: {fileID: 3219740104149977488}
   - component: {fileID: 3219740104149977495}
   - component: {fileID: 3219740104149977494}
-  - component: {fileID: 3219740104149977490}
   m_Layer: 0
   m_Name: RubikFaceCollider -Y
   m_TagString: Untagged
@@ -13562,20 +12961,6 @@ MonoBehaviour:
   m_linkedSpot: {fileID: 3219740103962939324}
   m_belongToFace: 0
   m_faceDirection: 5
---- !u!114 &3219740104149977490
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3219740104149977492}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c731a6025692a6045b1a3d86a55ce77f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_spot: {fileID: 3219740103962939324}
-  m_face: {fileID: 3219740104149977494}
 --- !u!1 &3219740104160033352
 GameObject:
   m_ObjectHideFlags: 0
@@ -13697,7 +13082,6 @@ GameObject:
   - component: {fileID: 3219740104165196220}
   - component: {fileID: 3219740104165196211}
   - component: {fileID: 3219740104165196210}
-  - component: {fileID: 3219740104165196222}
   m_Layer: 0
   m_Name: RubikFaceCollider +X
   m_TagString: Untagged
@@ -13793,20 +13177,6 @@ MonoBehaviour:
   m_linkedSpot: {fileID: 3219740103315774288}
   m_belongToFace: 4
   m_faceDirection: 9
---- !u!114 &3219740104165196222
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3219740104165196208}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c731a6025692a6045b1a3d86a55ce77f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_spot: {fileID: 3219740103315774288}
-  m_face: {fileID: 3219740104165196210}
 --- !u!1 &3219740104165868849
 GameObject:
   m_ObjectHideFlags: 0
@@ -13820,7 +13190,6 @@ GameObject:
   - component: {fileID: 3219740104165868861}
   - component: {fileID: 3219740104165868860}
   - component: {fileID: 3219740104165868851}
-  - component: {fileID: 3219740104165868863}
   m_Layer: 0
   m_Name: RubikFaceCollider +Z
   m_TagString: Untagged
@@ -13916,20 +13285,6 @@ MonoBehaviour:
   m_linkedSpot: {fileID: 3219740102711110509}
   m_belongToFace: 1
   m_faceDirection: 1
---- !u!114 &3219740104165868863
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3219740104165868849}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c731a6025692a6045b1a3d86a55ce77f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_spot: {fileID: 3219740102711110509}
-  m_face: {fileID: 3219740104165868851}
 --- !u!1 &3219740104170406221
 GameObject:
   m_ObjectHideFlags: 0
@@ -13990,7 +13345,6 @@ GameObject:
   - component: {fileID: 3219740104175663521}
   - component: {fileID: 3219740104175663520}
   - component: {fileID: 3219740104175663527}
-  - component: {fileID: 3219740104175663523}
   m_Layer: 0
   m_Name: RubikFaceCollider +X
   m_TagString: Untagged
@@ -14086,20 +13440,6 @@ MonoBehaviour:
   m_linkedSpot: {fileID: 3219740102711110509}
   m_belongToFace: 4
   m_faceDirection: 3
---- !u!114 &3219740104175663523
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3219740104175663525}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c731a6025692a6045b1a3d86a55ce77f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_spot: {fileID: 3219740102711110509}
-  m_face: {fileID: 3219740104175663527}
 --- !u!1 &3219740104193299114
 GameObject:
   m_ObjectHideFlags: 0
@@ -14221,7 +13561,6 @@ GameObject:
   - component: {fileID: 3219740104196627144}
   - component: {fileID: 3219740104196627151}
   - component: {fileID: 3219740104196627150}
-  - component: {fileID: 3219740104196627146}
   m_Layer: 0
   m_Name: RubikFaceCollider +X
   m_TagString: Untagged
@@ -14317,20 +13656,6 @@ MonoBehaviour:
   m_linkedSpot: {fileID: 3219740104379771951}
   m_belongToFace: 4
   m_faceDirection: 6
---- !u!114 &3219740104196627146
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3219740104196627148}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c731a6025692a6045b1a3d86a55ce77f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_spot: {fileID: 3219740104379771951}
-  m_face: {fileID: 3219740104196627150}
 --- !u!1 &3219740104196801504
 GameObject:
   m_ObjectHideFlags: 0
@@ -14391,7 +13716,6 @@ GameObject:
   - component: {fileID: 3219740104214584689}
   - component: {fileID: 3219740104214584688}
   - component: {fileID: 3219740104214584695}
-  - component: {fileID: 3219740104214584691}
   m_Layer: 0
   m_Name: RubikFaceCollider -Y
   m_TagString: Untagged
@@ -14487,20 +13811,6 @@ MonoBehaviour:
   m_linkedSpot: {fileID: 3219740103549031280}
   m_belongToFace: 3
   m_faceDirection: 6
---- !u!114 &3219740104214584691
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3219740104214584693}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c731a6025692a6045b1a3d86a55ce77f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_spot: {fileID: 3219740103549031280}
-  m_face: {fileID: 3219740104214584695}
 --- !u!1 &3219740104218573496
 GameObject:
   m_ObjectHideFlags: 0
@@ -14622,7 +13932,6 @@ GameObject:
   - component: {fileID: 3219740104229227625}
   - component: {fileID: 3219740104229227624}
   - component: {fileID: 3219740104229227631}
-  - component: {fileID: 3219740104229227627}
   m_Layer: 0
   m_Name: RubikFaceCollider +Y
   m_TagString: Untagged
@@ -14718,20 +14027,6 @@ MonoBehaviour:
   m_linkedSpot: {fileID: 3219740104411270651}
   m_belongToFace: 2
   m_faceDirection: 8
---- !u!114 &3219740104229227627
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3219740104229227629}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c731a6025692a6045b1a3d86a55ce77f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_spot: {fileID: 3219740104411270651}
-  m_face: {fileID: 3219740104229227631}
 --- !u!1 &3219740104236945208
 GameObject:
   m_ObjectHideFlags: 0
@@ -14745,7 +14040,6 @@ GameObject:
   - component: {fileID: 3219740104236945092}
   - component: {fileID: 3219740104236945211}
   - component: {fileID: 3219740104236945210}
-  - component: {fileID: 3219740104236945094}
   m_Layer: 0
   m_Name: RubikFaceCollider -X
   m_TagString: Untagged
@@ -14841,20 +14135,6 @@ MonoBehaviour:
   m_linkedSpot: {fileID: 3219740103964184730}
   m_belongToFace: 5
   m_faceDirection: 2
---- !u!114 &3219740104236945094
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3219740104236945208}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c731a6025692a6045b1a3d86a55ce77f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_spot: {fileID: 3219740103964184730}
-  m_face: {fileID: 3219740104236945210}
 --- !u!1 &3219740104240932515
 GameObject:
   m_ObjectHideFlags: 0
@@ -14868,7 +14148,6 @@ GameObject:
   - component: {fileID: 3219740104240932527}
   - component: {fileID: 3219740104240932526}
   - component: {fileID: 3219740104240932525}
-  - component: {fileID: 3219740104240932521}
   m_Layer: 0
   m_Name: RubikFaceCollider +Z
   m_TagString: Untagged
@@ -14964,20 +14243,6 @@ MonoBehaviour:
   m_linkedSpot: {fileID: 3219740104112268229}
   m_belongToFace: 1
   m_faceDirection: 5
---- !u!114 &3219740104240932521
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3219740104240932515}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c731a6025692a6045b1a3d86a55ce77f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_spot: {fileID: 3219740104112268229}
-  m_face: {fileID: 3219740104240932525}
 --- !u!1 &3219740104245507841
 GameObject:
   m_ObjectHideFlags: 0
@@ -14991,7 +14256,6 @@ GameObject:
   - component: {fileID: 3219740104245507853}
   - component: {fileID: 3219740104245507852}
   - component: {fileID: 3219740104245507843}
-  - component: {fileID: 3219740104245507855}
   m_Layer: 0
   m_Name: RubikFaceCollider -Z
   m_TagString: Untagged
@@ -15087,20 +14351,6 @@ MonoBehaviour:
   m_linkedSpot: {fileID: 3219740102772193294}
   m_belongToFace: 0
   m_faceDirection: 5
---- !u!114 &3219740104245507855
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3219740104245507841}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c731a6025692a6045b1a3d86a55ce77f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_spot: {fileID: 3219740102772193294}
-  m_face: {fileID: 3219740104245507843}
 --- !u!1 &3219740104246587028
 GameObject:
   m_ObjectHideFlags: 0
@@ -15709,7 +14959,6 @@ GameObject:
   - component: {fileID: 3219740104324110070}
   - component: {fileID: 3219740104324110069}
   - component: {fileID: 3219740104324110068}
-  - component: {fileID: 3219740104324110064}
   m_Layer: 0
   m_Name: RubikFaceCollider +Z
   m_TagString: Untagged
@@ -15805,20 +15054,6 @@ MonoBehaviour:
   m_linkedSpot: {fileID: 3219740103412378345}
   m_belongToFace: 1
   m_faceDirection: 9
---- !u!114 &3219740104324110064
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3219740104324110058}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c731a6025692a6045b1a3d86a55ce77f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_spot: {fileID: 3219740103412378345}
-  m_face: {fileID: 3219740104324110068}
 --- !u!1 &3219740104333457614
 GameObject:
   m_ObjectHideFlags: 0
@@ -16041,7 +15276,6 @@ GameObject:
   - component: {fileID: 3219740104347602419}
   - component: {fileID: 3219740104347602418}
   - component: {fileID: 3219740104347602417}
-  - component: {fileID: 3219740104347602429}
   m_Layer: 0
   m_Name: RubikFaceCollider +Y
   m_TagString: Untagged
@@ -16137,20 +15371,6 @@ MonoBehaviour:
   m_linkedSpot: {fileID: 3219740104789446513}
   m_belongToFace: 2
   m_faceDirection: 4
---- !u!114 &3219740104347602429
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3219740104347602423}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c731a6025692a6045b1a3d86a55ce77f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_spot: {fileID: 3219740104789446513}
-  m_face: {fileID: 3219740104347602417}
 --- !u!1 &3219740104365954843
 GameObject:
   m_ObjectHideFlags: 0
@@ -16629,7 +15849,6 @@ GameObject:
   - component: {fileID: 3219740104396795957}
   - component: {fileID: 3219740104396795956}
   - component: {fileID: 3219740104396795947}
-  - component: {fileID: 3219740104396795959}
   m_Layer: 0
   m_Name: RubikFaceCollider +Y
   m_TagString: Untagged
@@ -16725,20 +15944,6 @@ MonoBehaviour:
   m_linkedSpot: {fileID: 3219740104617566217}
   m_belongToFace: 2
   m_faceDirection: 1
---- !u!114 &3219740104396795959
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3219740104396795945}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c731a6025692a6045b1a3d86a55ce77f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_spot: {fileID: 3219740104617566217}
-  m_face: {fileID: 3219740104396795947}
 --- !u!1 &3219740104404903938
 GameObject:
   m_ObjectHideFlags: 0
@@ -17211,7 +16416,6 @@ GameObject:
   - component: {fileID: 3219740104554934185}
   - component: {fileID: 3219740104554934184}
   - component: {fileID: 3219740104554934191}
-  - component: {fileID: 3219740104554934187}
   m_Layer: 0
   m_Name: RubikFaceCollider +Y
   m_TagString: Untagged
@@ -17307,20 +16511,6 @@ MonoBehaviour:
   m_linkedSpot: {fileID: 3219740102828261248}
   m_belongToFace: 2
   m_faceDirection: 2
---- !u!114 &3219740104554934187
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3219740104554934189}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c731a6025692a6045b1a3d86a55ce77f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_spot: {fileID: 3219740102828261248}
-  m_face: {fileID: 3219740104554934191}
 --- !u!1 &3219740104560319726
 GameObject:
   m_ObjectHideFlags: 0
@@ -17334,7 +16524,6 @@ GameObject:
   - component: {fileID: 3219740104560319722}
   - component: {fileID: 3219740104560319721}
   - component: {fileID: 3219740104560319720}
-  - component: {fileID: 3219740104560319732}
   m_Layer: 0
   m_Name: RubikFaceCollider -Z
   m_TagString: Untagged
@@ -17430,20 +16619,6 @@ MonoBehaviour:
   m_linkedSpot: {fileID: 3219740104789446513}
   m_belongToFace: 0
   m_faceDirection: 8
---- !u!114 &3219740104560319732
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3219740104560319726}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c731a6025692a6045b1a3d86a55ce77f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_spot: {fileID: 3219740104789446513}
-  m_face: {fileID: 3219740104560319720}
 --- !u!1 &3219740104575677897
 GameObject:
   m_ObjectHideFlags: 0
@@ -18077,7 +17252,6 @@ GameObject:
   - component: {fileID: 3219740104625846824}
   - component: {fileID: 3219740104625846831}
   - component: {fileID: 3219740104625846830}
-  - component: {fileID: 3219740104625846826}
   m_Layer: 0
   m_Name: RubikFaceCollider -Z
   m_TagString: Untagged
@@ -18173,20 +17347,6 @@ MonoBehaviour:
   m_linkedSpot: {fileID: 3219740103808202347}
   m_belongToFace: 0
   m_faceDirection: 3
---- !u!114 &3219740104625846826
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3219740104625846828}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c731a6025692a6045b1a3d86a55ce77f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_spot: {fileID: 3219740103808202347}
-  m_face: {fileID: 3219740104625846830}
 --- !u!1 &3219740104630359235
 GameObject:
   m_ObjectHideFlags: 0
@@ -18355,7 +17515,6 @@ GameObject:
   - component: {fileID: 3219740104639930543}
   - component: {fileID: 3219740104639930542}
   - component: {fileID: 3219740104639930541}
-  - component: {fileID: 3219740104639930537}
   m_Layer: 0
   m_Name: RubikFaceCollider -Y
   m_TagString: Untagged
@@ -18451,20 +17610,6 @@ MonoBehaviour:
   m_linkedSpot: {fileID: 3219740103808202347}
   m_belongToFace: 3
   m_faceDirection: 7
---- !u!114 &3219740104639930537
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3219740104639930531}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c731a6025692a6045b1a3d86a55ce77f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_spot: {fileID: 3219740103808202347}
-  m_face: {fileID: 3219740104639930541}
 --- !u!1 &3219740104643900323
 GameObject:
   m_ObjectHideFlags: 0
@@ -18944,7 +18089,6 @@ GameObject:
   - component: {fileID: 3219740104678184823}
   - component: {fileID: 3219740104678184822}
   - component: {fileID: 3219740104678184821}
-  - component: {fileID: 3219740104678184817}
   m_Layer: 0
   m_Name: RubikFaceCollider -Z
   m_TagString: Untagged
@@ -19040,20 +18184,6 @@ MonoBehaviour:
   m_linkedSpot: {fileID: 3219740104617566217}
   m_belongToFace: 0
   m_faceDirection: 9
---- !u!114 &3219740104678184817
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3219740104678184811}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c731a6025692a6045b1a3d86a55ce77f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_spot: {fileID: 3219740104617566217}
-  m_face: {fileID: 3219740104678184821}
 --- !u!1 &3219740104683897569
 GameObject:
   m_ObjectHideFlags: 0
@@ -19067,7 +18197,6 @@ GameObject:
   - component: {fileID: 3219740104683897581}
   - component: {fileID: 3219740104683897580}
   - component: {fileID: 3219740104683897571}
-  - component: {fileID: 3219740104683897583}
   m_Layer: 0
   m_Name: RubikFaceCollider -X
   m_TagString: Untagged
@@ -19163,20 +18292,6 @@ MonoBehaviour:
   m_linkedSpot: {fileID: 3219740104411270651}
   m_belongToFace: 5
   m_faceDirection: 8
---- !u!114 &3219740104683897583
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3219740104683897569}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c731a6025692a6045b1a3d86a55ce77f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_spot: {fileID: 3219740104411270651}
-  m_face: {fileID: 3219740104683897571}
 --- !u!1 &3219740104688858420
 GameObject:
   m_ObjectHideFlags: 0
@@ -19346,7 +18461,6 @@ GameObject:
   - component: {fileID: 3219740104737196989}
   - component: {fileID: 3219740104737196988}
   - component: {fileID: 3219740104737196979}
-  - component: {fileID: 3219740104737196991}
   m_Layer: 0
   m_Name: RubikFaceCollider -X
   m_TagString: Untagged
@@ -19442,20 +18556,6 @@ MonoBehaviour:
   m_linkedSpot: {fileID: 3219740103962939324}
   m_belongToFace: 0
   m_faceDirection: 5
---- !u!114 &3219740104737196991
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3219740104737196977}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c731a6025692a6045b1a3d86a55ce77f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_spot: {fileID: 3219740103364134095}
-  m_face: {fileID: 3219740104737196979}
 --- !u!1 &3219740104740268976
 GameObject:
   m_ObjectHideFlags: 0
