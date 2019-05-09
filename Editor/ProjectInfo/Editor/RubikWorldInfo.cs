@@ -7,8 +7,8 @@ using System;
 
 public class RubikWorldInfo : EditorWindow
 {
-    DateTime m_nextMilestone = new DateTime(2018, 05, 21);
-    DateTime m_nextDeathline = new DateTime(2018, 05, 30);
+    DateTime m_nextMilestone = new DateTime(2019, 05, 22);
+    DateTime m_nextDeathline = new DateTime(2019, 07, 30);
     string m_urlGCD = "https://docs.google.com/document/d/1mojD1YjD4JLC6stRxIcl9wooiBfaj08uxH0iLRHrRB8/edit?usp=sharing";
     string m_urlToDoToRelease = "https://gitlab.com/JamsCenter/RubikWorld/boards/575345?=";
     string m_urlMilestoneToRelease = "https://gitlab.com/JamsCenter/RubikWorld/milestones";
