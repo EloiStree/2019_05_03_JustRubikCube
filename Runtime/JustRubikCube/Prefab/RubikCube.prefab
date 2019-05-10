@@ -1,5 +1,69 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1101573318248720468
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3935700433484767283}
+  - component: {fileID: 7410506523335063311}
+  - component: {fileID: 7807656151499403936}
+  m_Layer: 0
+  m_Name: CubeRotation
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3935700433484767283
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1101573318248720468}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 3219740104333457608}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7410506523335063311
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1101573318248720468}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a110eb15384ec54082ab890557a9ea8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_affected: {fileID: 3219740103768664363}
+  m_pointOfView: {fileID: 0}
+  m_rotationSpeed: 180
+  m_rotationSpeedForAngles: 270
+  m_tryToUseCameraAtStart: 1
+  m_direction: {x: 0, y: 0, z: 0}
+  m_stackRotation: {x: 0, y: 0, z: 0}
+--- !u!114 &7807656151499403936
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1101573318248720468}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb38e03659bbd6547813d474d8266fd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_rotor: {fileID: 7410506523335063311}
 --- !u!1 &3219740102657960171
 GameObject:
   m_ObjectHideFlags: 0
@@ -3258,8 +3322,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_TypeName: RubikCube+RotationEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
+    m_TypeName: RubikCube+RotationEvent, be.eloiexperiments.justrubikcube, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
   m_onRotated:
     m_PersistentCalls:
       m_Calls:
@@ -3274,8 +3338,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_TypeName: RubikCube+RotationEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
+    m_TypeName: RubikCube+RotationEvent, be.eloiexperiments.justrubikcube, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
   m_onStartMotorRotation:
     m_PersistentCalls:
       m_Calls: []
@@ -9042,8 +9106,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_TypeName: RubikCube+RotationEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
+    m_TypeName: RubikCube+RotationEvent, be.eloiexperiments.justrubikcube, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
   m_onRotated:
     m_PersistentCalls:
       m_Calls:
@@ -9058,8 +9122,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_TypeName: RubikCube+RotationEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
+    m_TypeName: RubikCube+RotationEvent, be.eloiexperiments.justrubikcube, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
   m_onStartMotorRotation:
     m_PersistentCalls:
       m_Calls: []
@@ -14513,8 +14577,8 @@ MonoBehaviour:
   m_onCubePourcentChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: RubikCubeResolvedState+PourcentFinishEvent, Assembly-CSharp, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
+    m_TypeName: RubikCubeResolvedState+PourcentFinishEvent, be.eloiexperiments.justrubikcube,
+      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 --- !u!1 &3219740104285001423
 GameObject:
   m_ObjectHideFlags: 0
@@ -15089,6 +15153,7 @@ Transform:
   - {fileID: 3219740103200308964}
   - {fileID: 3219740104597657385}
   - {fileID: 3219740104393455552}
+  - {fileID: 3935700433484767283}
   m_Father: {fileID: 3219740103768664363}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -18997,8 +19062,8 @@ MonoBehaviour:
   m_onStartRotating:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: RubikCube+RotationEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
+    m_TypeName: RubikCube+RotationEvent, be.eloiexperiments.justrubikcube, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
   m_onRotated:
     m_PersistentCalls:
       m_Calls:
@@ -19013,8 +19078,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_TypeName: RubikCube+RotationEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
+    m_TypeName: RubikCube+RotationEvent, be.eloiexperiments.justrubikcube, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
   m_cubeResolvedState: {fileID: 3219740104276161757}
   m_onCubeResolved:
     m_PersistentCalls:
