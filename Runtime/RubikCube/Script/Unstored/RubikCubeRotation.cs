@@ -73,16 +73,16 @@ public class RubikCubeRotation : MonoBehaviour
         switch (direction)
         {
             case EquatorDirection.Equator:
-                m_direction.y = +value;
+                m_direction.x = +value;
                 break;
             case EquatorDirection.CounterEquator:
-                m_direction.y = -value;
+                m_direction.x = -value;
                 break;
             case EquatorDirection.Middle:
-                m_direction.x = value;
+                m_direction.y = -value;
                 break;
             case EquatorDirection.CounterMiddle:
-                m_direction.x = -value;
+                m_direction.y = value;
                 break;
             case EquatorDirection.Standing:
                 m_direction.z = value;

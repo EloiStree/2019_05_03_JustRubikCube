@@ -29,15 +29,15 @@ public class RubikCubeRotationInput : MonoBehaviour
 
 
             if (IsDown(KeyCode.Keypad5, KeyCode.Keypad2))
-                m_rotor.SetRotationAxes(1, ArrowDirection.Down);
+                m_rotor.SetRotationAxes(1, EquatorDirection.Middle);
             if (Input.GetKey(KeyCode.Keypad8))
-                m_rotor.SetRotationAxes(1, ArrowDirection.Up);
+                m_rotor.SetRotationAxes(1, EquatorDirection.CounterMiddle);
 
 
             if (Input.GetKey(KeyCode.Keypad4))
-                m_rotor.SetRotationAxes(1, ArrowDirection.Left);
+                m_rotor.SetRotationAxes(1, EquatorDirection.CounterEquator);
             if (Input.GetKey(KeyCode.Keypad6))
-                m_rotor.SetRotationAxes(1, ArrowDirection.Right);
+                m_rotor.SetRotationAxes(1, EquatorDirection.Equator);
 
             if (Input.GetKey(KeyCode.Keypad9))
                 m_rotor.SetRotationAxes(1, EquatorDirection.Standing);
