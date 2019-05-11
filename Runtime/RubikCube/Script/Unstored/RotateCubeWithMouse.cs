@@ -46,9 +46,9 @@ public class RotateCubeWithMouse : MonoBehaviour, IPointerDownHandler, IPointerU
             Vector3 direction = (currentMousePosition - m_mousePosition).normalized;
             //  m_mousePosition = currentMousePosition;
 
-            if (direction.x != 0f)
+            if (direction.x != 0f && m_toRotate)
                 m_toRotate.m_externalDirection.x = direction.x;// > 0f ? 1f : -1f;
-            if (direction.y != 0f)
+            if (direction.y != 0f && m_toRotate)
                 m_toRotate.m_externalDirection.y = direction.y; //> 0f ? 1f : -1f;
         }
     }
