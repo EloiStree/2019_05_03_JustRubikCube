@@ -15,6 +15,7 @@ public interface IRubikCube {
 
 
 }
+public enum ArrowDirection { Left, Right, Up, Down }
 /// https://ruwix.com/the-rubiks-cube/notation/
 public enum RotationTypeShort
 {
@@ -126,7 +127,7 @@ public enum RubikCubeColor {
     White, Red, Green, Blue, Orange, Yellow
 
 }
-
+public enum EquatorDirection { Equator, Middle, Standing, CounterEquator, CounterMiddle, CounterStanding }
 
 
 

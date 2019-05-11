@@ -23,7 +23,6 @@ public class RubikPiece : MonoBehaviour {
     //}
 }
 
-public enum ArrowDirection { Left,Right, Up, Down}
 
 public class RotationRequest
 {

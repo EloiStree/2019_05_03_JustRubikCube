@@ -3,11 +3,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class RubikCubeRotation : MonoBehaviour
 {
 
-    public enum ArrowDirection { Up, Down, Left, Right }
-    public enum EquatorDirection { Equator, Middle, Standing, CounterEquator, CounterMiddle, CounterStanding }
+   
 
     public Transform m_affected;
 
