@@ -11,7 +11,7 @@ public class RubikCubeRotation : MonoBehaviour
 
     public Transform m_affected;
 
-    internal void RotateBy90Degree(EquatorDirection rotation)
+    public void RotateBy90Degree(EquatorDirection rotation)
     {
             RotateWithAngle( 90, rotation);
         
