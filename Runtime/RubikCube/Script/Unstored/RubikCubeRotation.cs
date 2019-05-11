@@ -69,7 +69,7 @@ public class RubikCubeRotation : MonoBehaviour
         }
     }
     public void SetRotationAxes(float value, EquatorDirection direction) {
-        value = Mathf.Clamp(value, 0, 1);
+        value = Mathf.Clamp(value, -1f, 1f);
         switch (direction)
         {
             case EquatorDirection.Equator:
