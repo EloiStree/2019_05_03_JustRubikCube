@@ -15395,6 +15395,7 @@ Transform:
   - {fileID: 3219740104597657385}
   - {fileID: 3219740104393455552}
   - {fileID: 3935700433484767283}
+  - {fileID: 7314556484767557112}
   m_Father: {fileID: 3219740103768664363}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -19749,6 +19750,123 @@ MonoBehaviour:
   m_root: {fileID: 3219740104798909549}
   m_range: 0.1
   m_useDebugDraw: 0
+--- !u!1 &6075370124414905042
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7314556484767557112}
+  - component: {fileID: 3201402468342449265}
+  - component: {fileID: 1937232242394202595}
+  - component: {fileID: 7009572774903113752}
+  - component: {fileID: 1635212621365535059}
+  - component: {fileID: 742451953}
+  m_Layer: 0
+  m_Name: CubeHistory
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7314556484767557112
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6075370124414905042}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 3219740104333457608}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3201402468342449265
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6075370124414905042}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05c742e163116204abae97fdb546825c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_rubikCube: {fileID: 3219740104777719390}
+  m_playPrefsId: PlayerSolutionSaved
+  m_history: 
+--- !u!114 &1937232242394202595
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6075370124414905042}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 992f13b1acde87f44a66848283cd776c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_rubikCube: {fileID: 3219740104777719390}
+  m_sequence:
+    m_rotations: 
+    m_sequenceAsString: 
+  m_timedSequence:
+    m_rotations: []
+  m_timePasted: {fileID: 1635212621365535059}
+--- !u!114 &7009572774903113752
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6075370124414905042}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a630696099ec6684cbede884e96871f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_rubikCube: {fileID: 3219740104777719390}
+  m_rotationsHistory: {fileID: 1937232242394202595}
+  m_incomingUndo: 
+  m_undoTrack: 
+  m_waitingUndo: 0
+  m_lastUndo: 0
+  m_waitingUnUndo: 0
+  m_lastUnUndo: 0
+  m_index: 0
+--- !u!114 &1635212621365535059
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6075370124414905042}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47cf62147e964ad4d9cc469bc6cc9340, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_time: 0
+  m_isRunning: 0
+--- !u!114 &742451953
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6075370124414905042}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad26d6188ddf6b84ebb794b1da7a218b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_undo: {fileID: 7009572774903113752}
 --- !u!1001 &3219740103032666834
 PrefabInstance:
   m_ObjectHideFlags: 0

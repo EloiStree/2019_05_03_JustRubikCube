@@ -43,9 +43,6 @@ public enum RotationTypeLong
     Middle, MiddleCounter,
     Equator, EquatorCounter,
     Standing, StandingCounter,
-    X, XCounter,
-    Y, YCounter,
-    Z, ZCounter
 }
 public enum RubikCubePivotable:int
 {
@@ -136,6 +133,8 @@ public class RubikCube : MonoBehaviour {
     [Header("Params")]
     public Transform m_root;
 
+   
+
     [Header("Pivot")]
     public Transform m_left;
     public Transform m_right;
@@ -144,6 +143,64 @@ public class RubikCube : MonoBehaviour {
     public Transform m_face;
     public Transform m_back;
     public Transform m_middle;
+
+    internal static RotationTypeShort GetInverseOf(RotationTypeShort value)
+    {
+        switch (value)
+        {
+            case RotationTypeShort.L: 
+                return RotationTypeShort.Lp;
+            case RotationTypeShort.Lp:
+                return RotationTypeShort.L;
+            case RotationTypeShort.R:
+                return RotationTypeShort.Rp;
+            case RotationTypeShort.Rp:
+                return RotationTypeShort.R;
+            case RotationTypeShort.U:
+                return RotationTypeShort.Up;
+            case RotationTypeShort.Up:
+                return RotationTypeShort.U;
+            case RotationTypeShort.D:
+                return RotationTypeShort.Dp;
+            case RotationTypeShort.Dp:
+                return RotationTypeShort.D;
+            case RotationTypeShort.F:
+                return RotationTypeShort.Fp;
+            case RotationTypeShort.Fp:
+                return RotationTypeShort.F;
+            case RotationTypeShort.B:
+                return RotationTypeShort.Bp;
+            case RotationTypeShort.Bp:
+                return RotationTypeShort.B;
+            case RotationTypeShort.M:
+                return RotationTypeShort.Mp;
+            case RotationTypeShort.Mp:   
+                return RotationTypeShort.M;
+            case RotationTypeShort.E:
+                return RotationTypeShort.Ep;
+            case RotationTypeShort.Ep:
+                return RotationTypeShort.E;
+            case RotationTypeShort.S:
+                return RotationTypeShort.Sp;
+            case RotationTypeShort.Sp:
+                return RotationTypeShort.S;
+            case RotationTypeShort.X:
+                return RotationTypeShort.Xp;
+            case RotationTypeShort.Xp:
+                return RotationTypeShort.X;
+            case RotationTypeShort.Y:
+                return RotationTypeShort.Yp;
+            case RotationTypeShort.Yp:
+                return RotationTypeShort.Y;
+            case RotationTypeShort.Z:
+                return RotationTypeShort.Zp;
+            case RotationTypeShort.Zp:
+                return RotationTypeShort.Z;
+            default:
+                return RotationTypeShort.Lp;
+        }
+    }
+
     public Transform m_equator;
     public Transform m_standing;
     public RubikCubePivot[] m_pivots;
@@ -244,6 +301,11 @@ public class RubikCube : MonoBehaviour {
 
         }
         return closest;
+    }
+    internal void AddLocalRotationSequence(RotationTypeShort shortRotation)
+    {
+       string seq = RubikCube.ConvertAcronymShortToString(shortRotation);
+       AddLocalRotationSequence(seq);
     }
 
     public void AddLocalRotationSequence(string sequence)
@@ -1281,5 +1343,24 @@ public class RubikCube : MonoBehaviour {
     {
         return m_pivots.OrderBy(k => Vector3.Distance(k.m_root.position, position)).First();
     }
+    public static string ShortToString(string separation, IEnumerable<RotationTypeShort> seq)
+    {
+        string sequence = "";
+        bool first = true;
+        foreach (RotationTypeShort rotation in seq)
+        {
+            string r= RubikCube.ConvertAcronymShortToString(rotation); 
+            if (first)
+            {
+                first = false;
+                sequence += r;
+            }
+            else {
+                sequence += separation + r;
+            }
+        }
+        return sequence;
+    }
+
 }
 
