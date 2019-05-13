@@ -53,7 +53,8 @@ public class RotationSequence {
     public void Add(RotationTypeShort rotation)
     {
        m_rotations.Add(rotation);
-      m_sequenceAsString += RubikCube.ConvertAcronymShortToString(rotation);
+        string acro = RubikCube.ConvertAcronymShortToString(rotation);
+      m_sequenceAsString += m_sequenceAsString.Length==0? acro: " "+acro;
     }
     public void Clear()
     {
