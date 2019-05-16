@@ -19333,18 +19333,16 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: RubikCube+RotationEvent, be.eloiexperiments.justrubikcube, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
-  m_cubeResolvedState: {fileID: 3219740104276161757}
+  m_onSaveStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: RubikCube+RubikCubeStateChangeEvent, be.eloiexperiments.justrubikcube,
+      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   m_onCubeResolved:
     m_PersistentCalls:
       m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
-  m_white: {r: 1, g: 1, b: 1, a: 1}
-  m_green: {r: 0, g: 1, b: 0, a: 1}
-  m_yellow: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
-  m_orange: {r: 1, g: 0.64705884, b: 0, a: 1}
-  m_blue: {r: 0, g: 0, b: 1, a: 1}
-  m_red: {r: 1, g: 0, b: 0, a: 1}
 --- !u!114 &1303579246
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19357,6 +19355,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05db07f44a405a840bcdd8f4629f33ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_rubikCube: {fileID: 3219740104777719390}
 --- !u!65 &1749838087633975513
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -19817,7 +19816,9 @@ MonoBehaviour:
     m_rotations: 
     m_sequenceAsString: 
   m_timedSequence:
-    m_rotations: []
+    m_rotations: 
+    m_sequenceAsString: 
+    m_timedRotation: []
   m_timePasted: {fileID: 1635212621365535059}
 --- !u!114 &7009572774903113752
 MonoBehaviour:

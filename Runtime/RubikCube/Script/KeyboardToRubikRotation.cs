@@ -17,7 +17,7 @@ public class KeyboardToRubikRotation : MonoBehaviour {
         RubikCubePivotable faceToTurn = GetFaceToTurn(out foundOne);
 
         if(foundOne)
-         m_affectedRubikCube.LocalRotate(faceToTurn, GetClockDirection());
+         m_affectedRubikCube.AddLocalRotate(faceToTurn, GetClockDirection());
 
         if (Input.GetKeyDown(KeyCode.End))
             m_affectedRubikCube.ResetInitialState();

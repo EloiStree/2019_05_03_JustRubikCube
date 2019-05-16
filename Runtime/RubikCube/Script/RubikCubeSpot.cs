@@ -6,16 +6,9 @@ using UnityEngine;
 //[ExecuteInEditMode]
 public class RubikCubeSpot : MonoBehaviour {
 
-    public RubikCubePivotable [] m_faces;
     public Transform m_root;
-    public float m_range=1;
-    public bool m_useDebugDraw;
-	void OnGUI ()
-    {
-        if(m_useDebugDraw)
-        DebugUtility.DrawCross(m_root, m_range, Color.cyan);
-    }
-
+    public RubikCubePivotable [] m_faces;
+   
    
 
     public void Reset()

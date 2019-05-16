@@ -30,4 +30,9 @@ public class RubikCubeFaceInfo : MonoBehaviour {
     {
         return RubikCube.ConvertFaceToPivot(m_belongToFace);
     }
+
+    internal Vector3 GetPosition()
+    {
+        return m_root.position;
+    }
 }

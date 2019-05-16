@@ -7,8 +7,16 @@ public class RubikPiece : MonoBehaviour {
 
     public Transform m_root;
     public RubikCube m_parentRubikCube;
-    
-	
+
+
+    public void OnValidate()
+    {
+        if(m_root==null)
+            m_root = this.transform;
+        if (m_parentRubikCube == null)
+            m_parentRubikCube = this.GetComponentInParent<RubikCube>();
+
+    }
 
     public void Reset()
     {
