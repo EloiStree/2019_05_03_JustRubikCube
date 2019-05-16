@@ -48,12 +48,68 @@ public class SequenceHistory : MonoBehaviour
 
 [System.Serializable]
 public class RotationSequence {
+
+    public int Lenght { get { return m_rotations.Count; } }
+    public RotationSequence()
+    { Clear(); }
+    public RotationSequence(string sequence): this(RubikCube.ConvertStringToShorts(sequence))
+    {}
+
+
+    public RotationSequence (IEnumerable<RotationTypeShort> sequence){
+        Clear();
+        Add(sequence);
+    }
+    
+    public RotationSequence(IEnumerable<RotationTypeLong> sequence)
+    {
+        Clear();
+        foreach (var item in sequence)
+        {
+            Add(RubikCube.ConvertAsShort(item));
+        }
+    }
+
     public List<RotationTypeShort> m_rotations = new List<RotationTypeShort>();
+    public RotationTypeShort[] GetSequenceAsShort()
+    {
+        return m_rotations.ToArray();
+    }
+    public string GetSequenceAsString(string separation = "")
+    {
+        string s = "";
+        for (int i = 0; i < m_rotations.Count; i++)
+        {
+            s += (i == 0 ? "" : separation) + RubikCube.ConvertAcronymShortToString(m_rotations[i]);
+        }
+        return s;
+    }
+    public RotationTypeLong[] GetSequenceAsLong()
+    {
+        RotationTypeLong[] result = new RotationTypeLong[m_rotations.Count];
+        for (int i = 0; i < m_rotations.Count; i++)
+        {
+
+            result[i] = RubikCube.ConvertAcronymShortToLong(m_rotations[i]);
+        }
+        return result;
+    }
+    
     public string m_sequenceAsString="";
-    public void Add(RotationTypeShort rotation)
+    private IEnumerator<RotationTypeShort> sequence;
+
+    public virtual void Add(RotationTypeShort rotation)
     {
        m_rotations.Add(rotation);
-      m_sequenceAsString += RubikCube.ConvertAcronymShortToString(rotation);
+        string acro = RubikCube.ConvertAcronymShortToString(rotation);
+      m_sequenceAsString += m_sequenceAsString.Length==0? acro: " "+acro;
+    }
+    public void Add(IEnumerable<RotationTypeShort> sequence)
+    {
+        foreach (var item in sequence)
+        {
+            Add(item);
+        }
     }
     public void Clear()
     {
@@ -66,7 +122,7 @@ public class RotationSequence {
         return m_sequenceAsString;
     }
 
-    internal List<RotationTypeShort> GetAsList()
+    public List<RotationTypeShort> GetAsList()
     {
         List<RotationTypeShort> duplica = new List<RotationTypeShort>();
         for (int i = 0; i < m_rotations.Count; i++)
@@ -77,15 +133,25 @@ public class RotationSequence {
     }
 }
 [System.Serializable]
-public class TimedRotationSequence {
-    public List<TimedRotation> m_rotations = new List<TimedRotation>();
-    public void Add(RotationTypeShort rotation, float time)
+public class TimedRotationSequence : RotationSequence
+{
+
+    public List<TimedRotation> m_timedRotation = new List<TimedRotation>();
+    public  void Add(RotationTypeShort rotation, float time)
     {
-        m_rotations.Add(new TimedRotation() { m_rotation = rotation, m_startTimeAssociated = time });
+        base.Add(rotation);
+        m_timedRotation.Add(new TimedRotation() { m_rotation = rotation, m_startTimeAssociated = time });
     }
-    public void Clear()
+
+    public override void Add(RotationTypeShort rotation)
     {
-        m_rotations.Clear();
+        throw new Exception("You cant add a rotation to time rotation sequence without the time");
+    }
+
+    public new void Clear()
+    {
+        base.Clear();
+        m_timedRotation.Clear();
     }
 }
 [System.Serializable]

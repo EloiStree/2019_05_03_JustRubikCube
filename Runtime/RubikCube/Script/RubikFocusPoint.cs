@@ -13,9 +13,8 @@ public class RubikFocusPoint : MonoBehaviour {
     [Header("Debug")]
     public RubikCube m_cubeTargeted;
     public Collider m_collision;
-    public RubikCubeSpot m_cubeSpot;
-    public RubikPiece m_pieceFocused;
-    public RubikCubeFaceInfo m_faceFocused;
+    public TagRubikCubePiece m_cubeSpot;
+    public TagRubikCubeFace m_faceFocused;
 
 
 
@@ -31,21 +30,15 @@ public class RubikFocusPoint : MonoBehaviour {
         {
             m_cubeTargeted = hit.collider.GetComponentInParent<RubikCube>();
             m_collision = hit.collider;
-            RubikPiece piece = hit.collider.GetComponent<RubikPiece>();
-            if (piece != null)
-            {
-                m_pieceFocused = piece;
-            }
-            else m_pieceFocused = null;
-
-            RubikCubeFaceInfo face = hit.collider.GetComponent<RubikCubeFaceInfo>();
+  
+            TagRubikCubeFace face = hit.collider.GetComponent<TagRubikCubeFace>();
             if (face != null)
             {
                 m_faceFocused = face;
             }
             else m_faceFocused = null;
 
-            RubikCubeSpot spot = hit.collider.GetComponent<RubikCubeSpot>();
+            TagRubikCubePiece spot = hit.collider.GetComponent<TagRubikCubePiece>();
             if (spot != null)
             {
                 m_cubeSpot = spot;
@@ -55,7 +48,6 @@ public class RubikFocusPoint : MonoBehaviour {
         else
         {
             m_cubeTargeted = null;
-            m_pieceFocused = null;
             m_faceFocused = null;
             m_cubeSpot = null;
             m_collision = null;

@@ -38,7 +38,7 @@ public class AddRotationHistory : MonoBehaviour {
             index = m_rotationType.Count-1;
 
         RotationTypeShort shortRot= RubikCube.GetInvertOf(m_rotationType[index]);
-        m_rubikCube.LocalRotate(shortRot);
+        m_rubikCube.AddLocalRotate(shortRot);
         index--;
 
     }

@@ -7,7 +7,7 @@ public class TryToRotateRightFace : MonoBehaviour {
 
     public RubikCube m_rubik;
     public RubikFocusPoint m_focus;
-    public RubikCubeFaceInfo m_faceInfo;
+    public TagRubikCubeFace m_faceInfo;
     public Transform m_from;
     
 
