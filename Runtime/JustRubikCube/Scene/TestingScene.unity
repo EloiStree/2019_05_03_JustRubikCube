@@ -12972,7 +12972,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1348847002}
-        m_MethodName: ShuffleFace
+        m_MethodName: Shuffle
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -13362,7 +13362,7 @@ Transform:
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3219740103046860480, guid: 54e0a59bd9ee2da429a4b90160e23d38,
     type: 3}
-  m_PrefabInstance: {fileID: 3219740103433722820}
+  m_PrefabInstance: {fileID: 6481413714369092405}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
@@ -16304,7 +16304,6 @@ MonoBehaviour:
   m_cubeTargeted: {fileID: 0}
   m_collision: {fileID: 0}
   m_cubeSpot: {fileID: 0}
-  m_pieceFocused: {fileID: 0}
   m_faceFocused: {fileID: 0}
 --- !u!4 &1197239036
 Transform:
@@ -18314,7 +18313,7 @@ MonoBehaviour:
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3219740104777719390, guid: 54e0a59bd9ee2da429a4b90160e23d38,
     type: 3}
-  m_PrefabInstance: {fileID: 3219740103433722820}
+  m_PrefabInstance: {fileID: 6481413714369092405}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
@@ -24830,7 +24829,7 @@ CanvasRenderer:
 Transform:
   m_CorrespondingSourceObject: {fileID: 3219740103768664363, guid: 54e0a59bd9ee2da429a4b90160e23d38,
     type: 3}
-  m_PrefabInstance: {fileID: 3219740103433722820}
+  m_PrefabInstance: {fileID: 6481413714369092405}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1815011282
 GameObject:
@@ -29262,7 +29261,7 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2144368368}
   m_CullTransparentMesh: 0
---- !u!1001 &3219740103433722820
+--- !u!1001 &6481413714369092405
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -29274,11 +29273,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: RubikCube Main
       objectReference: {fileID: 0}
-    - target: {fileID: 3219740104777719390, guid: 54e0a59bd9ee2da429a4b90160e23d38,
-        type: 3}
-      propertyPath: m_onRotated.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 983786748}
     - target: {fileID: 3219740103768664363, guid: 54e0a59bd9ee2da429a4b90160e23d38,
         type: 3}
       propertyPath: m_LocalPosition.x

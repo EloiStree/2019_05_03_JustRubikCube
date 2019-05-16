@@ -84,6 +84,40 @@ public enum RubikCubeFaceDirection : int {
     NE = 9
 }
 
+public enum RubikPiecePosition : int
+{
+
+    M_E_S = -1,
+    L_D_F = 0,
+    L_D_S = 1,
+    L_D_B = 2,
+    L_E_F = 3,
+    L_E_S = 4,
+    L_E_B = 5,
+    L_U_F = 6,
+    L_U_S = 7,
+    L_U_B = 8,
+
+    M_D_F = 9,
+    M_D_S = 10,
+    M_D_B = 11,
+    M_E_F = 12,
+    M_E_B = 13,
+    M_U_F = 14,
+    M_U_S = 15,
+    M_U_B = 16,
+     
+    R_D_F = 17,
+    R_D_S = 18,
+    R_D_B = 19,
+    R_E_F = 20,
+    R_E_S = 21,
+    R_E_B = 22,
+    R_U_F = 23,
+    R_U_S = 24,
+    R_U_B = 25,
+}
+
 public enum RubikPieceType :int {
 
     X2_Y2_Z2 = -1,
@@ -130,6 +164,23 @@ public class RubikCube : MonoBehaviour {
     [Header("Params")]
     public Transform m_root;
 
+
+    [Header("Pivot")]
+    public Transform m_left;
+    public Transform m_right;
+    public Transform m_up;
+    public Transform m_down;
+    public Transform m_face;
+    public Transform m_back;
+    public Transform m_middle;
+    public Transform m_equator;
+    public Transform m_standing;
+    public RubikCubePivot[] m_pivots;
+
+    public TagRubikCube m_fixedCube;
+    public TagRubikCube m_movingCube;
+    public RubikCubeRotateMotor m_rotationMotor;
+
     internal static RotationTypeShort ConvertAsShort(RotationTypeLong value)
     {
         switch (value)
@@ -156,15 +207,6 @@ public class RubikCube : MonoBehaviour {
                 return RotationTypeShort.L;
         }
     }
-
-    [Header("Pivot")]
-    public Transform m_left;
-    public Transform m_right;
-    public Transform m_up;
-    public Transform m_down;
-    public Transform m_face;
-    public Transform m_back;
-    public Transform m_middle;
 
     internal static RotationTypeShort GetInverseOf(RotationTypeShort value)
     {
@@ -211,24 +253,12 @@ public class RubikCube : MonoBehaviour {
         }
     }
 
-    public Transform m_equator;
-    public Transform m_standing;
-    public RubikCubePivot[] m_pivots;
-
-    public RubikCubeSpot[] m_piecesSpots;
-    public Dictionary<RubikCubePivotable, List<RubikCubeSpot>> m_faces = new Dictionary<RubikCubePivotable, List<RubikCubeSpot>>();
-
-
-    public RubikPiece[] m_pieces;
-
-    public RubikCubeFaceInfo[] m_originalfaces;
-    public RubikCubeFaceInfo[] m_piecesfaces;
-    public RubikCubeRotateMotor m_rotationMotor;
+    public Dictionary<RubikCubePivotable, List<TagRubikCubePiece>> m_faceLinkedToSpots = new Dictionary<RubikCubePivotable, List<TagRubikCubePiece>>();
 
     void Awake() {
-        foreach (RubikCubeSpot spot in m_piecesSpots)
+        foreach (TagRubikCubePiece spot in m_fixedCube.m_pieces)
         {
-            foreach (RubikCubePivotable face in spot.m_faces)
+            foreach (RubikCubePivotable face in spot.GetPivots())
             {
                 AddSpotToToRegister(face, spot);
             }
@@ -264,23 +294,24 @@ public class RubikCube : MonoBehaviour {
         SaveCubeState();
     }
 
-    private RubikCubeFaceInfo GetCurrentFaceAt(RubikCubeFace face, RubikCubeFaceDirection direction, out RubikCubeFace currentFace, out RubikCubeFaceDirection currentDirection)
+    private TagRubikCubeFace GetCurrentFaceAt(RubikCubeFace face, RubikCubeFaceDirection direction, out RubikCubeFace currentFace, out RubikCubeFaceDirection currentDirection)
     {
-        RubikCubeFaceInfo faceOrigine = GetCorrespondingOrigineFace(face, direction);
-        RubikCubeFaceInfo nearestFace = m_piecesfaces.OrderBy(k => Vector3.Distance(k.GetPosition(), faceOrigine.GetPosition())).First();
+        TagRubikCubeFace faceOrigine = GetCorrespondingOrigineFace(face, direction);
+        TagRubikCubeFace nearestFace = m_movingCube.m_faces.OrderBy(k => Vector3.Distance(k.GetPosition(), faceOrigine.GetPosition())).First();
         currentFace = nearestFace.m_belongToFace;
         currentDirection = nearestFace.m_faceDirection;
         return nearestFace;
         //
     }
 
-    private RubikCubeFaceInfo GetCorrespondingOrigineFace(RubikCubeFace face, RubikCubeFaceDirection direction)
+    private TagRubikCubeFace GetCorrespondingOrigineFace(RubikCubeFace face, RubikCubeFaceDirection direction)
     {
-        for (int i = 0; i < m_originalfaces.Length; i++)
+        TagRubikCubeFace [] faces = m_fixedCube.m_faces;
+        for (int i = 0; i < faces.Length; i++)
         {
-            if (m_originalfaces[i].m_faceDirection == direction &&
-                m_originalfaces[i].m_belongToFace == face)
-                return m_originalfaces[i];
+            if (faces[i].m_faceDirection == direction &&
+                faces[i].m_belongToFace == face)
+                return faces[i];
         }
         throw new Exception("A face is missing");
     }
@@ -292,24 +323,24 @@ public class RubikCube : MonoBehaviour {
 
     public void DebugDisplayFace(RubikCubePivotable face, float time, Color color)
     {
-        List<RubikCubeSpot> spots = GetSpots(face);
-        foreach (RubikCubeSpot spot in spots)
+        List<TagRubikCubePiece> spots = GetSpots(face);
+        foreach (TagRubikCubePiece spot in spots)
         {
             DebugUtility.DrawCross(spot.m_root, 0.2f, color, time);
 
         }
     }
 
-    private List<RubikCubeSpot> GetSpots(RubikCubePivotable face)
+    private List<TagRubikCubePiece> GetSpots(RubikCubePivotable face)
     {
-        return m_faces[face];
+        return m_faceLinkedToSpots[face];
     }
 
-    private void AddSpotToToRegister(RubikCubePivotable face, RubikCubeSpot spot)
+    private void AddSpotToToRegister(RubikCubePivotable face, TagRubikCubePiece spot)
     {
-        if (!m_faces.ContainsKey(face))
-            m_faces.Add(face, new List<RubikCubeSpot>());
-        m_faces[face].Add(spot);
+        if (!m_faceLinkedToSpots.ContainsKey(face))
+            m_faceLinkedToSpots.Add(face, new List<TagRubikCubePiece>());
+        m_faceLinkedToSpots[face].Add(spot);
     }
 
     void Update() {
@@ -333,23 +364,24 @@ public class RubikCube : MonoBehaviour {
         return null;
     }
 
-    internal RubikPiece[] GetPieces(RubikCubePivotable face)
+    internal TagRubikCubePiece[] GetPieces(RubikCubePivotable face)
     {
-        List<RubikCubeSpot> spots = GetSpots(face);
-        List<RubikPiece> pieces = new List<RubikPiece>();
-        foreach (RubikCubeSpot spot in spots)
+        List<TagRubikCubePiece> spots = GetSpots(face);
+        List<TagRubikCubePiece> pieces = new List<TagRubikCubePiece>();
+        foreach (TagRubikCubePiece spot in spots)
         {
-            RubikPiece piece = GetClosestPieceOf(spot.m_root);
+            TagRubikCubePiece piece = GetClosestPieceOf(spot.m_root);
             pieces.Add(piece);
         }
         return pieces.ToArray();
     }
 
-    private RubikPiece GetClosestPieceOf(Transform m_root)
+    private TagRubikCubePiece GetClosestPieceOf(Transform m_root)
     {
-        RubikPiece closest = null;
+        TagRubikCubePiece closest = null;
         float smallestdistance = float.MaxValue;
-        foreach (RubikPiece piece in m_pieces)
+        //HERE
+        foreach (TagRubikCubePiece piece in m_movingCube.m_pieces)
         {
             float dist = Vector3.Distance(m_root.position, piece.m_root.position);
             if (dist < smallestdistance)
@@ -699,7 +731,7 @@ public class RubikCube : MonoBehaviour {
 
     public void SaveInitialState() {
         List<PieceInitialState> state = new List<PieceInitialState>();
-        foreach (RubikPiece piece in m_pieces)
+        foreach (TagRubikCubePiece piece in m_movingCube.m_pieces)
         {
             state.Add(new PieceInitialState(piece, piece.transform.localRotation, piece.transform.localPosition));
         }
@@ -721,21 +753,21 @@ public class RubikCube : MonoBehaviour {
         return m_initialState;
     }
 
-    internal RubikPiece[] GetPieces()
-    {
-        return m_pieces;
-    }
+    //internal TagRubikCubePiece[] GetPieces()
+    //{
+    //    return m_initialSpot;
+    //}
 
     private PieceInitialState[] m_initialState;
 
     [Serializable]
     public class PieceInitialState
     {
-        public RubikPiece m_linkedPiece;
+        public TagRubikCubePiece m_linkedPiece;
         public Quaternion m_initialRotation;
         public Vector3 m_initialPosition;
 
-        public PieceInitialState(RubikPiece piece, Quaternion localRotation, Vector3 localPosition)
+        public PieceInitialState(TagRubikCubePiece piece, Quaternion localRotation, Vector3 localPosition)
         {
             this.m_linkedPiece = piece;
             this.m_initialRotation = localRotation;
@@ -1080,16 +1112,24 @@ public class RubikCube : MonoBehaviour {
     {
         return GetColor(GetMovingFaceFromLocal(face, direction).GetColorEnum());
     }
-    internal RubikCubeFaceInfo GetMovingFaceFromLocal(RubikCubeFace face, RubikCubeFaceDirection direction)
+    internal TagRubikCubeFace GetMovingFaceFromLocal(RubikCubeFace face, RubikCubeFaceDirection direction)
     {
-        RubikCubeFaceInfo askedFace = m_originalfaces.Where(k => k.m_belongToFace == face && k.m_faceDirection == direction).First();
-        RubikCubeFaceInfo closestOfAsked = GetMovingFaceAt(askedFace.m_root.position);
-        return closestOfAsked;
+        IEnumerable <TagRubikCubeFace> faces = m_fixedCube.m_faces.Where(k => k.m_belongToFace == face && k.m_faceDirection == direction);
+        if (faces.Count() <= 0) {
+            Debug.Log("Missing Face:" + face + " " + direction);
+            return null;
+        }
+        else
+        {
+            TagRubikCubeFace askedFace = faces.First();
+            TagRubikCubeFace closestOfAsked = GetMovingFaceAt(askedFace.m_root.position);
+            return closestOfAsked;
+        }
     }
 
-    private RubikCubeFaceInfo GetMovingFaceAt(Vector3 position)
+    private TagRubikCubeFace GetMovingFaceAt(Vector3 position)
     {
-        return m_piecesfaces.OrderBy(k => Vector3.Distance( k.m_root.position, position)).First();
+        return m_movingCube.m_faces.OrderBy(k => Vector3.Distance( k.m_root.position, position)).First();
 
     }
 
@@ -1106,7 +1146,7 @@ public class RubikCube : MonoBehaviour {
         Vector3 rubPosition = viewPosition.InverseTransformPoint(m_root.position);
         return (objPosition - rubPosition).normalized;
     }
-    public void RotateFaceFrom(ArrowDirection direction, RubikCubeFaceInfo movingFace, Transform from)
+    public void RotateFaceFrom(ArrowDirection direction, TagRubikCubeFace movingFace, Transform from)
     {
         /////////////HERE///////
         List<RubikCubePivotable> implyFaces = movingFace.GetLinkedFaces().ToList();
@@ -1401,18 +1441,19 @@ public class RubikCube : MonoBehaviour {
     
 
 
-    public RubikCubeSpot FindCubeByColors(params RubikCubeColor[] colors)
+    public TagRubikCubePiece FindCubeByColors(params RubikCubeColor[] colors)
     {
-        RubikCubeSpot[] spot = m_piecesSpots;
+        TagRubikCubePiece[] spot = m_fixedCube.m_pieces;
         for (int i = 0; i < spot.Length; i++)
         {
-            if (spot[i].m_faces.Length == colors.Length)
+            RubikCubePivotable[] pivots = spot[i].GetPivots();
+            if (pivots.Length == colors.Length)
             {
                 bool allFaceIsIn = true;
-                for (int j = 0; j < spot[i].m_faces.Length; j++)
+                for (int j = 0; j < pivots.Length; j++)
                 {
                     bool isDefined;
-                    RubikCubeColor col = GetColor(spot[i].m_faces[j], out isDefined);
+                    RubikCubeColor col = GetColor(pivots[j], out isDefined);
                     if ( isDefined  && !colors.Contains(col))
                         allFaceIsIn = false;
                 }
@@ -1423,16 +1464,17 @@ public class RubikCube : MonoBehaviour {
         }
         return null;
     }
-    public List<RubikCubeSpot> FindAnyCubesWithColor( RubikCubeColor color)
+    public List<TagRubikCubePiece> FindAnyCubesWithColor( RubikCubeColor color)
     {
-        List<RubikCubeSpot> result = new List<RubikCubeSpot>();
-        RubikCubeSpot[] spot = m_piecesSpots;
+        List<TagRubikCubePiece> result = new List<TagRubikCubePiece>();
+        TagRubikCubePiece[] spot = m_movingCube.m_pieces;
         for (int i = 0; i < spot.Length; i++)
         {
-                for (int j = 0; j < spot[i].m_faces.Length; j++)
+            RubikCubePivotable[] pivots = spot[i].GetPivots();
+                for (int j = 0; j < pivots.Length; j++)
                 {
                     bool isDefined;
-                    RubikCubeColor col = GetColor(spot[i].m_faces[j], out isDefined);
+                    RubikCubeColor col = GetColor(pivots[j], out isDefined);
                     if (isDefined && col == color)
                        result.Add(spot[i]);
                 }
@@ -1441,9 +1483,9 @@ public class RubikCube : MonoBehaviour {
     }
 
 
-    public RubikPiece GetClosestPiece(Vector3 position)
+    public TagRubikCubePiece GetClosestPiece(Vector3 position)
     {
-        return m_pieces.OrderBy(k => Vector3.Distance(k.m_root.position, position)).First();
+        return m_fixedCube.m_pieces.OrderBy(k => Vector3.Distance(k.m_root.position, position)).First();
     }
     public RubikCubePivot GetClosestPivot(Vector3 position)
     {
@@ -1511,6 +1553,395 @@ public class RubikCube : MonoBehaviour {
         {
             AddLocalRotate(shortRotation);
         }
+    }
+
+    internal static bool GetFaceInfoInString(string text, out RubikCubeFace face)
+    {
+        face = RubikCubeFace.Back;
+        text = text.ToLower();
+        foreach (RubikCubeFace f in GetListOf<RubikCubeFace>())
+        {
+            if (text.IndexOf(f.ToString().ToLower()) > -1)
+            {
+                face = f;
+                return true;
+            }
+        }
+        return false;
+    }
+
+    internal static bool GetDirectionInfoInString(string text, out RubikCubeFaceDirection direction)
+    {
+        direction = RubikCubeFaceDirection.C;
+        text = text.ToLower();
+        foreach (RubikCubeFaceDirection f in GetListOf<RubikCubeFaceDirection>())
+        {
+            if (text.IndexOf(f.ToString().ToLower()) > -1)
+            {
+                direction = f;
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public static bool GetPositionInfoInString(string text, out RubikPiecePosition position)
+    {
+        position = RubikPiecePosition.M_E_S;
+        text = text.ToLower();
+        foreach (RubikPiecePosition f in GetListOf<RubikPiecePosition>())
+        {
+            if (text.IndexOf(f.ToString().ToLower()) > -1)
+            {
+                position = f;
+                return true;
+            }
+        }
+        return false;
+
+    }
+
+    public static RubikCubePivotable[] GetPivotsFrom(RubikPiecePosition position) {
+        RubikCubePivotable [] pivots = new RubikCubePivotable[3];
+        switch (position)
+        {
+            case RubikPiecePosition.M_E_S:
+                pivots[0] = RubikCubePivotable.Middle;
+                pivots[1] = RubikCubePivotable.Equator;
+                pivots[2] = RubikCubePivotable.Standing;
+                break;
+            case RubikPiecePosition.L_D_F:
+                pivots[0] = RubikCubePivotable.Left;
+                pivots[1] = RubikCubePivotable.Down;
+                pivots[2] = RubikCubePivotable.Face;
+                break;
+            case RubikPiecePosition.L_D_S:
+                pivots[0] = RubikCubePivotable.Left;
+                pivots[1] = RubikCubePivotable.Down;
+                pivots[2] = RubikCubePivotable.Standing;
+                break;
+            case RubikPiecePosition.L_D_B:
+                pivots[0] = RubikCubePivotable.Left;
+                pivots[1] = RubikCubePivotable.Down;
+                pivots[2] = RubikCubePivotable.Back;
+                break;
+            case RubikPiecePosition.L_E_F:
+                pivots[0] = RubikCubePivotable.Left;
+                pivots[1] = RubikCubePivotable.Equator;
+                pivots[2] = RubikCubePivotable.Face;
+                break;
+            case RubikPiecePosition.L_E_S:
+                pivots[0] = RubikCubePivotable.Left;
+                pivots[1] = RubikCubePivotable.Equator;
+                pivots[2] = RubikCubePivotable.Standing;
+                break;
+            case RubikPiecePosition.L_E_B:
+                pivots[0] = RubikCubePivotable.Left;
+                pivots[1] = RubikCubePivotable.Equator;
+                pivots[2] = RubikCubePivotable.Back;
+                break;
+            case RubikPiecePosition.L_U_F:
+                pivots[0] = RubikCubePivotable.Left;
+                pivots[1] = RubikCubePivotable.Up;
+                pivots[2] = RubikCubePivotable.Face;
+                break;
+            case RubikPiecePosition.L_U_S:
+                pivots[0] = RubikCubePivotable.Left;
+                pivots[1] = RubikCubePivotable.Up;
+                pivots[2] = RubikCubePivotable.Standing;
+                break;
+            case RubikPiecePosition.L_U_B:
+                pivots[0] = RubikCubePivotable.Left;
+                pivots[1] = RubikCubePivotable.Up;
+                pivots[2] = RubikCubePivotable.Back;
+                break;
+            case RubikPiecePosition.M_D_F:
+                pivots[0] = RubikCubePivotable.Middle;
+                pivots[1] = RubikCubePivotable.Down;
+                pivots[2] = RubikCubePivotable.Face;
+                break;
+            case RubikPiecePosition.M_D_S:
+                pivots[0] = RubikCubePivotable.Middle;
+                pivots[1] = RubikCubePivotable.Down;
+                pivots[2] = RubikCubePivotable.Standing;
+                break;
+            case RubikPiecePosition.M_D_B:
+                pivots[0] = RubikCubePivotable.Middle;
+                pivots[1] = RubikCubePivotable.Down;
+                pivots[2] = RubikCubePivotable.Back;
+                break;
+            case RubikPiecePosition.M_E_F:
+                pivots[0] = RubikCubePivotable.Middle;
+                pivots[1] = RubikCubePivotable.Equator;
+                pivots[2] = RubikCubePivotable.Face;
+                break;
+            case RubikPiecePosition.M_E_B:
+                pivots[0] = RubikCubePivotable.Middle;
+                pivots[1] = RubikCubePivotable.Equator;
+                pivots[2] = RubikCubePivotable.Back;
+                break;
+            case RubikPiecePosition.M_U_F:
+                pivots[0] = RubikCubePivotable.Middle;
+                pivots[1] = RubikCubePivotable.Up;
+                pivots[2] = RubikCubePivotable.Face;
+                break;
+            case RubikPiecePosition.M_U_S:
+                pivots[0] = RubikCubePivotable.Middle;
+                pivots[1] = RubikCubePivotable.Up;
+                pivots[2] = RubikCubePivotable.Standing;
+                break;
+            case RubikPiecePosition.M_U_B:
+                pivots[0] = RubikCubePivotable.Middle;
+                pivots[1] = RubikCubePivotable.Up;
+                pivots[2] = RubikCubePivotable.Back;
+                break;
+            case RubikPiecePosition.R_D_F:
+                pivots[0] = RubikCubePivotable.Right;
+                pivots[1] = RubikCubePivotable.Down;
+                pivots[2] = RubikCubePivotable.Face;
+                break;
+            case RubikPiecePosition.R_D_S:
+                pivots[0] = RubikCubePivotable.Right;
+                pivots[1] = RubikCubePivotable.Down;
+                pivots[2] = RubikCubePivotable.Standing;
+                break;
+            case RubikPiecePosition.R_D_B:
+                pivots[0] = RubikCubePivotable.Right;
+                pivots[1] = RubikCubePivotable.Down;
+                pivots[2] = RubikCubePivotable.Back;
+                break;
+            case RubikPiecePosition.R_E_F:
+                pivots[0] = RubikCubePivotable.Right;
+                pivots[1] = RubikCubePivotable.Equator;
+                pivots[2] = RubikCubePivotable.Face;
+                break;
+            case RubikPiecePosition.R_E_S:
+                pivots[0] = RubikCubePivotable.Right;
+                pivots[1] = RubikCubePivotable.Equator;
+                pivots[2] = RubikCubePivotable.Standing;
+                break;
+            case RubikPiecePosition.R_E_B:
+                pivots[0] = RubikCubePivotable.Right;
+                pivots[1] = RubikCubePivotable.Equator;
+                pivots[2] = RubikCubePivotable.Back;
+                break;
+            case RubikPiecePosition.R_U_F:
+                pivots[0] = RubikCubePivotable.Right;
+                pivots[1] = RubikCubePivotable.Up;
+                pivots[2] = RubikCubePivotable.Face;
+                break;
+            case RubikPiecePosition.R_U_S:
+                pivots[0] = RubikCubePivotable.Right;
+                pivots[1] = RubikCubePivotable.Up;
+                pivots[2] = RubikCubePivotable.Standing;
+                break;
+            case RubikPiecePosition.R_U_B:
+                pivots[0] = RubikCubePivotable.Right;
+                pivots[1] = RubikCubePivotable.Up;
+                pivots[2] = RubikCubePivotable.Back;
+                break;
+            default:
+                break;
+        }
+        return pivots;
+    }
+    public static string GetTagOf(RubikCubeFace face, RubikCubeFaceDirection direction)
+    {
+        return face.ToString() + "|" + direction.ToString();
+
+    }
+    public static string GetTagOf(RubikPiecePosition position)
+    {
+        return position.ToString();
+    }
+    public static string GetTagOf(RubikCubePivotable[] pivot)
+    {
+        string s = "";
+        for (int i = 0; i < pivot.Length; i++)
+        {
+            s += (i == 0 ? "" : "|") + pivot[i].ToString();
+        }
+        return s;
+    }
+
+
+    private static RubikPiecePosition[,,] positionIndex;
+    public static RubikPiecePosition GetPosition(int x, int y, int z)
+    {
+        if (positionIndex == null)
+            InitPositionIndex();
+        return positionIndex[x, y, z];
+    }
+    public static void GetPositionCoordonate(RubikPiecePosition position, out int x, out int y, out int z)
+    {
+        throw new NotImplementedException();
+    }
+    private static void InitPositionIndex()
+    {
+        positionIndex = new RubikPiecePosition[3, 3, 3];
+        positionIndex[0, 0, 0] = RubikPiecePosition.L_D_F;
+        positionIndex[0, 0, 1] = RubikPiecePosition.L_D_S;
+        positionIndex[0, 0, 2] = RubikPiecePosition.L_D_B;
+        positionIndex[0, 1, 0] = RubikPiecePosition.L_E_F;
+        positionIndex[0, 1, 1] = RubikPiecePosition.L_E_S;
+        positionIndex[0, 1, 2] = RubikPiecePosition.L_E_B;
+        positionIndex[0, 2, 0] = RubikPiecePosition.L_U_F;
+        positionIndex[0, 2, 1] = RubikPiecePosition.L_U_S;
+        positionIndex[0, 2, 2] = RubikPiecePosition.L_U_B;
+        positionIndex[1, 0, 0] = RubikPiecePosition.M_D_F;
+        positionIndex[1, 0, 1] = RubikPiecePosition.M_D_S;
+        positionIndex[1, 0, 2] = RubikPiecePosition.M_D_B;
+        positionIndex[1, 1, 0] = RubikPiecePosition.M_E_F;
+        positionIndex[1, 1, 1] = RubikPiecePosition.M_E_S;
+        positionIndex[1, 1, 2] = RubikPiecePosition.M_E_B;
+        positionIndex[1, 2, 0] = RubikPiecePosition.M_U_F;
+        positionIndex[1, 2, 1] = RubikPiecePosition.M_U_S;
+        positionIndex[1, 2, 2] = RubikPiecePosition.M_U_B;
+        positionIndex[2, 0, 0] = RubikPiecePosition.R_D_F;
+        positionIndex[2, 0, 1] = RubikPiecePosition.R_D_S;
+        positionIndex[2, 0, 2] = RubikPiecePosition.R_D_B;
+        positionIndex[2, 1, 0] = RubikPiecePosition.R_E_F;
+        positionIndex[2, 1, 1] = RubikPiecePosition.R_E_S;
+        positionIndex[2, 1, 2] = RubikPiecePosition.R_E_B;
+        positionIndex[2, 2, 0] = RubikPiecePosition.R_U_F;
+        positionIndex[2, 2, 1] = RubikPiecePosition.R_U_S;
+        positionIndex[2, 2, 2] = RubikPiecePosition.R_U_B;
+        
+    }
+
+    public enum RubikCubeDepth : int { Face = 0, Standing = 1, Back = 2 }
+    public static RubikPiecePosition GetPiecePositionBasedOn(RubikCubeDepth depth, RubikCubeFaceDirection direction)
+    {
+        int x = 1;
+        int y = 1;
+        int z = (int)depth;
+        switch (direction)
+        {
+            case RubikCubeFaceDirection.SO: x = 0; y = 2; break;
+            case RubikCubeFaceDirection.S: x = 1; y = 2; break;
+            case RubikCubeFaceDirection.SE: x = 2; y = 2; break;
+            case RubikCubeFaceDirection.O: x = 0; y = 1; break;
+            case RubikCubeFaceDirection.C: x = 1; y = 1; break;
+            case RubikCubeFaceDirection.E: x = 2; y = 1; break;
+            case RubikCubeFaceDirection.NO: x = 0; y = 0; break;
+            case RubikCubeFaceDirection.N: x = 1; y = 0; break;
+            case RubikCubeFaceDirection.NE: x = 2; y = 0; break;
+            default:
+                break;
+        }
+        return GetPosition(x, y, z);
+    }
+    public static RubikPiecePosition GetPiecePositionBasedOn(RubikCubeFace face, RubikCubeFaceDirection direction) { 
+        throw new System.NotImplementedException();
+        //if (face == RubikCubeFace.Face)
+        //{
+        //    switch (direction)
+        //    {
+        //        case RubikCubeFaceDirection.SO: return RubikPiecePosition.L_U_F;
+        //        case RubikCubeFaceDirection.S: return RubikPiecePosition.M_U_F;
+        //        case RubikCubeFaceDirection.SE: return RubikPiecePosition.R_U_F;
+        //        case RubikCubeFaceDirection.O: return RubikPiecePosition.L_E_F;
+        //        case RubikCubeFaceDirection.C: return RubikPiecePosition.;
+        //        case RubikCubeFaceDirection.E: return RubikPiecePosition.;
+        //        case RubikCubeFaceDirection.NO: return RubikPiecePosition.;
+        //        case RubikCubeFaceDirection.N: return RubikPiecePosition.;
+        //        case RubikCubeFaceDirection.NE: return RubikPiecePosition.;
+        //        default:
+        //            break;
+        //    }
+        //}
+        //if (face == RubikCubeFace.Up)
+        //{
+        //    switch (direction)
+        //    {
+        //        case RubikCubeFaceDirection.SO: return RubikPiecePosition.L_U_F;
+        //        case RubikCubeFaceDirection.S: return RubikPiecePosition.M_U_F;
+        //        case RubikCubeFaceDirection.SE: return RubikPiecePosition.R_U_F;
+        //        case RubikCubeFaceDirection.O: return RubikPiecePosition.L_E_F;
+        //        case RubikCubeFaceDirection.C: return RubikPiecePosition.;
+        //        case RubikCubeFaceDirection.E: return RubikPiecePosition.;
+        //        case RubikCubeFaceDirection.NO: return RubikPiecePosition.;
+        //        case RubikCubeFaceDirection.N: return RubikPiecePosition.;
+        //        case RubikCubeFaceDirection.NE: return RubikPiecePosition.;
+        //        default:
+        //            break;
+        //    }
+        //}
+        //if (face == RubikCubeFace.Down)
+        //{
+        //    switch (direction)
+        //    {
+        //        case RubikCubeFaceDirection.SO: return RubikPiecePosition.L_U_F;
+        //        case RubikCubeFaceDirection.S: return RubikPiecePosition.M_U_F;
+        //        case RubikCubeFaceDirection.SE: return RubikPiecePosition.R_U_F;
+        //        case RubikCubeFaceDirection.O: return RubikPiecePosition.L_E_F;
+        //        case RubikCubeFaceDirection.C: return RubikPiecePosition.;
+        //        case RubikCubeFaceDirection.E: return RubikPiecePosition.;
+        //        case RubikCubeFaceDirection.NO: return RubikPiecePosition.;
+        //        case RubikCubeFaceDirection.N: return RubikPiecePosition.;
+        //        case RubikCubeFaceDirection.NE: return RubikPiecePosition.;
+        //        default:
+        //            break;
+        //    }
+        //}
+        //if (face == RubikCubeFace.Back)
+        //{
+        //    switch (direction)
+        //    {
+        //        case RubikCubeFaceDirection.SO: return RubikPiecePosition.L_U_F;
+        //        case RubikCubeFaceDirection.S: return RubikPiecePosition.M_U_F;
+        //        case RubikCubeFaceDirection.SE: return RubikPiecePosition.R_U_F;
+        //        case RubikCubeFaceDirection.O: return RubikPiecePosition.L_E_F;
+        //        case RubikCubeFaceDirection.C: return RubikPiecePosition.;
+        //        case RubikCubeFaceDirection.E: return RubikPiecePosition.;
+        //        case RubikCubeFaceDirection.NO: return RubikPiecePosition.;
+        //        case RubikCubeFaceDirection.N: return RubikPiecePosition.;
+        //        case RubikCubeFaceDirection.NE: return RubikPiecePosition.;
+        //        default:
+        //            break;
+        //    }
+        //}
+        //if (face == RubikCubeFace.Left)
+        //{
+        //    switch (direction)
+        //    {
+        //        case RubikCubeFaceDirection.SO: return RubikPiecePosition.L_U_F;
+        //        case RubikCubeFaceDirection.S: return RubikPiecePosition.M_U_F;
+        //        case RubikCubeFaceDirection.SE: return RubikPiecePosition.R_U_F;
+        //        case RubikCubeFaceDirection.O: return RubikPiecePosition.L_E_F;
+        //        case RubikCubeFaceDirection.C: return RubikPiecePosition.;
+        //        case RubikCubeFaceDirection.E: return RubikPiecePosition.;
+        //        case RubikCubeFaceDirection.NO: return RubikPiecePosition.;
+        //        case RubikCubeFaceDirection.N: return RubikPiecePosition.;
+        //        case RubikCubeFaceDirection.NE: return RubikPiecePosition.;
+        //        default:
+        //            break;
+        //    }
+        //}
+        //if (face == RubikCubeFace.Right)
+        //{
+        //    switch (direction)
+        //    {
+        //        case RubikCubeFaceDirection.SO: return RubikPiecePosition.L_U_F;
+        //        case RubikCubeFaceDirection.S: return RubikPiecePosition.M_U_F;
+        //        case RubikCubeFaceDirection.SE: return RubikPiecePosition.R_U_F;
+        //        case RubikCubeFaceDirection.O: return RubikPiecePosition.L_E_F;
+        //        case RubikCubeFaceDirection.C: return RubikPiecePosition.;
+        //        case RubikCubeFaceDirection.E: return RubikPiecePosition.;
+        //        case RubikCubeFaceDirection.NO: return RubikPiecePosition.;
+        //        case RubikCubeFaceDirection.N: return RubikPiecePosition.;
+        //        case RubikCubeFaceDirection.NE: return RubikPiecePosition.;
+        //        default:
+        //            break;
+        //    }
+        //}
+
+        //return RubikPiecePosition.M_E_S;
+    }
+
+    internal static RubikPiecePosition GetPiecePositionBasedOn(RubikCubePivotable[] pivots)
+    {
+        throw new NotImplementedException();
     }
 }
 

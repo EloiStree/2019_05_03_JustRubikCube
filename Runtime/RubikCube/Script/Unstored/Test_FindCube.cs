@@ -12,8 +12,8 @@ public class Test_FindCube : MonoBehaviour
     public RubikCubeColor m_allOfColor;
     public bool m_specific = true;
     public RubikCubeColor[] m_colorOfCube;
-    public List<RubikCubeSpot> cubes;
-    public RubikCubeSpot[] allSpot;
+    public List<TagRubikCubePiece> cubes;
+    public TagRubikCubePiece[] allSpot;
 
 
     void Start()

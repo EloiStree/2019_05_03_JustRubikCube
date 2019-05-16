@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
-[RequireComponent(typeof(RubikCubeFaceInfo))]
+[RequireComponent(typeof(TagRubikCubeFace))]
 public class AutoLinkToPiece  : MonoBehaviour
 {
 

@@ -18,6 +18,7 @@ public class RubikCubeSafeStateMono : MonoBehaviour
     //}
 }
 
+[System.Serializable]
 public class RubikCubeSaveState
 {
 
@@ -90,6 +91,7 @@ public class RubikCubeSaveState
     public CubeDirectionalState GetCubeStateBasedOnSequence() { throw new System.NotImplementedException();
     }
 }
+[System.Serializable]
 public class CubeDirectionalState
     {
         public CubeFaceState m_up = new CubeFaceState(RubikCubeFace.Up);

@@ -34,7 +34,7 @@ public class RubikCubeRotateMotorSlow : RubikCubeRotateMotor
             if (angleToRotate > m_leftAngleToRotate)
                 angleToRotate = m_leftAngleToRotate;
             
-            foreach (RubikPiece piece in pieces)
+            foreach (TagRubikCubePiece piece in pieces)
             {
                 piece.m_root.RotateAround(pivot.position, pivot.up, angleToRotate * colockDirection);
             }
@@ -57,7 +57,7 @@ public class RubikCubeRotateMotorSlow : RubikCubeRotateMotor
 
     }
     public Transform pivot;
-    public RubikPiece[] pieces;
+    public TagRubikCubePiece[] pieces;
     public float colockDirection;
 
 
@@ -179,7 +179,7 @@ public class RubikCubeRotateMotorSlow : RubikCubeRotateMotor
     {
         if (IsRotating())
         {
-            foreach (RubikPiece piece in pieces)
+            foreach (TagRubikCubePiece piece in pieces)
             {
                 piece.m_root.RotateAround(pivot.position, pivot.up, m_leftAngleToRotate);
             }
@@ -203,9 +203,9 @@ public class RubikCubeRotateMotorSlow : RubikCubeRotateMotor
         NotifyStartRotation(faceToRotate, clockwise);
 
         Transform pivot = m_affectedRubikCube.GetPivotTransform(faceToRotate);
-        RubikPiece[] pieces = m_affectedRubikCube.GetPieces(faceToRotate);
+        TagRubikCubePiece[] pieces = m_affectedRubikCube.GetPieces(faceToRotate);
         float colockDirection = clockwise ? 1f : -1f;
-        foreach (RubikPiece piece in pieces)
+        foreach (TagRubikCubePiece piece in pieces)
         {
             piece.m_root.RotateAround(pivot.position, pivot.up, 90f * colockDirection);
         }

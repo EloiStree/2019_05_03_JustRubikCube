@@ -24,9 +24,9 @@ public class RubikCubeRotateMotorDirect : RubikCubeRotateMotor
         NotifyStartRotation(faceToRotate, clockwise);
 
         Transform pivot = m_affectedRubikCube.GetPivotTransform(faceToRotate);
-        RubikPiece[] pieces = m_affectedRubikCube.GetPieces(faceToRotate);
+        TagRubikCubePiece[] pieces = m_affectedRubikCube.GetPieces(faceToRotate);
         float colockDirection = clockwise?1f:-1f ;
-        foreach (RubikPiece piece in pieces)
+        foreach (TagRubikCubePiece piece in pieces)
         {
             piece.m_root.RotateAround(pivot.position, pivot.up, 90f * colockDirection);
         }
