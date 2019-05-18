@@ -2,20 +2,26 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class RubikCubeSafeStateMono : MonoBehaviour
 {
     public RubikCubeSaveState m_state;
     public bool m_isCubeSolved;
+    [Header("Event")]
+    public  RubikCubeStateChangeEvent onCubeChange;
 
-    //TMP
-   // public RubikCubeInstanceManager m_selectedCube;
+    
+    public  void RefreshCubeState(CubeDirectionalState cubeDirectionalState)
+    {
+        m_state.SetCubeDirectionalState(cubeDirectionalState);
+        onCubeChange.Invoke(m_state);
+    }
+    
+}
+[System.Serializable]
+public class RubikCubeStateChangeEvent : UnityEvent <RubikCubeSaveState> {
 
-    //void Start()
-    //{
-    //    RubikCubeSaveState stateSaved = m_selectedCube.GetRubikcubeStateReference();
-    //    CubeDirectionalState cubeState = m_selectedCube.GetCubeStateReference();
-    //}
 }
 
 [System.Serializable]
@@ -76,14 +82,14 @@ public class RubikCubeSaveState
     }
     public RubikCubeColor GetRubikColorOf(RubikCubeFace face, RubikCubeFaceDirection direction)
     {
-       return RubikCube.GetColor(m_givenCubeState.GetFace(face).GetFace(direction).m_face);
+       return RubikCube.GetColor(m_givenCubeState.GetCubeFace(face).GetFace(direction).m_face);
     }
 
     public bool IsCubeSolved()
     {
         return m_givenCubeState.IsCubeSolved();
     }
-    public void SetCubeDirecitonalState(CubeDirectionalState cubeState)
+    public void SetCubeDirectionalState(CubeDirectionalState cubeState)
     {
         m_givenCubeState = cubeState;
     }
@@ -101,12 +107,32 @@ public class CubeDirectionalState
         public CubeFaceState m_left = new CubeFaceState(RubikCubeFace.Left);
         public CubeFaceState m_right = new CubeFaceState(RubikCubeFace.Right);
 
-        public IEnumerable<CubeFaceState> GetFaces()
+    public CubeFaceState[] m_allCubeFaces;
+    public PieceFaceState[] m_allPieceFaces;
+
+
+       public CubeFaceState [] GetAllCubeFaces()
         {
-            return new CubeFaceState[] { m_up, m_face, m_down, m_back, m_left, m_right };
+            if(m_allCubeFaces==null)
+                m_allCubeFaces=  new CubeFaceState[] { m_up, m_face, m_down, m_back, m_left, m_right };
+        return m_allCubeFaces;
+        }
+        public PieceFaceState [] GetAllPieceFaces()
+        {
+        if (m_allPieceFaces == null) {
+            List<PieceFaceState> faces = new List<PieceFaceState>();
+            faces.AddRange(m_up.GetFaces());
+            faces.AddRange(m_face.GetFaces());
+            faces.AddRange(m_down.GetFaces());
+            faces.AddRange(m_back.GetFaces());
+            faces.AddRange(m_left.GetFaces());
+            faces.AddRange(m_right.GetFaces());
+            m_allPieceFaces = faces.ToArray();
+        }
+        return m_allPieceFaces;
         }
 
-    public CubeFaceState GetFace(RubikCubeFace face)
+    public CubeFaceState GetCubeFace(RubikCubeFace face)
     {
         switch (face)
         {
@@ -120,15 +146,22 @@ public class CubeDirectionalState
                 return null;
         }
     }
-    public void SetFace(RubikCubeFace face, RubikCubeFaceDirection direction, RubikCubeFace newFace, RubikCubeFaceDirection newDirection)
+    public void SetPieceFace(RubikCubeFace face, RubikCubeFaceDirection direction, RubikCubeFace newFace, RubikCubeFaceDirection newDirection)
     {
-        CubeFaceState cubeface = GetFace(face);
+        CubeFaceState cubeface = GetCubeFace(face);
         cubeface.SetFace(direction, newFace, newDirection);
     }
 
+    public void GetRealPieceFaceInfoAt(RubikCubeFace face, RubikCubeFaceDirection direction, out RubikCubeFace newFace, out RubikCubeFaceDirection newDirection) {
+
+        CubeFaceState cubeface = GetCubeFace(face);
+        cubeface.GetRealFaceAt( direction, out  newFace, out  newDirection);
+    }
+
+
     internal bool IsCubeSolved()
     {
-        foreach (CubeFaceState face in GetFaces())
+        foreach (CubeFaceState face in GetAllCubeFaces())
         {
             if (!face.IsFaceSolved())
                 return false;
@@ -141,22 +174,13 @@ public class CubeDirectionalState
     public class CubeFaceState
     {
         public RubikCubeFace m_face;
-        public FaceState m_northWest, m_north, m_northEast;
-        public FaceState m_west, m_center, m_east;
-        public FaceState m_southWest, m_south, m_southEast;
+        public PieceFaceState m_northWest, m_north, m_northEast;
+        public PieceFaceState m_west, m_center, m_east;
+        public PieceFaceState m_southWest, m_south, m_southEast;
 
         public CubeFaceState(RubikCubeFace face)
         {
-            this.m_face = face;
-            m_northWest = new FaceState(face, RubikCubeFaceDirection.NO);
-            m_north = new FaceState(face, RubikCubeFaceDirection.N);
-            m_northEast = new FaceState(face, RubikCubeFaceDirection.NE);
-            m_west = new FaceState(face, RubikCubeFaceDirection.O);
-            m_center = new FaceState(face, RubikCubeFaceDirection.N);
-            m_east = new FaceState(face, RubikCubeFaceDirection.E);
-            m_southWest = new FaceState(face, RubikCubeFaceDirection.SO);
-            m_south = new FaceState(face, RubikCubeFaceDirection.S);
-            m_southEast = new FaceState(face, RubikCubeFaceDirection.SE);
+        Reset(face);
         }
 
         public bool IsFaceSolved()
@@ -168,7 +192,7 @@ public class CubeDirectionalState
         public bool IsFaceSolved(out RubikCubeFace faceType)
         {
             faceType = m_center.m_face;
-            foreach (FaceState face in GetFaces())
+            foreach (PieceFaceState face in GetFaces())
             {
                 if (faceType != face.m_face)
                     return false;
@@ -178,9 +202,9 @@ public class CubeDirectionalState
         }
 
 
-        public IEnumerable<FaceState> GetFaces()
+        public IEnumerable<PieceFaceState> GetFaces()
         {
-            return new FaceState[] {
+            return new PieceFaceState[] {
                 m_northWest,
                 m_north,
                 m_northEast,
@@ -193,7 +217,7 @@ public class CubeDirectionalState
             };
         }
 
-    public FaceState GetFace(RubikCubeFaceDirection direction)
+    public PieceFaceState GetFace(RubikCubeFaceDirection direction)
     {
         switch (direction)
         {
@@ -205,31 +229,57 @@ public class CubeDirectionalState
             case RubikCubeFaceDirection.E: return m_east;
             case RubikCubeFaceDirection.NO: return m_northWest;
             case RubikCubeFaceDirection.N: return m_north;
-            case RubikCubeFaceDirection.NE: return m_southEast;
+            case RubikCubeFaceDirection.NE: return m_northEast;
             default:
                 return null;
         }
     }
     public void SetFace(RubikCubeFaceDirection direction,RubikCubeFace newFace , RubikCubeFaceDirection newDirection  ) {
-        FaceState face = GetFace(direction);
+        PieceFaceState face = GetFace(direction);
         face.m_face = newFace;
         face.m_direction = newDirection;
+    }
+
+    internal void GetRealFaceAt(RubikCubeFaceDirection direction, out RubikCubeFace newFace, out RubikCubeFaceDirection newDirection)
+    {
+        PieceFaceState face = GetFace(direction);
+        newFace = face.m_face;
+        newDirection = face.m_direction;
+    }
+
+    public void Reset() {
+        Reset(m_face);
+    }
+    internal void Reset( RubikCubeFace face)
+    {
+        this.m_face = face;
+        m_northWest = new PieceFaceState(face, RubikCubeFaceDirection.NO);
+        m_north = new PieceFaceState(face, RubikCubeFaceDirection.N);
+        m_northEast = new PieceFaceState(face, RubikCubeFaceDirection.NE);
+        m_west = new PieceFaceState(face, RubikCubeFaceDirection.O);
+        m_center = new PieceFaceState(face, RubikCubeFaceDirection.N);
+        m_east = new PieceFaceState(face, RubikCubeFaceDirection.E);
+        m_southWest = new PieceFaceState(face, RubikCubeFaceDirection.SO);
+        m_south = new PieceFaceState(face, RubikCubeFaceDirection.S);
+        m_southEast = new PieceFaceState(face, RubikCubeFaceDirection.SE);
     }
 }
 
 [System.Serializable]
-public class FaceState
+public class PieceFaceState
 {
     public RubikCubeFace m_face;
     public RubikCubeFaceDirection m_direction;
 
-    public FaceState(RubikCubeFace face, RubikCubeFaceDirection direction)
+    public PieceFaceState(RubikCubeFace face, RubikCubeFaceDirection direction)
     {
         this.m_face = face;
         this.m_direction = direction;
     }
+
+    
 }
-public class FaceStateLinkedInfo<T> : FaceState
+public class FaceStateLinkedInfo<T> : PieceFaceState
 {
 
     [SerializeField] T m_value;
@@ -242,4 +292,6 @@ public class FaceStateLinkedInfo<T> : FaceState
     public T GetValu() { return m_value; }
     public void SetValue(T value) { m_value = value; }
 }
+
+
 

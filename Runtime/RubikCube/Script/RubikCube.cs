@@ -181,6 +181,11 @@ public class RubikCube : MonoBehaviour {
     public TagRubikCube m_movingCube;
     public RubikCubeRotateMotor m_rotationMotor;
 
+    [Header("Event")]
+
+    public static OnRubikCubeUsed onAnyRubikCubeUsed = new OnRubikCubeUsed();
+
+
     internal static RotationTypeShort ConvertAsShort(RotationTypeLong value)
     {
         switch (value)
@@ -265,7 +270,13 @@ public class RubikCube : MonoBehaviour {
         }
         SaveInitialState();
         SaveCubeState();
-        m_onRotated.AddListener(OnCubeRotated);
+        m_rotationMotor.m_onStartRotating.AddListener(OnCubeRotating);
+        m_rotationMotor.m_onRotated.AddListener(OnCubeRotated);
+    }
+
+    private void OnCubeRotating(LocalRotationRequest arg0)
+    {
+        m_onStartRotating.Invoke(arg0);
     }
 
     private void OnCubeRotated(LocalRotationRequest rotationRequested)
@@ -283,7 +294,7 @@ public class RubikCube : MonoBehaviour {
                     allDirections[jDirection], 
                     out currentFace,
                     out currentDirection);
-                m_cubeFaceDirectionState.SetFace(
+                m_cubeFaceDirectionState.SetPieceFace(
                     allFaces[iFace],
                     allDirections[jDirection],
                     currentFace,
@@ -292,6 +303,7 @@ public class RubikCube : MonoBehaviour {
         }
   
         SaveCubeState();
+        m_onRotated.Invoke(rotationRequested);
     }
 
     private TagRubikCubeFace GetCurrentFaceAt(RubikCubeFace face, RubikCubeFaceDirection direction, out RubikCubeFace currentFace, out RubikCubeFaceDirection currentDirection)
@@ -470,6 +482,7 @@ public class RubikCube : MonoBehaviour {
 
     public void AddLocalRotate(RubikCubePivotable faceToTurn, bool clockWise)
     {
+        onAnyRubikCubeUsed.Invoke(this);
         m_rotationMotor.LocalRotate(faceToTurn, clockWise);
     }
 
@@ -550,15 +563,6 @@ public class RubikCube : MonoBehaviour {
     }
 
     #endregion
-    //internal static void AddLocalRotationRequest(RotationTypeLong face)
-    //{
-    //    throw new NotImplementedException();
-    //}
-
-    //internal static void AddRotationRequest(RotationTypeLong face, Transform m_viewOrientation)
-    //{
-    //    throw new NotImplementedException();
-    //}
 
     public void LocalRotateWithAcronym(string requestAcryonym) {
         RotationTypeShort acronym;
@@ -1110,22 +1114,21 @@ public class RubikCube : MonoBehaviour {
     }
     internal Color GetRgbColorFromLocal(RubikCubeFace face, RubikCubeFaceDirection direction)
     {
-        return GetColor(GetMovingFaceFromLocal(face, direction).GetColorEnum());
+        TagRubikCubeFace selectedFace = GetMovingFaceFromLocal(face, direction);
+        if(selectedFace)
+        return GetColor(selectedFace.GetColorEnum());
+        return Color.black;
     }
+
     internal TagRubikCubeFace GetMovingFaceFromLocal(RubikCubeFace face, RubikCubeFaceDirection direction)
     {
-        IEnumerable <TagRubikCubeFace> faces = m_fixedCube.m_faces.Where(k => k.m_belongToFace == face && k.m_faceDirection == direction);
-        if (faces.Count() <= 0) {
-            Debug.Log("Missing Face:" + face + " " + direction);
-            return null;
-        }
-        else
-        {
-            TagRubikCubeFace askedFace = faces.First();
-            TagRubikCubeFace closestOfAsked = GetMovingFaceAt(askedFace.m_root.position);
-            return closestOfAsked;
-        }
+        RubikCubeFace currentFace;
+        RubikCubeFaceDirection currentDirection;
+        m_cubeFaceDirectionState.GetRealPieceFaceInfoAt(face, direction, out currentFace, out currentDirection);
+        return m_movingCube.GetFace(currentFace, currentDirection);
+
     }
+
 
     private TagRubikCubeFace GetMovingFaceAt(Vector3 position)
     {
@@ -1809,7 +1812,6 @@ public class RubikCube : MonoBehaviour {
         
     }
 
-    public enum RubikCubeDepth : int { Face = 0, Standing = 1, Back = 2 }
     public static RubikPiecePosition GetPiecePositionBasedOn(RubikCubeDepth depth, RubikCubeFaceDirection direction)
     {
         int x = 1;
@@ -1943,7 +1945,31 @@ public class RubikCube : MonoBehaviour {
     {
         throw new NotImplementedException();
     }
+
+    public static CubeDirectionalState CreateCubeStateFrom(RotationSequence rotationSequence)
+    {
+        //CubeDirectionalState result = RubikCubeAsDirectionalStateUtility.GenerateEmpty();
+        //foreach (RotationTypeShort rotation in rotationSequence.GetSequenceAsShort())
+        //{
+        //    RubikCubeAsDirectionalStateUtility.Rotate(ref result, rotation);
+        //}
+        //return result;
+
+        m_fakeCubeInBackground.ResetInitialState();
+        m_fakeCubeInBackground.AddLocalRotationSequence(rotationSequence);
+        m_fakeCubeInBackground.FinishMotorQueuedRotation();
+        return m_fakeCubeInBackground.GetCubeState();
+
+
+    }
+    public static RubikCube m_fakeCubeInBackground;
+
+
 }
 
+public enum FullCubeRotation { X,Xi,Y, Yi, Z, Zi }
+public enum RubikCubeDepth : int { Face = 0, Standing = 1, Back = 2 }
+[System.Serializable]
+public class OnRubikCubeUsed : UnityEvent<RubikCube> { }
 
 

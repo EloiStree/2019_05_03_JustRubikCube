@@ -7,14 +7,19 @@ public interface RubikCubeInterface {
 
 }
 
-public class RubikCubeInstanceManager : MonoBehaviour
+public class RubikCubeInstance : MonoBehaviour
 {
-    public RubikCube m_rubikCube;
-    public RubikCubeSaveState m_instanceState = new RubikCubeSaveState();
+    [SerializeField] RubikCube m_rubikCube;
+    [SerializeField] RubikCubeSaveState m_instanceState;
 
     public void Shuffle(int randomIteration, out RotationSequence sequenceGenerated) {
        sequenceGenerated = RubikCube.GetRandomSequence(randomIteration);
        Shuffle(sequenceGenerated);
+    }
+
+    internal RubikCube GetRubikCubeUnityRepresentation()
+    {
+        return m_rubikCube;
     }
 
     public RubikCubeSaveState GetRubikcubeStateReference()
@@ -54,4 +59,26 @@ public class RubikCubeInstanceManager : MonoBehaviour
     public bool IsCubeShuffledAndSolved() {
         return m_instanceState.HasBeenShuffled() && !IsCubeRotating() && IsCubeSolved() ;
     }
+
+
+    private void Awake()
+    {
+        if (gameObject.tag == "MainRubikCube")
+            BoardcastAsMainCube();
+    }
+
+    public void BoardcastAsMainCube() {
+        RubikCubeInstance previous = m_mainCube;
+        RubikCubeInstance newCube = this;
+        m_mainCube = newCube;
+        Component[] objects = GameObject.FindObjectsOfType<Component>();
+        for (int i = 0; i < objects.Length; i++)
+        {
+            IRubikCubeRequired listener = objects[i] as IRubikCubeRequired;
+            if (listener!=null) {
+                listener.OnNewRubikCubeFocused(previous, newCube);
+            }
+        }
+    }
+    public static RubikCubeInstance m_mainCube;
 }

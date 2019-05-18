@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class SaveAndLoad : MonoBehaviour {
 
@@ -11,6 +12,9 @@ public class SaveAndLoad : MonoBehaviour {
     [Header("Debug")]
     public string m_history;
 
+    public OnSaveSequence m_onSave;
+    [System.Serializable]
+    public class OnSaveSequence : UnityEvent<string> { }
     void Start () {
         m_rubikCube.m_onStartRotating.AddListener(AddToHistory);
 
@@ -23,7 +27,9 @@ public class SaveAndLoad : MonoBehaviour {
 
     public void Save () {
         PlayerPrefs.SetString(m_playPrefsId, m_history);
-	}
+        m_onSave.Invoke(m_history);
+
+    }
 
     public void Load() {
         m_history = "";

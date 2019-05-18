@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -6,16 +7,31 @@ using UnityEngine.UI;
 [RequireComponent(typeof(StoredSequence))]
 public class LinkSequenceToRubixCube : MonoBehaviour
 {
-    public Button m_button;
     public StoredSequence m_sequence;
     public RubikCube m_rubik;
+    public bool m_focusLastUsedRubikCube = true;
+    [Header("Auto Link")]
+    public Button m_autoLinkButtons;
 
     public void Awake()
     {
-        if(m_button)
-        m_button.onClick.AddListener(Apply);
+        RubikCube.onAnyRubikCubeUsed.AddListener(ChangeSelection);
+        if (m_autoLinkButtons != null)
+            m_autoLinkButtons.onClick.AddListener(Apply);
     }
 
+    private void ChangeSelection(RubikCube cube)
+    {
+        if (m_focusLastUsedRubikCube) {
+            m_rubik = cube;
+        }
+    }
+
+    public void OnDestroy()
+    {
+
+        RubikCube.onAnyRubikCubeUsed.RemoveListener(ChangeSelection);
+    }
     public void Apply() {
         if (m_rubik != null)
         {
@@ -27,9 +43,15 @@ public class LinkSequenceToRubixCube : MonoBehaviour
         }
     }
 
+    public void OnMouseDown()
+    {
+        Apply();
+    }
+
     private void OnValidate()
     {
-        m_button = GetComponent<Button>();
+        if (m_autoLinkButtons == null)
+            m_autoLinkButtons = GetComponent<Button>();
         m_sequence = GetComponent<StoredSequence>();
     }
 }

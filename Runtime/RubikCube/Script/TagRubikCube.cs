@@ -3,7 +3,7 @@ using UnityEngine;
 public class TagRubikCube : MonoBehaviour
 {
     public TagRubikCubePiece [] m_pieces;
-    public TagRubikCubeFace[] m_faces;
+    public TagRubikCubeFace [] m_faces;
     public Dictionary<string, TagRubikCubeFace> m_faceDirectAccess = new Dictionary<string, TagRubikCubeFace>();
     public Dictionary<string, TagRubikCubePiece> m_pieceDirectAccess = new Dictionary<string, TagRubikCubePiece>();
 
@@ -31,11 +31,17 @@ public class TagRubikCube : MonoBehaviour
     }
 
     public TagRubikCubeFace GetFace(RubikCubeFace face, RubikCubeFaceDirection direction) {
-       return m_faceDirectAccess[RubikCube.GetTagOf(face, direction)];
+        string key = RubikCube.GetTagOf(face, direction);
+        if (m_faceDirectAccess.ContainsKey(key))
+           return m_faceDirectAccess[key];
+        return null;
     }
     public TagRubikCubePiece GetPiece(RubikPiecePosition position)
     {
-        return m_pieceDirectAccess[RubikCube.GetTagOf(position)];
+        string key = RubikCube.GetTagOf(position);
+        if (m_pieceDirectAccess.ContainsKey(key))
+            return m_pieceDirectAccess[RubikCube.GetTagOf(position)];
+        return null;
     }
 
     public TagRubikCubePiece GetPiece(RubikCubeFace face, RubikCubeFaceDirection direction)
