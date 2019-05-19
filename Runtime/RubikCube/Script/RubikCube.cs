@@ -1955,10 +1955,14 @@ public class RubikCube : MonoBehaviour {
         //}
         //return result;
 
-        m_fakeCubeInBackground.ResetInitialState();
-        m_fakeCubeInBackground.AddLocalRotationSequence(rotationSequence);
-        m_fakeCubeInBackground.FinishMotorQueuedRotation();
-        return m_fakeCubeInBackground.GetCubeState();
+        if (m_fakeCubeInBackground) {
+            m_fakeCubeInBackground.ResetInitialState();
+            m_fakeCubeInBackground.AddLocalRotationSequence(rotationSequence);
+            m_fakeCubeInBackground.FinishMotorQueuedRotation();
+            return m_fakeCubeInBackground.GetCubeState();
+
+        }
+        return null;
 
 
     }

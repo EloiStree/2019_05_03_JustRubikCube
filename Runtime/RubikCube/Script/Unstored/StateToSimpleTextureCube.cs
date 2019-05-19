@@ -40,6 +40,8 @@ public class StateToSimpleTextureCube : MonoBehaviour
     }
     public void DoOnEachFace(DoTheThingToAnyRealFace toDo, CubeDirectionalState cubeState)
     {
+        if (cubeState == null)
+            return;
         foreach (RubikCubeFace f in Enum.GetValues(typeof(RubikCubeFace)).Cast<RubikCubeFace>().ToList())
         {
             foreach (RubikCubeFaceDirection d in Enum.GetValues(typeof(RubikCubeFaceDirection)).Cast<RubikCubeFaceDirection>().ToList())

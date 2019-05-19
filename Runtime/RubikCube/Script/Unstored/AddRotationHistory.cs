@@ -10,7 +10,12 @@ public class AddRotationHistory : MonoBehaviour {
     public List<RotationTypeShort> m_rotationType;
     public Text m_tHistoryDisplay;
     public int index =-1;
-    
+
+
+    public void Awake()
+    {
+        m_rubikCube.m_onRotated.AddListener(AddLocalRotation);
+    }
 
     public void AddLocalRotation(RubikCube.LocalRotationRequest request) {
         AddRotation(request.m_faceToRotate, request.m_clockWise);
@@ -23,30 +28,12 @@ public class AddRotationHistory : MonoBehaviour {
     }
     public void AddRotation(RotationTypeShort rotation)
     {
-        m_rotation = RubikCube.ConvertAcronymShortToString(rotation)+" "+ m_rotation;
+        m_rotation = RubikCube.ConvertAcronymShortToString(rotation)+" ";
         m_rotationType.Add(rotation);
         if(m_tHistoryDisplay)   
         m_tHistoryDisplay.text = m_rotation;
 
     }
 
-    void ControlZut ()
-    {
-        if (m_rotationType.Count < 1)
-            return;
-        if(index<0)
-            index = m_rotationType.Count-1;
-
-        RotationTypeShort shortRot= RubikCube.GetInvertOf(m_rotationType[index]);
-        m_rubikCube.AddLocalRotate(shortRot);
-        index--;
-
-    }
-	
-	void Update () {
-
-        if (Input.GetKey(KeyCode.LeftShift) && Input.GetKeyDown(KeyCode.Z))
-            ControlZut();
-
-	}
+   
 }
