@@ -1003,6 +1003,12 @@ public class RubikCube : MonoBehaviour {
         return m_movingCube.GetFace(currentFace, currentDirection);
 
     }
+    internal TagRubikCubeFace GetMovingFace(RubikCubeFace face, RubikCubeFaceDirection direction)
+    {
+       return m_movingCube.GetFace(face, direction);
+
+    }
+
 
 
     private TagRubikCubeFace GetMovingFaceAt(Vector3 position)

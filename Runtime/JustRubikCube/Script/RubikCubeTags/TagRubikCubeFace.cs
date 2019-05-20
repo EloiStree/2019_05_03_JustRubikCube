@@ -48,7 +48,9 @@ public class TagRubikCubeFace : TagRubikAbstract
 
     internal RubikCubePivotable [] GetLinkedFaces()
     {
+        if(m_linkedPiece)
         return m_linkedPiece.GetPivots() ;
+        return new RubikCubePivotable[0];
     }
 
     public RubikCubeColor GetColorEnum() {

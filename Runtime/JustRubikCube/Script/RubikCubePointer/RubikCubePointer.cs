@@ -2,6 +2,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class RubikCubePointer : MonoBehaviour
 {
@@ -10,7 +12,22 @@ public class RubikCubePointer : MonoBehaviour
     public Transform m_direction;
     public float m_rayLength = 9999;
 
+    [Header("UI Raycaster")]
+    GraphicRaycaster [] m_raycasters;
+    PointerEventData m_PointerEventData;
+    EventSystem m_EventSystem;
+
+    void Awake()
+    {
+        m_raycasters = GameObject.FindObjectsOfType< GraphicRaycaster>();
+        m_EventSystem = GetComponent<EventSystem>();
+    }
+
+
+
+
     [Header("Raycasted")]
+    public bool m_useUIRaycasting=true;
     public RubikCubeInstance m_rubikCubeManager;
     public RubikCube m_firstRubikCube;
     public List<RubikCube> m_rubikCubes = new List<RubikCube>();
@@ -47,20 +64,30 @@ public class RubikCubePointer : MonoBehaviour
         CastForRubikCubeInformation();
 
     }
+    List<RaycastResult> uiHits = new List<RaycastResult>();
+    RaycastHit[] physicHits = new RaycastHit[0];
+    public List<GameObject> objHits = new List<GameObject>();
 
     private void CastForRubikCubeInformation()
     {
 
         ClearAll();
-
-        RaycastHit[] hits = Physics.RaycastAll(m_direction.position, m_direction.forward, m_rayLength, m_layerFilter);
-        foreach (RaycastHit hit in hits)
+        objHits.Clear();
+        if (m_useUIRaycasting)
         {
-            TagRubikCubeFace face = hit.collider.GetComponent<TagRubikCubeFace>();
-            RubikCube rubikCube = hit.collider.GetComponent<RubikCube>();
-            StoredSequence sequence = hit.collider.GetComponent<StoredSequence>();
+            CastUI();
+            Add(ref objHits, uiHits);
+        }
+        physicHits = Physics.RaycastAll(m_direction.position, m_direction.forward, m_rayLength, m_layerFilter);
+        Add(ref objHits, physicHits);
+
+        foreach (GameObject hit in objHits)
+        {
+            TagRubikCubeFace face = hit.GetComponent<TagRubikCubeFace>();
+            RubikCube rubikCube = hit.GetComponent<RubikCube>();
+            StoredSequence sequence = hit.GetComponent<StoredSequence>();
             if (rubikCube == null)
-                rubikCube = hit.collider.GetComponentInParent<RubikCube>();
+                rubikCube = hit.GetComponentInParent<RubikCube>();
 
             if (face != null)
                 m_facesInfo.Add(face);
@@ -77,8 +104,44 @@ public class RubikCubePointer : MonoBehaviour
             if (m_firstRubikCube != null)
                 m_rubikCubeManager = m_firstRubikCube.GetComponent<RubikCubeInstance>();
         }
-        if (hits.Length == 0)
+        if (physicHits.Length == 0 && uiHits.Count==0)
             ClearAll();
+    }
+
+    private void Add(ref List<GameObject> objHits, RaycastHit[] physicHits)
+    {
+        foreach (var item in physicHits)
+        {
+            objHits.Add( item.collider.gameObject);
+        }
+    }
+
+    private void Add(ref List<GameObject> objHits, List<RaycastResult> uiHits)
+    {
+        foreach (RaycastResult item in uiHits)
+        {
+            objHits.Add(item.gameObject);
+
+        }
+    }
+    
+
+    public int m_rayCastCount;
+    public int m_uiFound;
+    private void CastUI()
+    {
+        uiHits.Clear();
+        m_PointerEventData = new PointerEventData(m_EventSystem);
+        m_PointerEventData.position = Camera.main.WorldToScreenPoint(m_direction.position);
+       
+        for (int i = 0; i < m_raycasters.Length; i++)
+        {
+            List<RaycastResult> r = new List<RaycastResult>();
+            m_raycasters[i].Raycast(m_PointerEventData, r);
+            uiHits.AddRange(r);
+        }
+        m_rayCastCount = m_raycasters.Length;
+            m_uiFound= uiHits.Count;
     }
 
     internal Transform GetPointOfView()

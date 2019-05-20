@@ -31,6 +31,8 @@ public class RubikCubeInstance : MonoBehaviour
         return m_rubikCube.GetCubeState() ;
     }
 
+   
+
     public void Rotate(string sequence, Transform pointOfView)
     {
         m_rubikCube.AddRotationSequence(sequence, pointOfView);
@@ -41,10 +43,16 @@ public class RubikCubeInstance : MonoBehaviour
         Shuffle(new RotationSequence(sequence));
     }
 
-    public void Rotate(ArrowDirection direction, TagRubikCubeFace face, Transform pointOfView)
+    //public void Rotate(ArrowDirection direction, TagRubikCubeFace face, Transform pointOfView)
+    //{
+    //    Rotate(direction, face.m_belongToFace, face.m_faceDirection, pointOfView);
+    //}
+    internal void Rotate(ArrowDirection direction, RubikCubeFace face, RubikCubeFaceDirection faceDirection, Transform pointOfView)
     {
-        m_rubikCube.RotateFaceFrom(direction, face, pointOfView);
+        TagRubikCubeFace tagFace = m_rubikCube.GetMovingFace(face, faceDirection);
+        m_rubikCube.RotateFaceFrom(direction, tagFace, pointOfView);
     }
+
     public void Rotate(RotationTypeShort rotationType, TagRubikCubeFace face, Transform pointOfView)
     {
         throw new ToDo.Later(ToDo.PiorityExplicit.Major);
