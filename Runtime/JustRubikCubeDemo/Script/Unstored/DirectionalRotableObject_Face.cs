@@ -5,7 +5,7 @@ using UnityEngine;
 public class DirectionalRotableObject_Face : MonoBehaviour, IDirectionalRotableObject
 {
     public TagRubikCubeFace m_linkedFace;
-    public RubikCube m_rubikCube;
+    public RubikCubeEngineMono m_rubikCube;
 
     private void RotateRubik(Transform pointOfView, ArrowDirection direction)
     {
@@ -61,7 +61,7 @@ public class DirectionalRotableObject_Face : MonoBehaviour, IDirectionalRotableO
     public void OnValidate()
     {
         if (m_rubikCube == null)
-            m_rubikCube = GetComponentInParent<RubikCube>();
+            m_rubikCube = GetComponentInParent<RubikCubeEngineMono>();
         if (m_linkedFace == null)
             m_linkedFace = GetComponentInParent<TagRubikCubeFace>();
     }

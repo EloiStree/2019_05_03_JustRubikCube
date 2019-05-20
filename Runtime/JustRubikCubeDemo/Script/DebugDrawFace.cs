@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class DebugDrawFace : MonoBehaviour {
 
-    public RubikCube m_rubikCube;
+    public RubikCubeEngineMono m_rubikCube;
     public RubikCubePivotable m_faceToDisplay;
     void Update () {
        switch (m_faceToDisplay)

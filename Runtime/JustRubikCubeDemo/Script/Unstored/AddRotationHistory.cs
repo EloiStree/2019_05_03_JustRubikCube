@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class AddRotationHistory : MonoBehaviour {
 
-    public RubikCube m_rubikCube;
+    public RubikCubeEngineMono m_rubikCube;
     public string m_rotation;
     public List<RotationTypeShort> m_rotationType;
     public Text m_tHistoryDisplay;
@@ -17,7 +17,7 @@ public class AddRotationHistory : MonoBehaviour {
         m_rubikCube.m_onRotated.AddListener(AddLocalRotation);
     }
 
-    public void AddLocalRotation(RubikCube.LocalRotationRequest request) {
+    public void AddLocalRotation(RubikCubeEngineMono.LocalRotationRequest request) {
         AddRotation(request.m_faceToRotate, request.m_clockWise);
     }
     public void AddRotation(RubikCubePivotable rotation, bool clockwise)

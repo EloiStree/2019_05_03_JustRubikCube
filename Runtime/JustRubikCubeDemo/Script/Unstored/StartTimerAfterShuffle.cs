@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class StartTimerAfterShuffle : MonoBehaviour {
-    public RubikCube m_rubikCube;
+    public RubikCubeEngineMono m_rubikCube;
     public Timer m_timer;
 
     public void  StartTimerShuffled() {

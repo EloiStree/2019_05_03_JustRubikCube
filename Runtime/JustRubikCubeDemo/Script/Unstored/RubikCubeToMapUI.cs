@@ -7,7 +7,7 @@ using UnityEngine;
 public class RubikCubeToMapUI : MonoBehaviour ,IRubikCubeRequired
 {
 
-    public RubikCube m_rubikCube;
+    public RubikCubeEngineMono m_rubikCube;
     public FlatRubikCubeUI m_flatUI;
 
     public void OnNewRubikCubeFocused(RubikCubeInstance oldcube, RubikCubeInstance cube)
@@ -25,7 +25,7 @@ public class RubikCubeToMapUI : MonoBehaviour ,IRubikCubeRequired
         }
     }
     
-    private void RefreshUI(RubikCube.LocalRotationRequest arg0)
+    private void RefreshUI(RubikCubeEngineMono.LocalRotationRequest arg0)
     {
 
         foreach (RubikCubeFace f in Enum.GetValues(typeof(RubikCubeFace)).Cast<RubikCubeFace>().ToList())
@@ -37,7 +37,7 @@ public class RubikCubeToMapUI : MonoBehaviour ,IRubikCubeRequired
                 RubikCubeFace currentFace;
                 RubikCubeFaceDirection currentDirection;
                 m_rubikCube.m_cubeFaceDirectionState.GetRealPieceFaceInfoAt(f, d, out currentFace, out currentDirection);
-                Color color = RubikCube.GetColor( RubikCube.GetDefaultColor(currentFace));
+                Color color = RubikCube.GetColor(RubikCube.GetDefaultColor(currentFace));
                 RubikCubeFaceUI face = m_flatUI.GetFace(f,d);
                 face.SetColor(color);
             }

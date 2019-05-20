@@ -66,7 +66,7 @@ public class RubikCubeSaveState
         }
     }
 
-    internal bool HasBeenShuffled()
+    public bool HasBeenShuffled()
     {
        return m_shuffleSequence != null && m_shuffleSequence.Lenght > 0;
     }
@@ -159,7 +159,7 @@ public class CubeDirectionalState
     }
 
 
-    internal bool IsCubeSolved()
+    public bool IsCubeSolved()
     {
         foreach (CubeFaceState face in GetAllCubeFaces())
         {
@@ -240,7 +240,7 @@ public class CubeDirectionalState
         face.m_direction = newDirection;
     }
 
-    internal void GetRealFaceAt(RubikCubeFaceDirection direction, out RubikCubeFace newFace, out RubikCubeFaceDirection newDirection)
+    public void GetRealFaceAt(RubikCubeFaceDirection direction, out RubikCubeFace newFace, out RubikCubeFaceDirection newDirection)
     {
         PieceFaceState face = GetFace(direction);
         newFace = face.m_face;
@@ -250,7 +250,7 @@ public class CubeDirectionalState
     public void Reset() {
         Reset(m_face);
     }
-    internal void Reset( RubikCubeFace face)
+    public void Reset( RubikCubeFace face)
     {
         this.m_face = face;
         m_northWest = new PieceFaceState(face, RubikCubeFaceDirection.NO);

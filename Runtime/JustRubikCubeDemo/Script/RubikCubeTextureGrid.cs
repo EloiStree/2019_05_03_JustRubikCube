@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class RubikCubeTextureGrid : MonoBehaviour
 {
-    public RubikCube m_rubikCube ;
+    public RubikCubeEngineMono m_rubikCube ;
     public SetTextureAsGrid m_testTexture;
     public CoordLinkedToFace[] m_coordinatesToFaceInfo;
     [System.Serializable]

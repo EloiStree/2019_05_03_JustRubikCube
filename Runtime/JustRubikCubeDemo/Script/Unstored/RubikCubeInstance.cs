@@ -9,7 +9,7 @@ public interface RubikCubeInterface {
 
 public class RubikCubeInstance : MonoBehaviour
 {
-    [SerializeField] RubikCube m_rubikCube;
+    [SerializeField] RubikCubeEngineMono m_rubikCube;
     [SerializeField] RubikCubeSaveState m_instanceState;
 
     public void Shuffle(int randomIteration, out RotationSequence sequenceGenerated) {
@@ -17,7 +17,7 @@ public class RubikCubeInstance : MonoBehaviour
        Shuffle(sequenceGenerated);
     }
 
-    internal RubikCube GetRubikCubeUnityRepresentation()
+    public RubikCubeEngineMono GetRubikCubeUnityRepresentation()
     {
         return m_rubikCube;
     }
@@ -47,7 +47,7 @@ public class RubikCubeInstance : MonoBehaviour
     //{
     //    Rotate(direction, face.m_belongToFace, face.m_faceDirection, pointOfView);
     //}
-    internal void Rotate(ArrowDirection direction, RubikCubeFace face, RubikCubeFaceDirection faceDirection, Transform pointOfView)
+    public void Rotate(ArrowDirection direction, RubikCubeFace face, RubikCubeFaceDirection faceDirection, Transform pointOfView)
     {
         TagRubikCubeFace tagFace = m_rubikCube.GetMovingFace(face, faceDirection);
         m_rubikCube.RotateFaceFrom(direction, tagFace, pointOfView);

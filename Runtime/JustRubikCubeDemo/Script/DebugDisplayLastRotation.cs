@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class DebugDisplayLastRotation : MonoBehaviour {
 
-    public RubikCube m_rubikCube;
+    public RubikCubeEngineMono m_rubikCube;
     public Text m_textDisplay;
 
 	void Awake ()
@@ -16,14 +16,14 @@ public class DebugDisplayLastRotation : MonoBehaviour {
 
     }
 
-    private void EndRotation(RubikCube.LocalRotationRequest rot)
+    private void EndRotation(RubikCubeEngineMono.LocalRotationRequest rot)
     {
-        m_textDisplay.text = ""+RubikCube.ConvertFaceRotationToString(rot.m_faceToRotate, rot.m_clockWise);
+        m_textDisplay.text = ""+ RubikCube.ConvertFaceRotationToString(rot.m_faceToRotate, rot.m_clockWise);
     }
 
-    private void StarRotation(RubikCube.LocalRotationRequest rot)
+    private void StarRotation(RubikCubeEngineMono.LocalRotationRequest rot)
     {
-        m_textDisplay.text = ">"+RubikCube.ConvertFaceRotationToString(rot.m_faceToRotate, rot.m_clockWise);
+        m_textDisplay.text = ">"+ RubikCube.ConvertFaceRotationToString(rot.m_faceToRotate, rot.m_clockWise);
     }
     
 }

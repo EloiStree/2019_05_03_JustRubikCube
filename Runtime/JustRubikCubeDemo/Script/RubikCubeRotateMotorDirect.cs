@@ -7,7 +7,7 @@ public class RubikCubeRotateMotorDirect : RubikCubeRotateMotor
     public bool isRotating;
 
 
-    public RubikCube m_affectedRubikCube;
+    public RubikCubeEngineMono m_affectedRubikCube;
 
     public override void FinishQueuedRotation()
     {

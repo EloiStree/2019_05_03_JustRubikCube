@@ -7,7 +7,7 @@ public class RubikCubeRotateMotorSlow : RubikCubeRotateMotor
 {
 
 
-    public RubikCube m_affectedRubikCube;
+    public RubikCubeEngineMono m_affectedRubikCube;
     public float m_rotationSpeed = 30f;
 
     [Header("Debug")]
@@ -170,13 +170,13 @@ public class RubikCubeRotateMotorSlow : RubikCubeRotateMotor
 
     protected override void NotifyStartRotation(RubikCubePivotable face, bool clockWise)
     {
-        RubikCube.LocalRotationRequest request = new RubikCube.LocalRotationRequest(face, clockWise);
+        RubikCubeEngineMono.LocalRotationRequest request = new RubikCubeEngineMono.LocalRotationRequest(face, clockWise);
         m_onStartRotating.Invoke(request);
         //m_affectedRubikCube.NotifyStartRotation(request);
     }
     protected override void NotifyEndRotation(RubikCubePivotable face, bool clockWise)
     {
-        RubikCube.LocalRotationRequest request = new RubikCube.LocalRotationRequest(face, clockWise);
+        RubikCubeEngineMono.LocalRotationRequest request = new RubikCubeEngineMono.LocalRotationRequest(face, clockWise);
         m_onRotated.Invoke(request);
         //m_affectedRubikCube.NotifyEndRotation(request);
     }

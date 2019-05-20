@@ -75,14 +75,14 @@ public abstract class Controller : MonoBehaviour, IController
     public abstract string GetName();
     public abstract bool IsPressing();
 
-    internal static Controller FindActiveOne(string word)
+    public static Controller FindActiveOne(string word)
     {
         IEnumerable<Controller> controllers = FindObjectsOfType<Controller>().Where(k => k.IsActiveInHierarchy() && k.GetName().Contains(word));
         if (controllers.Count() > 0)
             return controllers.First();
         return null;
     }
-    internal static Controller FindActiveOne(string [] keywords)
+    public static Controller FindActiveOne(string [] keywords)
     {
         Controller controller=null;
         foreach (string name in keywords)

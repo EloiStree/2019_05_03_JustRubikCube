@@ -88,7 +88,7 @@ public class PieceFaceLinks : FaceLinks
 }
 public class FaceLinkUtility
 {
-    internal static FaceLinks Get(FaceLinks origine, ArrowDirection direction, int iteration=1)
+    public static FaceLinks Get(FaceLinks origine, ArrowDirection direction, int iteration=1)
     {
         if (iteration < 0)
         {
@@ -112,7 +112,7 @@ public class FaceLinkUtility
         return ArrowDirection.Left;
     }
 
-    internal static FaceLinks Get(FaceLinks origine, ArrowDirection direction)
+    public static FaceLinks Get(FaceLinks origine, ArrowDirection direction)
     {
         if (direction == ArrowDirection.Up) return origine.Up();
         if (direction == ArrowDirection.Left) return origine.Left();

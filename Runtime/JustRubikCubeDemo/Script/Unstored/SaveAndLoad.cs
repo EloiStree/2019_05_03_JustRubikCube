@@ -6,7 +6,7 @@ using UnityEngine.Events;
 
 public class SaveAndLoad : MonoBehaviour {
 
-    public RubikCube m_rubikCube;
+    public RubikCubeEngineMono m_rubikCube;
     public string m_playPrefsId="PlayerSolutionSaved";
 
     [Header("Debug")]
@@ -20,7 +20,7 @@ public class SaveAndLoad : MonoBehaviour {
 
     }
 
-    private void AddToHistory(RubikCube.LocalRotationRequest request)
+    private void AddToHistory(RubikCubeEngineMono.LocalRotationRequest request)
     {
         m_history +=" "+ RubikCube.ConvertFaceRotationToString(request.m_faceToRotate, request.m_clockWise);
     }

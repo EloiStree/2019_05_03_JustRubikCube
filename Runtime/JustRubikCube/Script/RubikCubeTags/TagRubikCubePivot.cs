@@ -13,7 +13,7 @@ public class TagRubikCubePivot : TagRubikAbstract
     {
         RefreshLink();
     }
-
+    
     private void RefreshLink()
     {
     

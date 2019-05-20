@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class SequenceHistory : MonoBehaviour
 {
-    [SerializeField] RubikCube m_rubikCube=null;
+    [SerializeField] RubikCubeEngineMono m_rubikCube=null;
     [SerializeField] RotationSequence m_sequence = new RotationSequence();
     [SerializeField] TimedRotationSequence m_timedSequence = new TimedRotationSequence();
     [SerializeField] TimePast m_timePasted;
@@ -17,7 +17,7 @@ public class SequenceHistory : MonoBehaviour
     }
 
 
-    private void AddToHistory(RubikCube.LocalRotationRequest request)
+    private void AddToHistory(RubikCubeEngineMono.LocalRotationRequest request)
     {
         float time = m_timePasted.GetTimePast();
         RotationTypeShort rotation = RubikCube.ConvertRotationToAcronymShort(request.m_faceToRotate, request.m_clockWise);
@@ -28,7 +28,7 @@ public class SequenceHistory : MonoBehaviour
 
     
 
-    public RubikCube GetLinkedCube() { return m_rubikCube; }
+    public RubikCubeEngineMono GetLinkedCube() { return m_rubikCube; }
     public RotationTypeShort[] GetSequenceAsRotation() { return m_sequence.m_rotations.ToArray(); }
     public RotationSequence GetSequence() { return m_sequence; }
     public TimedRotationSequence GetTimedSequence() { return m_timedSequence; }

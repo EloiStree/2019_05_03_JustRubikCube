@@ -6,7 +6,7 @@ using UnityEngine;
 ///BAD CODE. I was super sleepy when I write it. Should diserve 3 hours of concetrated thinking to be bug free.
 public class UndoSequence : MonoBehaviour
 {
-    public RubikCube m_rubikCube;
+    public RubikCubeEngineMono m_rubikCube;
     public SequenceHistory m_rotationsHistory;
     public List<RotationTypeShort> m_incomingUndo = new List<RotationTypeShort>();
     public List<RotationTypeShort> m_undoTrack = new List<RotationTypeShort>();
@@ -20,9 +20,9 @@ public class UndoSequence : MonoBehaviour
         m_rubikCube.m_onStartRotating.AddListener(CheckIfItIsUndoRotation);
     }
 
-    private void CheckIfItIsUndoRotation(RubikCube.LocalRotationRequest arg0)
+    private void CheckIfItIsUndoRotation(RubikCubeEngineMono.LocalRotationRequest arg0)
     {
-        RotationTypeShort received = 
+        RotationTypeShort received =
             RubikCube.ConvertRotationToAcronymShort(
                 arg0.m_faceToRotate, arg0.m_clockWise);
         //if received don't correspond at the undow combo

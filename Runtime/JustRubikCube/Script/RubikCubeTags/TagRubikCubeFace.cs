@@ -33,7 +33,7 @@ public class TagRubikCubeFace : TagRubikAbstract
         
     if(RubikCube.GetFaceInfoInString(gameObject.name, out face))
         m_belongToFace = face;
-    if( RubikCube.GetDirectionInfoInString(gameObject.name, out direction))
+    if(RubikCube.GetDirectionInfoInString(gameObject.name, out direction))
         m_faceDirection = direction;
 
     }
@@ -46,7 +46,7 @@ public class TagRubikCubeFace : TagRubikAbstract
 
     }
 
-    internal RubikCubePivotable [] GetLinkedFaces()
+    public RubikCubePivotable [] GetLinkedFaces()
     {
         if(m_linkedPiece)
         return m_linkedPiece.GetPivots() ;

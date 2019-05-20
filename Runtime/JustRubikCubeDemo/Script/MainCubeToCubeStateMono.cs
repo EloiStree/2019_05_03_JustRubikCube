@@ -37,7 +37,7 @@ public class MainCubeToCubeStateMono : MonoBehaviour, IRubikCubeRequired
 
     }
 
-    private void RefreshUI(RubikCube.LocalRotationRequest arg0)
+    private void RefreshUI(RubikCubeEngineMono.LocalRotationRequest arg0)
     {
         if(m_rubikCube && m_stateMono)
             m_stateMono.RefreshCubeState( m_rubikCube.GetCubeStateReference());

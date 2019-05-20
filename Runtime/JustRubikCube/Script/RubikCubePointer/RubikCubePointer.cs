@@ -29,8 +29,8 @@ public class RubikCubePointer : MonoBehaviour
     [Header("Raycasted")]
     public bool m_useUIRaycasting=true;
     public RubikCubeInstance m_rubikCubeManager;
-    public RubikCube m_firstRubikCube;
-    public List<RubikCube> m_rubikCubes = new List<RubikCube>();
+    public RubikCubeEngineMono m_firstRubikCube;
+    public List<RubikCubeEngineMono> m_rubikCubes = new List<RubikCubeEngineMono>();
 
 
     public TagRubikCubeFace m_firstFaceInfo;
@@ -84,10 +84,10 @@ public class RubikCubePointer : MonoBehaviour
         foreach (GameObject hit in objHits)
         {
             TagRubikCubeFace face = hit.GetComponent<TagRubikCubeFace>();
-            RubikCube rubikCube = hit.GetComponent<RubikCube>();
+            RubikCubeEngineMono rubikCube = hit.GetComponent<RubikCubeEngineMono>();
             StoredSequence sequence = hit.GetComponent<StoredSequence>();
             if (rubikCube == null)
-                rubikCube = hit.GetComponentInParent<RubikCube>();
+                rubikCube = hit.GetComponentInParent<RubikCubeEngineMono>();
 
             if (face != null)
                 m_facesInfo.Add(face);
@@ -144,7 +144,7 @@ public class RubikCubePointer : MonoBehaviour
             m_uiFound= uiHits.Count;
     }
 
-    internal Transform GetPointOfView()
+    public Transform GetPointOfView()
     {
         return m_direction;
     }
@@ -193,7 +193,7 @@ public class RubikCubePointer : MonoBehaviour
             return firstRubikCube;
     }
 
-    internal TagRubikCubeFace GetSelectedFace()
+    public TagRubikCubeFace GetSelectedFace()
     {
         return m_firstFaceInfo;
     }

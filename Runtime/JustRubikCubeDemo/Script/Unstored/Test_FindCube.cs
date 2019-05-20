@@ -5,7 +5,7 @@ using UnityEngine;
 public class Test_FindCube : MonoBehaviour
 {
 
-    public RubikCube m_rubik;
+    public RubikCubeEngineMono m_rubik;
     public RubikCubeHighlight m_highlighter;
 
     public bool m_any=false;

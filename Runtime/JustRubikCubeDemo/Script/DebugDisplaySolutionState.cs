@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class DebugDisplaySolutionState : MonoBehaviour {
 
 
-    public RubikCube m_rubikCube;
+    public RubikCubeEngineMono m_rubikCube;
     public Text m_textDisplay;
     
 	

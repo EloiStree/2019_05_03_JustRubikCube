@@ -7,7 +7,7 @@ using UnityEngine.UI;
 
 public class RubikCubeImportExport : MonoBehaviour
 {
-    public RubikCube  m_rubikCube;
+    public RubikCubeEngineMono  m_rubikCube;
     public SequenceHistory m_history;
     public InputField m_input;
 

@@ -11,18 +11,18 @@ public abstract class RubikCubeRotateMotor : MonoBehaviour {
     public abstract void LocalRotate(RotationTypeShort faceToRotate);
 
     [Header("Events")]
-    public RubikCube.RotationEvent m_onStartRotating;
-    public RubikCube.RotationEvent m_onRotated;
+    public RubikCubeEngineMono.RotationEvent m_onStartRotating;
+    public RubikCubeEngineMono.RotationEvent m_onRotated;
     public UnityEvent m_onStartMotorRotation;
     public UnityEvent m_onStopMotorRotation;
 
     protected virtual void NotifyStartRotation(RubikCubePivotable face, bool clockWise)
     {
-        m_onStartRotating.Invoke(new RubikCube.LocalRotationRequest(face, clockWise));
+        m_onStartRotating.Invoke(new RubikCubeEngineMono.LocalRotationRequest(face, clockWise));
     }
     protected virtual void NotifyEndRotation(RubikCubePivotable face, bool clockWise)
     {
-        m_onRotated.Invoke(new RubikCube.LocalRotationRequest(face, clockWise));
+        m_onRotated.Invoke(new RubikCubeEngineMono.LocalRotationRequest(face, clockWise));
     }
     protected virtual void NotifyStartUsingMotor()
     {

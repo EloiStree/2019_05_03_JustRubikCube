@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class RubikCubeMirror : MonoBehaviour
 {
-    public RubikCube m_rubikCube;
+    public RubikCubeEngineMono m_rubikCube;
     public Transform m_root;
     public Transform[] m_pieces;
     void Start()

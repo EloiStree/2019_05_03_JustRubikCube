@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class KeyboardToRubikRotation : MonoBehaviour {
 
-    public RubikCube m_affectedRubikCube;
+    public RubikCubeEngineMono m_affectedRubikCube;
 
 	void Start () {
 		
