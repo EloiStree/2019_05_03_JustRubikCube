@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6728610078624594138}
   - component: {fileID: 6728610078624594148}
   - component: {fileID: 6728610078624594149}
+  - component: {fileID: 1183185384}
   m_Layer: 0
   m_Name: Panel Rubik UI
   m_TagString: Untagged
@@ -125,6 +126,23 @@ MonoBehaviour:
       Culture=neutral, PublicKeyToken=null
   m_overObject: 0
   m_clicked: 0
+--- !u!114 &1183185384
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6728610078624594136}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f5c8b03943454548939370ae1f27148, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_root: {fileID: 6728610078624594137}
+  m_linkedCube: {fileID: 619925149}
+  m_linkedPiece: {fileID: 0}
+  m_belongToFace: 2
+  m_faceDirection: 3
 --- !u!1 &6728610078636140438
 GameObject:
   m_ObjectHideFlags: 0
@@ -138,6 +156,7 @@ GameObject:
   - component: {fileID: 6728610078636140432}
   - component: {fileID: 6728610078636140434}
   - component: {fileID: 6728610078636140435}
+  - component: {fileID: 1770068588}
   m_Layer: 0
   m_Name: Panel Rubik UI
   m_TagString: Untagged
@@ -250,6 +269,23 @@ MonoBehaviour:
       Culture=neutral, PublicKeyToken=null
   m_overObject: 0
   m_clicked: 0
+--- !u!114 &1770068588
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6728610078636140438}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f5c8b03943454548939370ae1f27148, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_root: {fileID: 6728610078636140439}
+  m_linkedCube: {fileID: 619925149}
+  m_linkedPiece: {fileID: 0}
+  m_belongToFace: 5
+  m_faceDirection: 6
 --- !u!1 &6728610078664300519
 GameObject:
   m_ObjectHideFlags: 0
@@ -263,6 +299,7 @@ GameObject:
   - component: {fileID: 6728610078664300513}
   - component: {fileID: 6728610078664300515}
   - component: {fileID: 6728610078664300524}
+  - component: {fileID: 710425644}
   m_Layer: 0
   m_Name: Panel Rubik UI
   m_TagString: Untagged
@@ -375,6 +412,23 @@ MonoBehaviour:
       Culture=neutral, PublicKeyToken=null
   m_overObject: 0
   m_clicked: 0
+--- !u!114 &710425644
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6728610078664300519}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f5c8b03943454548939370ae1f27148, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_root: {fileID: 6728610078664300512}
+  m_linkedCube: {fileID: 619925149}
+  m_linkedPiece: {fileID: 0}
+  m_belongToFace: 3
+  m_faceDirection: 4
 --- !u!1 &6728610078682318421
 GameObject:
   m_ObjectHideFlags: 0
@@ -435,6 +489,7 @@ GameObject:
   - component: {fileID: 6728610078718462076}
   - component: {fileID: 6728610078718462078}
   - component: {fileID: 6728610078718462079}
+  - component: {fileID: 1450046990}
   m_Layer: 0
   m_Name: Panel Rubik UI
   m_TagString: Untagged
@@ -547,6 +602,23 @@ MonoBehaviour:
       Culture=neutral, PublicKeyToken=null
   m_overObject: 0
   m_clicked: 0
+--- !u!114 &1450046990
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6728610078718462066}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f5c8b03943454548939370ae1f27148, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_root: {fileID: 6728610078718462067}
+  m_linkedCube: {fileID: 619925149}
+  m_linkedPiece: {fileID: 0}
+  m_belongToFace: 5
+  m_faceDirection: 9
 --- !u!1 &6728610078738018555
 GameObject:
   m_ObjectHideFlags: 0
@@ -560,6 +632,7 @@ GameObject:
   - component: {fileID: 6728610078738018437}
   - component: {fileID: 6728610078738018439}
   - component: {fileID: 6728610078738018432}
+  - component: {fileID: 398441656}
   m_Layer: 0
   m_Name: Panel Rubik UI
   m_TagString: Untagged
@@ -672,6 +745,23 @@ MonoBehaviour:
       Culture=neutral, PublicKeyToken=null
   m_overObject: 0
   m_clicked: 0
+--- !u!114 &398441656
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6728610078738018555}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f5c8b03943454548939370ae1f27148, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_root: {fileID: 6728610078738018436}
+  m_linkedCube: {fileID: 619925149}
+  m_linkedPiece: {fileID: 0}
+  m_belongToFace: 5
+  m_faceDirection: 2
 --- !u!1 &6728610078762539829
 GameObject:
   m_ObjectHideFlags: 0
@@ -685,6 +775,7 @@ GameObject:
   - component: {fileID: 6728610078762539831}
   - component: {fileID: 6728610078762539825}
   - component: {fileID: 6728610078762539826}
+  - component: {fileID: 198369457}
   m_Layer: 0
   m_Name: Panel Rubik UI
   m_TagString: Untagged
@@ -797,6 +888,23 @@ MonoBehaviour:
       Culture=neutral, PublicKeyToken=null
   m_overObject: 0
   m_clicked: 0
+--- !u!114 &198369457
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6728610078762539829}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f5c8b03943454548939370ae1f27148, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_root: {fileID: 6728610078762539830}
+  m_linkedCube: {fileID: 619925149}
+  m_linkedPiece: {fileID: 0}
+  m_belongToFace: 3
+  m_faceDirection: 7
 --- !u!1 &6728610078772308016
 GameObject:
   m_ObjectHideFlags: 0
@@ -810,6 +918,7 @@ GameObject:
   - component: {fileID: 6728610078772308018}
   - component: {fileID: 6728610078772308028}
   - component: {fileID: 6728610078772308029}
+  - component: {fileID: 237158989}
   m_Layer: 0
   m_Name: Panel Rubik UI
   m_TagString: Untagged
@@ -922,6 +1031,23 @@ MonoBehaviour:
       Culture=neutral, PublicKeyToken=null
   m_overObject: 0
   m_clicked: 0
+--- !u!114 &237158989
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6728610078772308016}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f5c8b03943454548939370ae1f27148, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_root: {fileID: 6728610078772308017}
+  m_linkedCube: {fileID: 619925149}
+  m_linkedPiece: {fileID: 0}
+  m_belongToFace: 4
+  m_faceDirection: 6
 --- !u!1 &6728610078803731168
 GameObject:
   m_ObjectHideFlags: 0
@@ -935,6 +1061,7 @@ GameObject:
   - component: {fileID: 6728610078803731170}
   - component: {fileID: 6728610078803731180}
   - component: {fileID: 6728610078803731181}
+  - component: {fileID: 1697340991}
   m_Layer: 0
   m_Name: Panel Rubik UI
   m_TagString: Untagged
@@ -1047,6 +1174,23 @@ MonoBehaviour:
       Culture=neutral, PublicKeyToken=null
   m_overObject: 0
   m_clicked: 0
+--- !u!114 &1697340991
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6728610078803731168}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f5c8b03943454548939370ae1f27148, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_root: {fileID: 6728610078803731169}
+  m_linkedCube: {fileID: 619925149}
+  m_linkedPiece: {fileID: 0}
+  m_belongToFace: 1
+  m_faceDirection: 4
 --- !u!1 &6728610078851351832
 GameObject:
   m_ObjectHideFlags: 0
@@ -1154,6 +1298,7 @@ GameObject:
   - component: {fileID: 6728610078935929256}
   - component: {fileID: 6728610078935929258}
   - component: {fileID: 6728610078935929259}
+  - component: {fileID: 873523282}
   m_Layer: 0
   m_Name: Panel Rubik UI
   m_TagString: Untagged
@@ -1266,6 +1411,23 @@ MonoBehaviour:
       Culture=neutral, PublicKeyToken=null
   m_overObject: 0
   m_clicked: 0
+--- !u!114 &873523282
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6728610078935929262}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f5c8b03943454548939370ae1f27148, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_root: {fileID: 6728610078935929263}
+  m_linkedCube: {fileID: 619925149}
+  m_linkedPiece: {fileID: 0}
+  m_belongToFace: 4
+  m_faceDirection: 1
 --- !u!1 &6728610078980596808
 GameObject:
   m_ObjectHideFlags: 0
@@ -1279,6 +1441,7 @@ GameObject:
   - component: {fileID: 6728610078980596810}
   - component: {fileID: 6728610078980596820}
   - component: {fileID: 6728610078980596821}
+  - component: {fileID: 134379423}
   m_Layer: 0
   m_Name: Panel Rubik UI
   m_TagString: Untagged
@@ -1391,6 +1554,23 @@ MonoBehaviour:
       Culture=neutral, PublicKeyToken=null
   m_overObject: 0
   m_clicked: 0
+--- !u!114 &134379423
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6728610078980596808}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f5c8b03943454548939370ae1f27148, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_root: {fileID: 6728610078980596809}
+  m_linkedCube: {fileID: 619925149}
+  m_linkedPiece: {fileID: 0}
+  m_belongToFace: 4
+  m_faceDirection: 8
 --- !u!1 &6728610078986080412
 GameObject:
   m_ObjectHideFlags: 0
@@ -1404,6 +1584,7 @@ GameObject:
   - component: {fileID: 6728610078986080414}
   - component: {fileID: 6728610078986080408}
   - component: {fileID: 6728610078986080409}
+  - component: {fileID: 1712153749}
   m_Layer: 0
   m_Name: Panel Rubik UI
   m_TagString: Untagged
@@ -1516,6 +1697,23 @@ MonoBehaviour:
       Culture=neutral, PublicKeyToken=null
   m_overObject: 0
   m_clicked: 0
+--- !u!114 &1712153749
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6728610078986080412}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f5c8b03943454548939370ae1f27148, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_root: {fileID: 6728610078986080413}
+  m_linkedCube: {fileID: 619925149}
+  m_linkedPiece: {fileID: 0}
+  m_belongToFace: 1
+  m_faceDirection: 3
 --- !u!1 &6728610079024353871
 GameObject:
   m_ObjectHideFlags: 0
@@ -1529,6 +1727,7 @@ GameObject:
   - component: {fileID: 6728610079024353865}
   - component: {fileID: 6728610079024353867}
   - component: {fileID: 6728610079024353876}
+  - component: {fileID: 1747878574}
   m_Layer: 0
   m_Name: Panel Rubik UI
   m_TagString: Untagged
@@ -1641,6 +1840,23 @@ MonoBehaviour:
       Culture=neutral, PublicKeyToken=null
   m_overObject: 0
   m_clicked: 0
+--- !u!114 &1747878574
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6728610079024353871}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f5c8b03943454548939370ae1f27148, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_root: {fileID: 6728610079024353864}
+  m_linkedCube: {fileID: 619925149}
+  m_linkedPiece: {fileID: 0}
+  m_belongToFace: 2
+  m_faceDirection: 8
 --- !u!1 &6728610079083310481
 GameObject:
   m_ObjectHideFlags: 0
@@ -1654,6 +1870,7 @@ GameObject:
   - component: {fileID: 6728610079083310483}
   - component: {fileID: 6728610079083310493}
   - component: {fileID: 6728610079083310494}
+  - component: {fileID: 1874145293}
   m_Layer: 0
   m_Name: Panel Rubik UI
   m_TagString: Untagged
@@ -1766,6 +1983,23 @@ MonoBehaviour:
       Culture=neutral, PublicKeyToken=null
   m_overObject: 0
   m_clicked: 0
+--- !u!114 &1874145293
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6728610079083310481}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f5c8b03943454548939370ae1f27148, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_root: {fileID: 6728610079083310482}
+  m_linkedCube: {fileID: 619925149}
+  m_linkedPiece: {fileID: 0}
+  m_belongToFace: 3
+  m_faceDirection: 2
 --- !u!1 &6728610079109245951
 GameObject:
   m_ObjectHideFlags: 0
@@ -1779,6 +2013,7 @@ GameObject:
   - component: {fileID: 6728610079109245945}
   - component: {fileID: 6728610079109245947}
   - component: {fileID: 6728610079109245828}
+  - component: {fileID: 595074724}
   m_Layer: 0
   m_Name: Panel Rubik UI
   m_TagString: Untagged
@@ -1891,6 +2126,23 @@ MonoBehaviour:
       Culture=neutral, PublicKeyToken=null
   m_overObject: 0
   m_clicked: 0
+--- !u!114 &595074724
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6728610079109245951}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f5c8b03943454548939370ae1f27148, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_root: {fileID: 6728610079109245944}
+  m_linkedCube: {fileID: 619925149}
+  m_linkedPiece: {fileID: 0}
+  m_belongToFace: 1
+  m_faceDirection: 2
 --- !u!1 &6728610079110623789
 GameObject:
   m_ObjectHideFlags: 0
@@ -1904,6 +2156,7 @@ GameObject:
   - component: {fileID: 6728610079110623791}
   - component: {fileID: 6728610079110623785}
   - component: {fileID: 6728610079110623786}
+  - component: {fileID: 1841199812}
   m_Layer: 0
   m_Name: Panel Rubik UI
   m_TagString: Untagged
@@ -2016,6 +2269,23 @@ MonoBehaviour:
       Culture=neutral, PublicKeyToken=null
   m_overObject: 0
   m_clicked: 0
+--- !u!114 &1841199812
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6728610079110623789}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f5c8b03943454548939370ae1f27148, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_root: {fileID: 6728610079110623790}
+  m_linkedCube: {fileID: 619925149}
+  m_linkedPiece: {fileID: 0}
+  m_belongToFace: 5
+  m_faceDirection: 3
 --- !u!1 &6728610079133606093
 GameObject:
   m_ObjectHideFlags: 0
@@ -2029,6 +2299,7 @@ GameObject:
   - component: {fileID: 6728610079133606095}
   - component: {fileID: 6728610079133606089}
   - component: {fileID: 6728610079133606090}
+  - component: {fileID: 951805748}
   m_Layer: 0
   m_Name: Panel Rubik UI
   m_TagString: Untagged
@@ -2141,6 +2412,23 @@ MonoBehaviour:
       Culture=neutral, PublicKeyToken=null
   m_overObject: 0
   m_clicked: 0
+--- !u!114 &951805748
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6728610079133606093}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f5c8b03943454548939370ae1f27148, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_root: {fileID: 6728610079133606094}
+  m_linkedCube: {fileID: 619925149}
+  m_linkedPiece: {fileID: 0}
+  m_belongToFace: 3
+  m_faceDirection: 3
 --- !u!1 &6728610079147649179
 GameObject:
   m_ObjectHideFlags: 0
@@ -2154,6 +2442,7 @@ GameObject:
   - component: {fileID: 6728610079147649189}
   - component: {fileID: 6728610079147649191}
   - component: {fileID: 6728610079147649184}
+  - component: {fileID: 870192474}
   m_Layer: 0
   m_Name: Panel Rubik UI
   m_TagString: Untagged
@@ -2266,6 +2555,23 @@ MonoBehaviour:
       Culture=neutral, PublicKeyToken=null
   m_overObject: 0
   m_clicked: 0
+--- !u!114 &870192474
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6728610079147649179}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f5c8b03943454548939370ae1f27148, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_root: {fileID: 6728610079147649188}
+  m_linkedCube: {fileID: 619925149}
+  m_linkedPiece: {fileID: 0}
+  m_belongToFace: 4
+  m_faceDirection: 9
 --- !u!1 &6728610079186676253
 GameObject:
   m_ObjectHideFlags: 0
@@ -2279,6 +2585,7 @@ GameObject:
   - component: {fileID: 6728610079186676255}
   - component: {fileID: 6728610079186676249}
   - component: {fileID: 6728610079186676250}
+  - component: {fileID: 748138545}
   m_Layer: 0
   m_Name: Panel Rubik UI
   m_TagString: Untagged
@@ -2391,6 +2698,23 @@ MonoBehaviour:
       Culture=neutral, PublicKeyToken=null
   m_overObject: 0
   m_clicked: 0
+--- !u!114 &748138545
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6728610079186676253}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f5c8b03943454548939370ae1f27148, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_root: {fileID: 6728610079186676254}
+  m_linkedCube: {fileID: 619925149}
+  m_linkedPiece: {fileID: 0}
+  m_belongToFace: 4
+  m_faceDirection: 2
 --- !u!1 &6728610079348767057
 GameObject:
   m_ObjectHideFlags: 0
@@ -2404,6 +2728,7 @@ GameObject:
   - component: {fileID: 6728610079348767059}
   - component: {fileID: 6728610079348767069}
   - component: {fileID: 6728610079348767070}
+  - component: {fileID: 995333236}
   m_Layer: 0
   m_Name: Panel Rubik UI
   m_TagString: Untagged
@@ -2516,6 +2841,23 @@ MonoBehaviour:
       Culture=neutral, PublicKeyToken=null
   m_overObject: 0
   m_clicked: 0
+--- !u!114 &995333236
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6728610079348767057}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f5c8b03943454548939370ae1f27148, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_root: {fileID: 6728610079348767058}
+  m_linkedCube: {fileID: 619925149}
+  m_linkedPiece: {fileID: 0}
+  m_belongToFace: 3
+  m_faceDirection: 9
 --- !u!1 &6728610079361130285
 GameObject:
   m_ObjectHideFlags: 0
@@ -2576,6 +2918,7 @@ GameObject:
   - component: {fileID: 6728610079365841244}
   - component: {fileID: 6728610079365841246}
   - component: {fileID: 6728610079365841247}
+  - component: {fileID: 14302879}
   m_Layer: 0
   m_Name: Panel Rubik UI
   m_TagString: Untagged
@@ -2688,6 +3031,23 @@ MonoBehaviour:
       Culture=neutral, PublicKeyToken=null
   m_overObject: 0
   m_clicked: 0
+--- !u!114 &14302879
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6728610079365841234}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f5c8b03943454548939370ae1f27148, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_root: {fileID: 6728610079365841235}
+  m_linkedCube: {fileID: 619925149}
+  m_linkedPiece: {fileID: 0}
+  m_belongToFace: 4
+  m_faceDirection: 3
 --- !u!1 &6728610079401398321
 GameObject:
   m_ObjectHideFlags: 0
@@ -2701,6 +3061,7 @@ GameObject:
   - component: {fileID: 6728610079401398323}
   - component: {fileID: 6728610079401398333}
   - component: {fileID: 6728610079401398334}
+  - component: {fileID: 1795556405}
   m_Layer: 0
   m_Name: Panel Rubik UI
   m_TagString: Untagged
@@ -2813,6 +3174,23 @@ MonoBehaviour:
       Culture=neutral, PublicKeyToken=null
   m_overObject: 0
   m_clicked: 0
+--- !u!114 &1795556405
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6728610079401398321}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f5c8b03943454548939370ae1f27148, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_root: {fileID: 6728610079401398322}
+  m_linkedCube: {fileID: 619925149}
+  m_linkedPiece: {fileID: 0}
+  m_belongToFace: 5
+  m_faceDirection: 1
 --- !u!1 &6728610079436944401
 GameObject:
   m_ObjectHideFlags: 0
@@ -2826,6 +3204,7 @@ GameObject:
   - component: {fileID: 6728610079436944403}
   - component: {fileID: 6728610079436944413}
   - component: {fileID: 6728610079436944414}
+  - component: {fileID: 127075142}
   m_Layer: 0
   m_Name: Panel Rubik UI
   m_TagString: Untagged
@@ -2938,6 +3317,23 @@ MonoBehaviour:
       Culture=neutral, PublicKeyToken=null
   m_overObject: 0
   m_clicked: 0
+--- !u!114 &127075142
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6728610079436944401}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f5c8b03943454548939370ae1f27148, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_root: {fileID: 6728610079436944402}
+  m_linkedCube: {fileID: 619925149}
+  m_linkedPiece: {fileID: 0}
+  m_belongToFace: 0
+  m_faceDirection: 6
 --- !u!1 &6728610079445004292
 GameObject:
   m_ObjectHideFlags: 0
@@ -3004,6 +3400,7 @@ GameObject:
   - component: {fileID: 6728610079494844933}
   - component: {fileID: 6728610079494844935}
   - component: {fileID: 6728610079494844928}
+  - component: {fileID: 1690314600}
   m_Layer: 0
   m_Name: Panel Rubik UI
   m_TagString: Untagged
@@ -3116,6 +3513,23 @@ MonoBehaviour:
       Culture=neutral, PublicKeyToken=null
   m_overObject: 0
   m_clicked: 0
+--- !u!114 &1690314600
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6728610079494845051}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f5c8b03943454548939370ae1f27148, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_root: {fileID: 6728610079494844932}
+  m_linkedCube: {fileID: 619925149}
+  m_linkedPiece: {fileID: 0}
+  m_belongToFace: 4
+  m_faceDirection: 5
 --- !u!1 &6728610079570835289
 GameObject:
   m_ObjectHideFlags: 0
@@ -3129,6 +3543,7 @@ GameObject:
   - component: {fileID: 6728610079570835291}
   - component: {fileID: 6728610079570835301}
   - component: {fileID: 6728610079570835302}
+  - component: {fileID: 1185251627}
   m_Layer: 0
   m_Name: Panel Rubik UI
   m_TagString: Untagged
@@ -3241,6 +3656,23 @@ MonoBehaviour:
       Culture=neutral, PublicKeyToken=null
   m_overObject: 0
   m_clicked: 0
+--- !u!114 &1185251627
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6728610079570835289}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f5c8b03943454548939370ae1f27148, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_root: {fileID: 6728610079570835290}
+  m_linkedCube: {fileID: 619925149}
+  m_linkedPiece: {fileID: 0}
+  m_belongToFace: 0
+  m_faceDirection: 9
 --- !u!1 &6728610079643106108
 GameObject:
   m_ObjectHideFlags: 0
@@ -3254,6 +3686,7 @@ GameObject:
   - component: {fileID: 6728610079643106110}
   - component: {fileID: 6728610079643106104}
   - component: {fileID: 6728610079643106105}
+  - component: {fileID: 1076346148}
   m_Layer: 0
   m_Name: Panel Rubik UI
   m_TagString: Untagged
@@ -3366,6 +3799,23 @@ MonoBehaviour:
       Culture=neutral, PublicKeyToken=null
   m_overObject: 0
   m_clicked: 0
+--- !u!114 &1076346148
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6728610079643106108}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f5c8b03943454548939370ae1f27148, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_root: {fileID: 6728610079643106109}
+  m_linkedCube: {fileID: 619925149}
+  m_linkedPiece: {fileID: 0}
+  m_belongToFace: 0
+  m_faceDirection: 3
 --- !u!1 &6728610079663279010
 GameObject:
   m_ObjectHideFlags: 0
@@ -3379,6 +3829,7 @@ GameObject:
   - component: {fileID: 6728610079663279020}
   - component: {fileID: 6728610079663279022}
   - component: {fileID: 6728610079663279023}
+  - component: {fileID: 1965673383}
   m_Layer: 0
   m_Name: Panel Rubik UI
   m_TagString: Untagged
@@ -3491,6 +3942,23 @@ MonoBehaviour:
       Culture=neutral, PublicKeyToken=null
   m_overObject: 0
   m_clicked: 0
+--- !u!114 &1965673383
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6728610079663279010}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f5c8b03943454548939370ae1f27148, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_root: {fileID: 6728610079663279011}
+  m_linkedCube: {fileID: 619925149}
+  m_linkedPiece: {fileID: 0}
+  m_belongToFace: 0
+  m_faceDirection: 8
 --- !u!1 &6728610079670734845
 GameObject:
   m_ObjectHideFlags: 0
@@ -3504,6 +3972,7 @@ GameObject:
   - component: {fileID: 6728610079670734847}
   - component: {fileID: 6728610079670734841}
   - component: {fileID: 6728610079670734842}
+  - component: {fileID: 368875484}
   m_Layer: 0
   m_Name: Panel Rubik UI
   m_TagString: Untagged
@@ -3616,6 +4085,23 @@ MonoBehaviour:
       Culture=neutral, PublicKeyToken=null
   m_overObject: 0
   m_clicked: 0
+--- !u!114 &368875484
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6728610079670734845}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f5c8b03943454548939370ae1f27148, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_root: {fileID: 6728610079670734846}
+  m_linkedCube: {fileID: 619925149}
+  m_linkedPiece: {fileID: 0}
+  m_belongToFace: 1
+  m_faceDirection: 6
 --- !u!1 &6728610079758391418
 GameObject:
   m_ObjectHideFlags: 0
@@ -3629,6 +4115,7 @@ GameObject:
   - component: {fileID: 6728610079758391300}
   - component: {fileID: 6728610079758391302}
   - component: {fileID: 6728610079758391303}
+  - component: {fileID: 1421160478}
   m_Layer: 0
   m_Name: Panel Rubik UI
   m_TagString: Untagged
@@ -3741,6 +4228,23 @@ MonoBehaviour:
       Culture=neutral, PublicKeyToken=null
   m_overObject: 0
   m_clicked: 0
+--- !u!114 &1421160478
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6728610079758391418}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f5c8b03943454548939370ae1f27148, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_root: {fileID: 6728610079758391419}
+  m_linkedCube: {fileID: 619925149}
+  m_linkedPiece: {fileID: 0}
+  m_belongToFace: 1
+  m_faceDirection: 9
 --- !u!1 &6728610079762071900
 GameObject:
   m_ObjectHideFlags: 0
@@ -3854,6 +4358,7 @@ GameObject:
   - component: {fileID: 6728610079781655220}
   - component: {fileID: 6728610079781655222}
   - component: {fileID: 6728610079781655223}
+  - component: {fileID: 1685481134}
   m_Layer: 0
   m_Name: Panel Rubik UI
   m_TagString: Untagged
@@ -3966,6 +4471,23 @@ MonoBehaviour:
       Culture=neutral, PublicKeyToken=null
   m_overObject: 0
   m_clicked: 0
+--- !u!114 &1685481134
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6728610079781655210}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f5c8b03943454548939370ae1f27148, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_root: {fileID: 6728610079781655211}
+  m_linkedCube: {fileID: 619925149}
+  m_linkedPiece: {fileID: 0}
+  m_belongToFace: 1
+  m_faceDirection: 1
 --- !u!1 &6728610079796667610
 GameObject:
   m_ObjectHideFlags: 0
@@ -4026,6 +4548,7 @@ GameObject:
   - component: {fileID: 6728610079798629688}
   - component: {fileID: 6728610079798629690}
   - component: {fileID: 6728610079798629691}
+  - component: {fileID: 140629246}
   m_Layer: 0
   m_Name: Panel Rubik UI
   m_TagString: Untagged
@@ -4138,6 +4661,23 @@ MonoBehaviour:
       Culture=neutral, PublicKeyToken=null
   m_overObject: 0
   m_clicked: 0
+--- !u!114 &140629246
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6728610079798629694}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f5c8b03943454548939370ae1f27148, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_root: {fileID: 6728610079798629695}
+  m_linkedCube: {fileID: 619925149}
+  m_linkedPiece: {fileID: 0}
+  m_belongToFace: 0
+  m_faceDirection: 9
 --- !u!1 &6728610079811481299
 GameObject:
   m_ObjectHideFlags: 0
@@ -4245,6 +4785,7 @@ GameObject:
   - component: {fileID: 6728610079843226724}
   - component: {fileID: 6728610079843226726}
   - component: {fileID: 6728610079843226727}
+  - component: {fileID: 337920949}
   m_Layer: 0
   m_Name: Panel Rubik UI
   m_TagString: Untagged
@@ -4357,6 +4898,23 @@ MonoBehaviour:
       Culture=neutral, PublicKeyToken=null
   m_overObject: 0
   m_clicked: 0
+--- !u!114 &337920949
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6728610079843226714}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f5c8b03943454548939370ae1f27148, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_root: {fileID: 6728610079843226715}
+  m_linkedCube: {fileID: 619925149}
+  m_linkedPiece: {fileID: 0}
+  m_belongToFace: 3
+  m_faceDirection: 5
 --- !u!1 &6728610079854387078
 GameObject:
   m_ObjectHideFlags: 0
@@ -4370,6 +4928,7 @@ GameObject:
   - component: {fileID: 6728610079854387072}
   - component: {fileID: 6728610079854387074}
   - component: {fileID: 6728610079854387075}
+  - component: {fileID: 316492180}
   m_Layer: 0
   m_Name: Panel Rubik UI
   m_TagString: Untagged
@@ -4482,6 +5041,23 @@ MonoBehaviour:
       Culture=neutral, PublicKeyToken=null
   m_overObject: 0
   m_clicked: 0
+--- !u!114 &316492180
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6728610079854387078}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f5c8b03943454548939370ae1f27148, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_root: {fileID: 6728610079854387079}
+  m_linkedCube: {fileID: 619925149}
+  m_linkedPiece: {fileID: 0}
+  m_belongToFace: 4
+  m_faceDirection: 4
 --- !u!1 &6728610079890513202
 GameObject:
   m_ObjectHideFlags: 0
@@ -4548,6 +5124,7 @@ GameObject:
   - component: {fileID: 6728610079922827771}
   - component: {fileID: 6728610079922827653}
   - component: {fileID: 6728610079922827654}
+  - component: {fileID: 1096762716}
   m_Layer: 0
   m_Name: Panel Rubik UI
   m_TagString: Untagged
@@ -4660,6 +5237,23 @@ MonoBehaviour:
       Culture=neutral, PublicKeyToken=null
   m_overObject: 0
   m_clicked: 0
+--- !u!114 &1096762716
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6728610079922827769}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f5c8b03943454548939370ae1f27148, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_root: {fileID: 6728610079922827770}
+  m_linkedCube: {fileID: 619925149}
+  m_linkedPiece: {fileID: 0}
+  m_belongToFace: 0
+  m_faceDirection: 1
 --- !u!1 &6728610079923296500
 GameObject:
   m_ObjectHideFlags: 0
@@ -4673,6 +5267,7 @@ GameObject:
   - component: {fileID: 6728610079923296502}
   - component: {fileID: 6728610079923296496}
   - component: {fileID: 6728610079923296497}
+  - component: {fileID: 1524003510}
   m_Layer: 0
   m_Name: Panel Rubik UI
   m_TagString: Untagged
@@ -4785,6 +5380,23 @@ MonoBehaviour:
       Culture=neutral, PublicKeyToken=null
   m_overObject: 0
   m_clicked: 0
+--- !u!114 &1524003510
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6728610079923296500}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f5c8b03943454548939370ae1f27148, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_root: {fileID: 6728610079923296501}
+  m_linkedCube: {fileID: 619925149}
+  m_linkedPiece: {fileID: 0}
+  m_belongToFace: 2
+  m_faceDirection: 1
 --- !u!1 &6728610079937239147
 GameObject:
   m_ObjectHideFlags: 0
@@ -4798,6 +5410,7 @@ GameObject:
   - component: {fileID: 6728610079937239157}
   - component: {fileID: 6728610079937239159}
   - component: {fileID: 6728610079937239152}
+  - component: {fileID: 1496986542}
   m_Layer: 0
   m_Name: Panel Rubik UI
   m_TagString: Untagged
@@ -4910,6 +5523,23 @@ MonoBehaviour:
       Culture=neutral, PublicKeyToken=null
   m_overObject: 0
   m_clicked: 0
+--- !u!114 &1496986542
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6728610079937239147}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f5c8b03943454548939370ae1f27148, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_root: {fileID: 6728610079937239156}
+  m_linkedCube: {fileID: 619925149}
+  m_linkedPiece: {fileID: 0}
+  m_belongToFace: 0
+  m_faceDirection: 5
 --- !u!1 &6728610079940063195
 GameObject:
   m_ObjectHideFlags: 0
@@ -4923,6 +5553,7 @@ GameObject:
   - component: {fileID: 6728610079940063205}
   - component: {fileID: 6728610079940063207}
   - component: {fileID: 6728610079940063200}
+  - component: {fileID: 4887273}
   m_Layer: 0
   m_Name: Panel Rubik UI
   m_TagString: Untagged
@@ -5035,6 +5666,23 @@ MonoBehaviour:
       Culture=neutral, PublicKeyToken=null
   m_overObject: 0
   m_clicked: 0
+--- !u!114 &4887273
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6728610079940063195}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f5c8b03943454548939370ae1f27148, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_root: {fileID: 6728610079940063204}
+  m_linkedCube: {fileID: 619925149}
+  m_linkedPiece: {fileID: 0}
+  m_belongToFace: 2
+  m_faceDirection: 2
 --- !u!1 &6728610079947778260
 GameObject:
   m_ObjectHideFlags: 0
@@ -5048,6 +5696,7 @@ GameObject:
   - component: {fileID: 6728610079947778262}
   - component: {fileID: 6728610079947778256}
   - component: {fileID: 6728610079947778257}
+  - component: {fileID: 1245170917}
   m_Layer: 0
   m_Name: Panel Rubik UI
   m_TagString: Untagged
@@ -5160,6 +5809,23 @@ MonoBehaviour:
       Culture=neutral, PublicKeyToken=null
   m_overObject: 0
   m_clicked: 0
+--- !u!114 &1245170917
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6728610079947778260}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f5c8b03943454548939370ae1f27148, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_root: {fileID: 6728610079947778261}
+  m_linkedCube: {fileID: 619925149}
+  m_linkedPiece: {fileID: 0}
+  m_belongToFace: 0
+  m_faceDirection: 4
 --- !u!1 &6728610079996676430
 GameObject:
   m_ObjectHideFlags: 0
@@ -5170,6 +5836,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6728610079996676431}
   - component: {fileID: 6728610079996676425}
+  - component: {fileID: 619925149}
   m_Layer: 0
   m_Name: Panel_RubikCube
   m_TagString: Untagged
@@ -5216,6 +5883,75 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6728610079996676430}
   m_CullTransparentMesh: 0
+--- !u!114 &619925149
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6728610079996676430}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30e86d5e4af16e0459390846debcd850, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_root: {fileID: 6728610079996676431}
+  m_pieces: []
+  m_faces:
+  - {fileID: 1841199812}
+  - {fileID: 398441656}
+  - {fileID: 1795556405}
+  - {fileID: 1770068588}
+  - {fileID: 1937260566}
+  - {fileID: 1675006251}
+  - {fileID: 1450046990}
+  - {fileID: 2112977271}
+  - {fileID: 1589598497}
+  - {fileID: 459072336}
+  - {fileID: 1747878574}
+  - {fileID: 1390285838}
+  - {fileID: 277638647}
+  - {fileID: 751530166}
+  - {fileID: 854970320}
+  - {fileID: 1524003510}
+  - {fileID: 4887273}
+  - {fileID: 1183185384}
+  - {fileID: 1185251627}
+  - {fileID: 1965673383}
+  - {fileID: 140629246}
+  - {fileID: 1313620663}
+  - {fileID: 134379423}
+  - {fileID: 870192474}
+  - {fileID: 2101933494}
+  - {fileID: 574448317}
+  - {fileID: 1421160478}
+  - {fileID: 1245170917}
+  - {fileID: 1496986542}
+  - {fileID: 127075142}
+  - {fileID: 316492180}
+  - {fileID: 1690314600}
+  - {fileID: 237158989}
+  - {fileID: 1697340991}
+  - {fileID: 713130408}
+  - {fileID: 368875484}
+  - {fileID: 1096762716}
+  - {fileID: 1875977120}
+  - {fileID: 1076346148}
+  - {fileID: 873523282}
+  - {fileID: 748138545}
+  - {fileID: 14302879}
+  - {fileID: 1685481134}
+  - {fileID: 595074724}
+  - {fileID: 1712153749}
+  - {fileID: 198369457}
+  - {fileID: 1963438036}
+  - {fileID: 995333236}
+  - {fileID: 710425644}
+  - {fileID: 337920949}
+  - {fileID: 1266875545}
+  - {fileID: 1050256507}
+  - {fileID: 1874145293}
+  - {fileID: 951805748}
 --- !u!1 &6728610080009702793
 GameObject:
   m_ObjectHideFlags: 0
@@ -5229,6 +5965,7 @@ GameObject:
   - component: {fileID: 6728610080009702795}
   - component: {fileID: 6728610080009702805}
   - component: {fileID: 6728610080009702806}
+  - component: {fileID: 1875977120}
   m_Layer: 0
   m_Name: Panel Rubik UI
   m_TagString: Untagged
@@ -5341,6 +6078,23 @@ MonoBehaviour:
       Culture=neutral, PublicKeyToken=null
   m_overObject: 0
   m_clicked: 0
+--- !u!114 &1875977120
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6728610080009702793}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f5c8b03943454548939370ae1f27148, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_root: {fileID: 6728610080009702794}
+  m_linkedCube: {fileID: 619925149}
+  m_linkedPiece: {fileID: 0}
+  m_belongToFace: 0
+  m_faceDirection: 2
 --- !u!1 &6728610080088607113
 GameObject:
   m_ObjectHideFlags: 0
@@ -5472,6 +6226,7 @@ GameObject:
   - component: {fileID: 6728610080106307961}
   - component: {fileID: 6728610080106307963}
   - component: {fileID: 6728610080106307844}
+  - component: {fileID: 1050256507}
   m_Layer: 0
   m_Name: Panel Rubik UI
   m_TagString: Untagged
@@ -5584,6 +6339,23 @@ MonoBehaviour:
       Culture=neutral, PublicKeyToken=null
   m_overObject: 0
   m_clicked: 0
+--- !u!114 &1050256507
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6728610080106307967}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f5c8b03943454548939370ae1f27148, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_root: {fileID: 6728610080106307960}
+  m_linkedCube: {fileID: 619925149}
+  m_linkedPiece: {fileID: 0}
+  m_belongToFace: 3
+  m_faceDirection: 1
 --- !u!1 &6728610080128020880
 GameObject:
   m_ObjectHideFlags: 0
@@ -5597,6 +6369,7 @@ GameObject:
   - component: {fileID: 6728610080128020882}
   - component: {fileID: 6728610080128020892}
   - component: {fileID: 6728610080128020893}
+  - component: {fileID: 2101933494}
   m_Layer: 0
   m_Name: Panel Rubik UI
   m_TagString: Untagged
@@ -5709,6 +6482,23 @@ MonoBehaviour:
       Culture=neutral, PublicKeyToken=null
   m_overObject: 0
   m_clicked: 0
+--- !u!114 &2101933494
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6728610080128020880}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f5c8b03943454548939370ae1f27148, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_root: {fileID: 6728610080128020881}
+  m_linkedCube: {fileID: 619925149}
+  m_linkedPiece: {fileID: 0}
+  m_belongToFace: 1
+  m_faceDirection: 7
 --- !u!1 &6728610080156374776
 GameObject:
   m_ObjectHideFlags: 0
@@ -5722,6 +6512,7 @@ GameObject:
   - component: {fileID: 6728610080156374778}
   - component: {fileID: 6728610080156374660}
   - component: {fileID: 6728610080156374661}
+  - component: {fileID: 1937260566}
   m_Layer: 0
   m_Name: Panel Rubik UI
   m_TagString: Untagged
@@ -5834,6 +6625,23 @@ MonoBehaviour:
       Culture=neutral, PublicKeyToken=null
   m_overObject: 0
   m_clicked: 0
+--- !u!114 &1937260566
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6728610080156374776}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f5c8b03943454548939370ae1f27148, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_root: {fileID: 6728610080156374777}
+  m_linkedCube: {fileID: 619925149}
+  m_linkedPiece: {fileID: 0}
+  m_belongToFace: 5
+  m_faceDirection: 5
 --- !u!1 &6728610080166236536
 GameObject:
   m_ObjectHideFlags: 0
@@ -5847,6 +6655,7 @@ GameObject:
   - component: {fileID: 6728610080166236538}
   - component: {fileID: 6728610080166236420}
   - component: {fileID: 6728610080166236421}
+  - component: {fileID: 1589598497}
   m_Layer: 0
   m_Name: Panel Rubik UI
   m_TagString: Untagged
@@ -5959,6 +6768,23 @@ MonoBehaviour:
       Culture=neutral, PublicKeyToken=null
   m_overObject: 0
   m_clicked: 0
+--- !u!114 &1589598497
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6728610080166236536}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f5c8b03943454548939370ae1f27148, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_root: {fileID: 6728610080166236537}
+  m_linkedCube: {fileID: 619925149}
+  m_linkedPiece: {fileID: 0}
+  m_belongToFace: 5
+  m_faceDirection: 9
 --- !u!1 &6728610080196978375
 GameObject:
   m_ObjectHideFlags: 0
@@ -5972,6 +6798,7 @@ GameObject:
   - component: {fileID: 6728610080196978369}
   - component: {fileID: 6728610080196978371}
   - component: {fileID: 6728610080196978380}
+  - component: {fileID: 713130408}
   m_Layer: 0
   m_Name: Panel Rubik UI
   m_TagString: Untagged
@@ -6084,6 +6911,23 @@ MonoBehaviour:
       Culture=neutral, PublicKeyToken=null
   m_overObject: 0
   m_clicked: 0
+--- !u!114 &713130408
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6728610080196978375}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f5c8b03943454548939370ae1f27148, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_root: {fileID: 6728610080196978368}
+  m_linkedCube: {fileID: 619925149}
+  m_linkedPiece: {fileID: 0}
+  m_belongToFace: 1
+  m_faceDirection: 5
 --- !u!1 &6728610080262332615
 GameObject:
   m_ObjectHideFlags: 0
@@ -6097,6 +6941,7 @@ GameObject:
   - component: {fileID: 6728610080262332609}
   - component: {fileID: 6728610080262332611}
   - component: {fileID: 6728610080262332620}
+  - component: {fileID: 1963438036}
   m_Layer: 0
   m_Name: Panel Rubik UI
   m_TagString: Untagged
@@ -6209,6 +7054,23 @@ MonoBehaviour:
       Culture=neutral, PublicKeyToken=null
   m_overObject: 0
   m_clicked: 0
+--- !u!114 &1963438036
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6728610080262332615}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f5c8b03943454548939370ae1f27148, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_root: {fileID: 6728610080262332608}
+  m_linkedCube: {fileID: 619925149}
+  m_linkedPiece: {fileID: 0}
+  m_belongToFace: 3
+  m_faceDirection: 8
 --- !u!1 &6728610080384814572
 GameObject:
   m_ObjectHideFlags: 0
@@ -6222,6 +7084,7 @@ GameObject:
   - component: {fileID: 6728610080384814574}
   - component: {fileID: 6728610080384814568}
   - component: {fileID: 6728610080384814569}
+  - component: {fileID: 854970320}
   m_Layer: 0
   m_Name: Panel Rubik UI
   m_TagString: Untagged
@@ -6334,6 +7197,23 @@ MonoBehaviour:
       Culture=neutral, PublicKeyToken=null
   m_overObject: 0
   m_clicked: 0
+--- !u!114 &854970320
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6728610080384814572}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f5c8b03943454548939370ae1f27148, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_root: {fileID: 6728610080384814573}
+  m_linkedCube: {fileID: 619925149}
+  m_linkedPiece: {fileID: 0}
+  m_belongToFace: 2
+  m_faceDirection: 6
 --- !u!1 &6728610080390556085
 GameObject:
   m_ObjectHideFlags: 0
@@ -6347,6 +7227,7 @@ GameObject:
   - component: {fileID: 6728610080390556087}
   - component: {fileID: 6728610080390556081}
   - component: {fileID: 6728610080390556082}
+  - component: {fileID: 277638647}
   m_Layer: 0
   m_Name: Panel Rubik UI
   m_TagString: Untagged
@@ -6459,6 +7340,23 @@ MonoBehaviour:
       Culture=neutral, PublicKeyToken=null
   m_overObject: 0
   m_clicked: 0
+--- !u!114 &277638647
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6728610080390556085}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f5c8b03943454548939370ae1f27148, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_root: {fileID: 6728610080390556086}
+  m_linkedCube: {fileID: 619925149}
+  m_linkedPiece: {fileID: 0}
+  m_belongToFace: 2
+  m_faceDirection: 4
 --- !u!1 &6728610080440263957
 GameObject:
   m_ObjectHideFlags: 0
@@ -6525,6 +7423,7 @@ GameObject:
   - component: {fileID: 6728610080478305515}
   - component: {fileID: 6728610080478305525}
   - component: {fileID: 6728610080478305526}
+  - component: {fileID: 1390285838}
   m_Layer: 0
   m_Name: Panel Rubik UI
   m_TagString: Untagged
@@ -6637,6 +7536,23 @@ MonoBehaviour:
       Culture=neutral, PublicKeyToken=null
   m_overObject: 0
   m_clicked: 0
+--- !u!114 &1390285838
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6728610080478305513}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f5c8b03943454548939370ae1f27148, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_root: {fileID: 6728610080478305514}
+  m_linkedCube: {fileID: 619925149}
+  m_linkedPiece: {fileID: 0}
+  m_belongToFace: 2
+  m_faceDirection: 9
 --- !u!1 &6728610080510502060
 GameObject:
   m_ObjectHideFlags: 0
@@ -6744,6 +7660,7 @@ GameObject:
   - component: {fileID: 6728610080603794097}
   - component: {fileID: 6728610080603794099}
   - component: {fileID: 6728610080603794108}
+  - component: {fileID: 1675006251}
   m_Layer: 0
   m_Name: Panel Rubik UI
   m_TagString: Untagged
@@ -6856,6 +7773,23 @@ MonoBehaviour:
       Culture=neutral, PublicKeyToken=null
   m_overObject: 0
   m_clicked: 0
+--- !u!114 &1675006251
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6728610080603794103}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f5c8b03943454548939370ae1f27148, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_root: {fileID: 6728610080603794096}
+  m_linkedCube: {fileID: 619925149}
+  m_linkedPiece: {fileID: 0}
+  m_belongToFace: 5
+  m_faceDirection: 4
 --- !u!1 &6728610080628071790
 GameObject:
   m_ObjectHideFlags: 0
@@ -6869,6 +7803,7 @@ GameObject:
   - component: {fileID: 6728610080628071784}
   - component: {fileID: 6728610080628071786}
   - component: {fileID: 6728610080628071787}
+  - component: {fileID: 1266875545}
   m_Layer: 0
   m_Name: Panel Rubik UI
   m_TagString: Untagged
@@ -6981,6 +7916,23 @@ MonoBehaviour:
       Culture=neutral, PublicKeyToken=null
   m_overObject: 0
   m_clicked: 0
+--- !u!114 &1266875545
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6728610080628071790}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f5c8b03943454548939370ae1f27148, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_root: {fileID: 6728610080628071791}
+  m_linkedCube: {fileID: 619925149}
+  m_linkedPiece: {fileID: 0}
+  m_belongToFace: 3
+  m_faceDirection: 6
 --- !u!1 &6728610080659619959
 GameObject:
   m_ObjectHideFlags: 0
@@ -6994,6 +7946,7 @@ GameObject:
   - component: {fileID: 6728610080659619953}
   - component: {fileID: 6728610080659619955}
   - component: {fileID: 6728610080659619964}
+  - component: {fileID: 1313620663}
   m_Layer: 0
   m_Name: Panel Rubik UI
   m_TagString: Untagged
@@ -7106,6 +8059,23 @@ MonoBehaviour:
       Culture=neutral, PublicKeyToken=null
   m_overObject: 0
   m_clicked: 0
+--- !u!114 &1313620663
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6728610080659619959}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f5c8b03943454548939370ae1f27148, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_root: {fileID: 6728610080659619952}
+  m_linkedCube: {fileID: 619925149}
+  m_linkedPiece: {fileID: 0}
+  m_belongToFace: 4
+  m_faceDirection: 9
 --- !u!1 &6728610080674719760
 GameObject:
   m_ObjectHideFlags: 0
@@ -7119,6 +8089,7 @@ GameObject:
   - component: {fileID: 6728610080674719762}
   - component: {fileID: 6728610080674719772}
   - component: {fileID: 6728610080674719773}
+  - component: {fileID: 751530166}
   m_Layer: 0
   m_Name: Panel Rubik UI
   m_TagString: Untagged
@@ -7231,6 +8202,23 @@ MonoBehaviour:
       Culture=neutral, PublicKeyToken=null
   m_overObject: 0
   m_clicked: 0
+--- !u!114 &751530166
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6728610080674719760}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f5c8b03943454548939370ae1f27148, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_root: {fileID: 6728610080674719761}
+  m_linkedCube: {fileID: 619925149}
+  m_linkedPiece: {fileID: 0}
+  m_belongToFace: 2
+  m_faceDirection: 5
 --- !u!1 &6728610080703104654
 GameObject:
   m_ObjectHideFlags: 0
@@ -7244,6 +8232,7 @@ GameObject:
   - component: {fileID: 6728610080703104648}
   - component: {fileID: 6728610080703104650}
   - component: {fileID: 6728610080703104651}
+  - component: {fileID: 459072336}
   m_Layer: 0
   m_Name: Panel Rubik UI
   m_TagString: Untagged
@@ -7356,6 +8345,23 @@ MonoBehaviour:
       Culture=neutral, PublicKeyToken=null
   m_overObject: 0
   m_clicked: 0
+--- !u!114 &459072336
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6728610080703104654}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f5c8b03943454548939370ae1f27148, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_root: {fileID: 6728610080703104655}
+  m_linkedCube: {fileID: 619925149}
+  m_linkedPiece: {fileID: 0}
+  m_belongToFace: 2
+  m_faceDirection: 9
 --- !u!1 &6728610080709754798
 GameObject:
   m_ObjectHideFlags: 0
@@ -7369,6 +8375,7 @@ GameObject:
   - component: {fileID: 6728610080709754792}
   - component: {fileID: 6728610080709754794}
   - component: {fileID: 6728610080709754795}
+  - component: {fileID: 2112977271}
   m_Layer: 0
   m_Name: Panel Rubik UI
   m_TagString: Untagged
@@ -7481,6 +8488,23 @@ MonoBehaviour:
       Culture=neutral, PublicKeyToken=null
   m_overObject: 0
   m_clicked: 0
+--- !u!114 &2112977271
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6728610080709754798}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f5c8b03943454548939370ae1f27148, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_root: {fileID: 6728610080709754799}
+  m_linkedCube: {fileID: 619925149}
+  m_linkedPiece: {fileID: 0}
+  m_belongToFace: 5
+  m_faceDirection: 8
 --- !u!1 &6728610080745588524
 GameObject:
   m_ObjectHideFlags: 0
@@ -7494,6 +8518,7 @@ GameObject:
   - component: {fileID: 6728610080745588526}
   - component: {fileID: 6728610080745588520}
   - component: {fileID: 6728610080745588521}
+  - component: {fileID: 574448317}
   m_Layer: 0
   m_Name: Panel Rubik UI
   m_TagString: Untagged
@@ -7606,3 +8631,20 @@ MonoBehaviour:
       Culture=neutral, PublicKeyToken=null
   m_overObject: 0
   m_clicked: 0
+--- !u!114 &574448317
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6728610080745588524}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f5c8b03943454548939370ae1f27148, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_root: {fileID: 6728610080745588525}
+  m_linkedCube: {fileID: 619925149}
+  m_linkedPiece: {fileID: 0}
+  m_belongToFace: 1
+  m_faceDirection: 8
