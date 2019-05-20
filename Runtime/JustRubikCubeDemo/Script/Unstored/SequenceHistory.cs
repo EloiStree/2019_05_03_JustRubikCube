@@ -131,6 +131,8 @@ public class RotationSequence {
         }
         return duplica;
     }
+
+   
 }
 [System.Serializable]
 public class TimedRotationSequence : RotationSequence

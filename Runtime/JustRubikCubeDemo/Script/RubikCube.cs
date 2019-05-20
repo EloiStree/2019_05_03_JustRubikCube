@@ -47,6 +47,17 @@ public class RubikCube : MonoBehaviour {
     public static OnRubikCubeUsed onAnyRubikCubeUsed = new OnRubikCubeUsed();
 
 
+
+    public static RotationTypeShort[] InverseOf(RotationTypeShort[] rotations)
+    {
+        RotationTypeShort[] result = new RotationTypeShort[rotations.Length];
+        for (int i = 0; i < rotations.Length; i++)
+        {
+            result[rotations.Length-1-i] = RubikCube.GetInverseOf(rotations[i]);
+        }
+        return result;
+    }
+
     internal static RotationTypeShort ConvertAsShort(RotationTypeLong value)
     {
         switch (value)

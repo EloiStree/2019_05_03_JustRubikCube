@@ -31,10 +31,26 @@ public class RubikCubeInstance : MonoBehaviour
         return m_rubikCube.GetCubeState() ;
     }
 
+    public void Rotate(string sequence, Transform pointOfView)
+    {
+        m_rubikCube.AddRotationSequence(sequence, pointOfView);
+    }
+
     public void Shuffle(string sequence)
     {
         Shuffle(new RotationSequence(sequence));
     }
+
+    public void Rotate(ArrowDirection direction, TagRubikCubeFace face, Transform pointOfView)
+    {
+        m_rubikCube.RotateFaceFrom(direction, face, pointOfView);
+    }
+    public void Rotate(RotationTypeShort rotationType, TagRubikCubeFace face, Transform pointOfView)
+    {
+        throw new ToDo.Later(ToDo.PiorityExplicit.Major);
+    }
+
+ 
     public void Shuffle(IEnumerable<RotationTypeShort> sequence)
     {
         Shuffle(new RotationSequence(sequence));

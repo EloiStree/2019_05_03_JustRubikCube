@@ -16,8 +16,7 @@ public class TagRubikCubePivot : TagRubikAbstract
 
     private void RefreshLink()
     {
-
-
+    
         if (m_root == null)
             m_root = this.transform;
         if (m_linkedCube == null)

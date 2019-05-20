@@ -35,7 +35,7 @@ public class LinkSequenceToRubixCube : MonoBehaviour
     public void Apply() {
         if (m_rubik != null)
         {
-            if( m_sequence.m_sequenceType== StoredSequence.SequenceType.DefaultCamera)
+            if( m_sequence.m_sequenceType== RotationPointOfViewType.DefaultCamera)
                 m_rubik.AddRotationSequenceWithDefaultCamera(m_sequence.m_sequence);
             else m_rubik.AddLocalRotationSequence(m_sequence.m_sequence);
 
