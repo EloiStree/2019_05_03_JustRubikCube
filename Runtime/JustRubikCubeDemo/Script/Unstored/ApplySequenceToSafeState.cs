@@ -14,6 +14,11 @@ public class ApplySequenceToSafeState : MonoBehaviour
             Apply();        
     }
 
+    public void Apply(string sequence) {
+        m_sequence.SetSequence(sequence);
+        Apply();
+    }
+
     public void Apply()
     {
       CubeDirectionalState state = RubikCube.CreateCubeStateFrom(new RotationSequence(m_sequence.m_sequence));

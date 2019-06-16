@@ -10,7 +10,7 @@ public class TagRubikCubePiece : TagRubikAbstract
     
     [SerializeField] RubikPieceByPosition3D m_position;
     public RubikPieceByPosition3D GetCubePosition3D() { return m_position; }
-    public RubikCubePivotable[] GetPivots() { return RubikCube.GetPieceOf(m_position).GetPivots(); }
+    public RubikCubePivotable[] GetPivots() { return RubikCube.GetPieceInfoOf(m_position).GetPivots(); }
 
     public TagRubikCube m_linkedCube;
     public TagRubikCubeFace[] m_linkedFaces;
@@ -44,7 +44,7 @@ public class TagRubikCubePiece : TagRubikAbstract
         RubikPiecePositionByPivot pivot;
         if (RubikCube.GetPositionInfoInString(gameObject.name, out pivot))
         {
-            m_position = RubikCube.GetPieceOf(pivot).GetPosition3D();
+            m_position = RubikCube.GetPieceInfoOf(pivot).GetPosition3D();
         }
     }
 

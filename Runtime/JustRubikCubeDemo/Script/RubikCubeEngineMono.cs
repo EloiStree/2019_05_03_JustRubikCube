@@ -31,12 +31,32 @@ public class RubikCubeEngineMono : MonoBehaviour {
     public TagRubikCube m_fixedCube;
     public TagRubikCube m_movingCube;
     public RubikCubeRotateMotor m_rotationMotor;
-    
-    public Dictionary<RubikCubePivotable, List<TagRubikCubePiece>> m_faceLinkedToSpots = new Dictionary<RubikCubePivotable, List<TagRubikCubePiece>>();
+
+    public CubeDirectionalState m_cubeFaceDirectionState = new CubeDirectionalState();
+    public UnityEvent m_onCubeResolved;
+    public List<RotationTypeShort> m_rotationHistory = new List<RotationTypeShort>();
+
+    internal RotationSequence GetSequence()
+    {
+        return new RotationSequence(m_rotationHistory);
+    }
+
+    public Dictionary<RubikCubePivotable, List<TagRubikCubePiece>> m_faceLinkedToPivots = new Dictionary<RubikCubePivotable, List<TagRubikCubePiece>>();
+    internal void SetWithSequence(RotationSequence sequence)
+    {
+        SetWithSequence(sequence.GetSequenceAsString());
+    }
+        internal void SetWithSequence(string sequence)
+    {
+
+       ResetInitialState();
+       AddLocalRotationSequence(sequence);
+    }
+
     [Header("Events")]
     public RotationEvent m_onStartRotating = new RotationEvent();
-    public RotationEvent m_onRotated = new RotationEvent();
-    public RubikCubeStateChangeEvent m_onSaveStateChanged = new RubikCubeStateChangeEvent();
+    public RotationEvent m_onEndRotating = new RotationEvent();
+    public CubeStateChangeEvent m_onSaveStateChanged = new CubeStateChangeEvent();
 
     #endregion
 
@@ -46,8 +66,17 @@ public class RubikCubeEngineMono : MonoBehaviour {
     #endregion
 
     #region UNITY MONO FUNCTION
+    void Awake()
+    {
+        SaveLocalPositionOfEahPiece();
+        SaveInitialState();
+        NotifyCubeStateChange();
+        m_rotationMotor.m_onStartRotating.AddListener(OnMotoStartRotating);
+        m_rotationMotor.m_onRotated.AddListener(OnMotorEndRotating);
+    }
 
-    void Awake() {
+    private void SaveLocalPositionOfEahPiece()
+    {
         foreach (TagRubikCubePiece spot in m_fixedCube.m_pieces)
         {
             foreach (RubikCubePivotable face in spot.GetPivots())
@@ -55,22 +84,25 @@ public class RubikCubeEngineMono : MonoBehaviour {
                 AddSpotToToRegister(face, spot);
             }
         }
-        SaveInitialState();
-        SaveCubeState();
-        m_rotationMotor.m_onStartRotating.AddListener(OnCubeRotating);
-        m_rotationMotor.m_onRotated.AddListener(OnCubeRotated);
     }
     #endregion
 
 
 
 
-    private void OnCubeRotating(LocalRotationRequest arg0)
+    private void OnMotoStartRotating(LocalRotationRequest arg0)
     {
         m_onStartRotating.Invoke(arg0);
     }
 
-    private void OnCubeRotated(LocalRotationRequest rotationRequested)
+    private void OnMotorEndRotating(LocalRotationRequest rotationRequested)
+    {
+        RefreshCubeStateInformationFromTransformPosition();
+        NotifyCubeStateChange();
+        m_onEndRotating.Invoke(rotationRequested);
+    }
+
+    private void RefreshCubeStateInformationFromTransformPosition()
     {
         RubikCubeFace[] allFaces = RubikCube.GetArrayOf<RubikCubeFace>();
         RubikCubeFaceDirection[] allDirections = RubikCube.GetArrayOf<RubikCubeFaceDirection>();
@@ -92,9 +124,6 @@ public class RubikCubeEngineMono : MonoBehaviour {
                     currentDirection);
             }
         }
-
-        SaveCubeState();
-        m_onRotated.Invoke(rotationRequested);
     }
 
     private TagRubikCubeFace GetCurrentFaceAt(RubikCubeFace face, RubikCubeFaceDirection direction, out RubikCubeFace currentFace, out RubikCubeFaceDirection currentDirection)
@@ -119,7 +148,7 @@ public class RubikCubeEngineMono : MonoBehaviour {
         throw new Exception("A face is missing");
     }
 
-    private void SaveCubeState()
+    private void NotifyCubeStateChange()
     {
         m_onSaveStateChanged.Invoke(m_cubeFaceDirectionState);
     }
@@ -134,16 +163,18 @@ public class RubikCubeEngineMono : MonoBehaviour {
         }
     }
 
+
     private List<TagRubikCubePiece> GetSpots(RubikCubePivotable face)
     {
-        return m_faceLinkedToSpots[face];
+        ToDo.Later(ToDo.PiorityExplicit.Minor, "Could be replace using Index system instead with TagCollectoin");
+        return m_faceLinkedToPivots[face];
     }
 
     private void AddSpotToToRegister(RubikCubePivotable face, TagRubikCubePiece spot)
     {
-        if (!m_faceLinkedToSpots.ContainsKey(face))
-            m_faceLinkedToSpots.Add(face, new List<TagRubikCubePiece>());
-        m_faceLinkedToSpots[face].Add(spot);
+        if (!m_faceLinkedToPivots.ContainsKey(face))
+            m_faceLinkedToPivots.Add(face, new List<TagRubikCubePiece>());
+        m_faceLinkedToPivots[face].Add(spot);
     }
     
     public Transform GetPivotTransform(RubikCubePivotable faceToTurn)
@@ -230,16 +261,19 @@ public class RubikCubeEngineMono : MonoBehaviour {
             catch (Exception) { }
         }
     }
-    public void AddLocalRotate(string rotation)
-    {
-        RotationTypeShort rotationType;
-        if (RubikCube.ConvertStringToShortAcronym(rotation, out rotationType))
-            AddLocalRotate(rotationType);
-    }
+    //public void AddLocalRotateFromRotation(string rotation)
+    //{
+    //    //RotationTypeShort rotationType;
+    //    //if (RubikCube.ConvertStringToShortAcronym(rotation, out rotationType))
+    //    //    AddLocalRotate(rotationType);
+    //}
 
 
     public void AddLocalRotate(RubikCubePivotable faceToTurn, bool clockWise)
     {
+        ToDo.Here();
+        RotationTypeShort rotationType = RubikCube.ConvertRotationToAcronymShort(faceToTurn, clockWise);
+        m_rotationHistory.Add(rotationType);
         onAnyRubikCubeUsed.Invoke(this);
         m_rotationMotor.LocalRotate(faceToTurn, clockWise);
     }
@@ -252,15 +286,7 @@ public class RubikCubeEngineMono : MonoBehaviour {
 
     #region ROTATION LISTENER
 
-    [System.Serializable]
-    public class RotationEvent : UnityEvent<LocalRotationRequest>
-    {
-
-    }
-    [System.Serializable]
-    public class RubikCubeStateChangeEvent : UnityEvent<CubeDirectionalState>
-    {
-    }
+    
 
 
     [System.Serializable]
@@ -289,7 +315,7 @@ public class RubikCubeEngineMono : MonoBehaviour {
     }
     public void NotifyEndRotation(LocalRotationRequest req)
     {
-        m_onRotated.Invoke(req);
+        m_onEndRotating.Invoke(req);
     }
     public void NotifyStateChange(CubeDirectionalState newState)
     {
@@ -303,8 +329,6 @@ public class RubikCubeEngineMono : MonoBehaviour {
 
     #region Solution LISTENER
 
-    public CubeDirectionalState m_cubeFaceDirectionState = new CubeDirectionalState();
-    public UnityEvent m_onCubeResolved;
 
 
     public bool IsCubeResolved()
@@ -352,6 +376,7 @@ public class RubikCubeEngineMono : MonoBehaviour {
             state.m_linkedPiece.transform.localPosition = state.m_initialPosition;
             state.m_linkedPiece.transform.localRotation = state.m_initialRotation;
         }
+        m_rotationHistory.Clear();
 
     }
 
@@ -418,18 +443,7 @@ public class RubikCubeEngineMono : MonoBehaviour {
     #endregion
 
     #region ROTATE THE CUBE FROM POINT OF 
-    public void RotateFaceFrom(string acronym)
-    {
-        RotateFaceFrom(acronym, GetDefaultOrientation());
-    }
-    public void RotateFaceFrom(string acronym, Transform orientation)
-    {
-        if (orientation == null)
-            orientation = GetDefaultOrientation();
-        RotationTypeShort rotationType;
-        if (RubikCube.ConvertStringToShortAcronym(acronym, out rotationType))
-            RotateFaceFrom(rotationType, orientation);
-    }
+  
 
     public void RotateFaceFrom(RotationTypeShort rotation, Transform orientation)
     {
@@ -892,7 +906,5 @@ public class RubikCubeEngineMono : MonoBehaviour {
 
 
 #region RUBIK CUBE EVENT
-[System.Serializable]
-public class OnRubikCubeUsed : UnityEvent<RubikCubeEngineMono> { }
 #endregion
 

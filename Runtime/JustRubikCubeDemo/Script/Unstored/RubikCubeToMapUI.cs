@@ -15,13 +15,13 @@ public class RubikCubeToMapUI : MonoBehaviour ,IRubikCubeRequired
         if (m_rubikCube)
         {
 
-            m_rubikCube.m_onRotated.RemoveListener(RefreshUI);
+            m_rubikCube.m_onEndRotating.RemoveListener(RefreshUI);
             m_rubikCube = null;
         }
 
         if (m_rubikCube == null) {
             m_rubikCube=  cube.GetRubikCubeUnityRepresentation();
-            m_rubikCube.m_onRotated.AddListener(RefreshUI);
+            m_rubikCube.m_onEndRotating.AddListener(RefreshUI);
         }
     }
     

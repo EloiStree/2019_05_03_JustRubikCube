@@ -413,7 +413,7 @@ public class RubikCube
             default:
                 break;
         }
-        return GetPieceOf(x, y, z).GetPosition3D();
+        return GetPieceInfoOf(x, y, z).GetPosition3D();
     }
     #region NOT IMPLEMENTED YET
     public static RubikPiecePositionByPivot GetPiecePositionBasedOn(RubikCubeFace face, RubikCubeFaceDirection direction)
@@ -435,29 +435,33 @@ public class RubikCube
 
 
     #region QUICK ACCESS TO STATIC DATA ON THE RUBIK CUBE
-    public static RubikCubePieceIndex GetPieceOf(int x, int y, int z)
+    public static RubikCubePieceIndex GetPieceInfoOf(int x, int y, int z)
     {
         return RubikCubePieceIndex.GetIndex(x, y, z);
     }
-    public static RubikCubePieceIndex GetPieceOf(RubikPieceByPosition3D position3D)
+    public static RubikCubePieceIndex GetPieceInfoOf(RubikPieceByPosition3D position3D)
     {
         return RubikCubePieceIndex.GetIndex(position3D);
     }
 
-    public static RubikCubePieceIndex GetPieceOf(RubikPiecePositionByPivot pivot)
+    public static RubikCubePieceIndex GetPieceInfoOf(RubikPiecePositionByPivot pivot)
     {
-
         return RubikCubePieceIndex.GetPieceIndex(pivot);
     }
 
 
-    public static RubikCubePieceIndex GetPieceOf(RubikCubeFace face, RubikCubeFaceDirection direction)
+    public static RubikCubePieceIndex GetPieceInfoOf(RubikCubeFace face, RubikCubeFaceDirection direction)
     {
         throw new NotImplementedException();
     }
-    private static void GetIntPosition(RubikPieceByPosition3D position, out short x, out short y, out short z)
+    private static void GetIntPositionOf(RubikPieceByPosition3D position, out short x, out short y, out short z)
     {
-        throw new NotImplementedException();
+        RubikCubePieceIndex index = RubikCubePieceIndex.GetIndex(position);
+        x = index.m_x;
+        y = index.m_y;
+        z = index.m_z;
+
+
     }
     #endregion
 
@@ -470,15 +474,15 @@ public class RubikCube
         private static RubikPieceByPosition3D[,,] m_positionMatrice = new RubikPieceByPosition3D[3, 3, 3];
         public int m_index;
         public RubikPieceByPosition3D m_positionByVector3;
-        public int m_x;
-        public int m_y;
-        public int m_z;
+        public short m_x;
+        public short m_y;
+        public short m_z;
         public RubikPiecePositionByPivot m_positionByPivots;
         private RubikCubePivotable m_vertical;
         private RubikCubePivotable m_horizontal;
         private RubikCubePivotable m_standing;
 
-        public RubikCubePieceIndex(RubikPieceByPosition3D position3D, int x, int y, int z, RubikPiecePositionByPivot positionPivot, RubikCubePivotable vertical, RubikCubePivotable horizontal, RubikCubePivotable standing)
+        public RubikCubePieceIndex(RubikPieceByPosition3D position3D, short x, short y, short z, RubikPiecePositionByPivot positionPivot, RubikCubePivotable vertical, RubikCubePivotable horizontal, RubikCubePivotable standing)
         {
             this.m_index = (int)position3D;
             this.m_positionByVector3 = position3D;

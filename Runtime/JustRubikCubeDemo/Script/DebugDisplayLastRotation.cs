@@ -12,7 +12,7 @@ public class DebugDisplayLastRotation : MonoBehaviour {
 	void Awake ()
     {
         m_rubikCube.m_onStartRotating.AddListener(StarRotation);
-        m_rubikCube.m_onRotated.AddListener(EndRotation);
+        m_rubikCube.m_onEndRotating.AddListener(EndRotation);
 
     }
 

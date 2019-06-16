@@ -14,7 +14,7 @@ public class AddRotationHistory : MonoBehaviour {
 
     public void Awake()
     {
-        m_rubikCube.m_onRotated.AddListener(AddLocalRotation);
+        m_rubikCube.m_onEndRotating.AddListener(AddLocalRotation);
     }
 
     public void AddLocalRotation(RubikCubeEngineMono.LocalRotationRequest request) {

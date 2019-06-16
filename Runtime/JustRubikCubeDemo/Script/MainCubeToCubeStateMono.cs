@@ -26,13 +26,13 @@ public class MainCubeToCubeStateMono : MonoBehaviour, IRubikCubeRequired
     {
         if (m_rubikCube) {
 
-            m_rubikCube.GetRubikCubeUnityRepresentation().m_onRotated.RemoveListener(RefreshUI);
+            m_rubikCube.GetRubikCubeUnityRepresentation().m_onEndRotating.RemoveListener(RefreshUI);
             m_rubikCube = null;
         }
         if (m_rubikCube == null)
         {
             m_rubikCube = newCube;
-            m_rubikCube.GetRubikCubeUnityRepresentation().m_onRotated.AddListener(RefreshUI);
+            m_rubikCube.GetRubikCubeUnityRepresentation().m_onEndRotating.AddListener(RefreshUI);
         }
 
     }

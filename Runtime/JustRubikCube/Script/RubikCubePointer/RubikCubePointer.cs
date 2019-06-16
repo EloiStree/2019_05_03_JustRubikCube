@@ -44,7 +44,7 @@ public class RubikCubePointer : MonoBehaviour
 
         public NearestRaycast() {
             ToRefactor.Later(Piority.B, ToRefactor.PotentialExplicit.ToolboxPackage);
-            throw new ToDo.Later(ToDo.PiorityExplicit.Minor);
+            throw new ToDo.LaterException(ToDo.PiorityExplicit.Minor);
 
         }
     }

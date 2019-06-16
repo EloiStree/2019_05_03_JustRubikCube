@@ -8,22 +8,18 @@ public class TryToApplySequence : MonoBehaviour
     public RubikCubeInstance m_rubik;
     public StoredSequence m_storedSequence;
     public Transform m_from;
-
+    
 
     public void Update()
     {
+        m_rubik = RubikCubeInstance.m_mainCube;
+        if (m_rubik == null) return;
+        m_storedSequence = m_focus.GetSelectedSequence();
+    }
 
-            m_rubik = RubikCubeInstance.m_mainCube;
-            if (m_rubik == null) return;
-
-            m_storedSequence = m_focus.GetSelectedSequence();
-            if (m_storedSequence == null) return;
-
-        bool leftClick = Input.GetMouseButtonDown(0) ;
-        bool rightClick= Input.GetMouseButtonDown(1);
-
-        if (leftClick || rightClick )
-        {
+    public void ApplyRotations(bool inverse )
+    {
+        if (m_storedSequence == null) return;
             if (m_storedSequence.m_sequenceType == RotationPointOfViewType.DefaultCamera)
                 m_from = Camera.main.transform;
             else if (m_storedSequence.m_sequenceType == RotationPointOfViewType.PointOfView)
@@ -32,14 +28,15 @@ public class TryToApplySequence : MonoBehaviour
 
             if (m_rubik)
             {
-
-
                 RotationSequence sequence = new RotationSequence(m_storedSequence.m_sequence);
-                  if(rightClick)
-                    sequence = new RotationSequence (RubikCube.InverseOf(sequence.GetSequenceAsShort()));
-              
-                    m_rubik.Rotate(sequence.GetSequenceAsString(), m_from);
+                if (inverse)
+                    sequence = new RotationSequence(RubikCube.InverseOf(sequence.GetSequenceAsShort()));
+
+                m_rubik.Rotate(sequence.GetSequenceAsString(), m_from);
             }
-        }
+    }
+
+    public void ApplyRotations() {
+        ApplyRotations(false);
     }
 }

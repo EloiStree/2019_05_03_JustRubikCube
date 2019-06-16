@@ -10,8 +10,6 @@ public class RubikCubeSafeStateMono : MonoBehaviour
     public bool m_isCubeSolved;
     [Header("Event")]
     public  RubikCubeStateChangeEvent onCubeChange;
-
-    
     public  void RefreshCubeState(CubeDirectionalState cubeDirectionalState)
     {
         m_state.SetCubeDirectionalState(cubeDirectionalState);
@@ -19,61 +17,28 @@ public class RubikCubeSafeStateMono : MonoBehaviour
     }
     
 }
-[System.Serializable]
-public class RubikCubeStateChangeEvent : UnityEvent <RubikCubeSaveState> {
 
-}
 
 [System.Serializable]
 public class RubikCubeSaveState
 {
-
     public void SetSequences( string global)
     {
-        SetSequences(null, global);
-    }
-        public void SetSequences(string shuffle, string global)
-    {
-        if (shuffle == null)
-            shuffle = "";
         if (global == null)
             global = "";
-        RotationTypeShort[] shuffleSequence = RubikCube.ConvertStringToShorts(shuffle);
         RotationTypeShort[] globalSequence = RubikCube.ConvertStringToShorts(global);
-        SetSequences(shuffleSequence, globalSequence);
+        SetSequences( globalSequence);
     }
 
-    public void SetSequences(RotationTypeShort[] global) {
-        SetSequences(null, global);
-    }
-    public void SetSequences(RotationTypeShort[] shuffle, RotationTypeShort[] global)
+    public void SetSequences(RotationTypeShort[] global)
     {
-        if (shuffle == null)
-            shuffle = new RotationTypeShort[0];
         if (global == null)
             global = new RotationTypeShort[0];
-
-        m_shuffleSequence = new RotationSequence( shuffle);
         m_globalSequence = new RotationSequence(global);
-        m_playerSequence = new RotationSequence();
-        for (int i = 0; i < global.Length; i++)
-        {
-            if (i < shuffle.Length && shuffle[i] != global[i])
-            {
-                throw new Exception("Global should start with shuffle parameters");
-            }
-            else m_playerSequence.Add(global[i]);
-        }
+       
     }
-
-    public bool HasBeenShuffled()
-    {
-       return m_shuffleSequence != null && m_shuffleSequence.Lenght > 0;
-    }
-
-    public RotationSequence m_shuffleSequence;
+    
     public RotationSequence m_globalSequence;
-    public RotationSequence m_playerSequence;
     public CubeDirectionalState m_givenCubeState;
 
     public Color GetUnityColorOf(RubikCubeFace face, RubikCubeFaceDirection direction)

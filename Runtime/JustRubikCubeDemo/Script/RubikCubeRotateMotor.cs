@@ -11,8 +11,8 @@ public abstract class RubikCubeRotateMotor : MonoBehaviour {
     public abstract void LocalRotate(RotationTypeShort faceToRotate);
 
     [Header("Events")]
-    public RubikCubeEngineMono.RotationEvent m_onStartRotating;
-    public RubikCubeEngineMono.RotationEvent m_onRotated;
+    public RotationEvent m_onStartRotating;
+    public RotationEvent m_onRotated;
     public UnityEvent m_onStartMotorRotation;
     public UnityEvent m_onStopMotorRotation;
 
