@@ -252,11 +252,11 @@ public class RubikCubeEngineMono : MonoBehaviour {
         {
             try
             {
-
-                if (orientation == null)
-                    AddLocalRotate(segment);
-                else
-                    RotateFaceFrom(segment, orientation);
+                throw  new System.NotImplementedException("Bug because of rush");
+                //if (orientation == null)
+                //    AddLocalRotate(segment);
+                //else
+                //    RotateFaceFrom(segment, orientation);
             }
             catch (Exception) { }
         }

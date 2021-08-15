@@ -1,10 +1,12 @@
 {
-    "name": "be.eloiexperiments.justrubikcube",
+    "name": "be.eloistree.justrubikcube",
     "displayName": "Just a Rubik cube",
     "version": "0.0.1",
     "unity": "2018.1",
     "description": "A rubik cube for your game.\n\nFeel free to contact me in need of help",
-    "keywords": ["Rubik", "Cube"],
-    "category": "Script",
-    "dependencies": {}
-}  
+    "keywords": [
+        "Rubik",
+        "Cube"
+    ],
+    "category": "Script"
+}
