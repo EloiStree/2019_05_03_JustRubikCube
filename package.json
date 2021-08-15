@@ -4,9 +4,16 @@
     "version": "0.0.1",
     "unity": "2018.1",
     "description": "A rubik cube for your game.\n\nFeel free to contact me in need of help",
+<<<<<<< HEAD
     "keywords": [
         "Rubik",
         "Cube"
     ],
     "category": "Script"
 }
+=======
+    "keywords": ["Rubik", "Cube"],
+    "category": "Script",
+    "dependencies": {"be.eloistree.license":"0.0.1"}
+}  
+>>>>>>> 4675d1e448d40cf6c2d5585465b4d9a63c78d54d
