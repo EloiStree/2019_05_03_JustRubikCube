@@ -1,7 +1,7 @@
 {                                                                                
     "name": "be.eloistree.justrubikcube",
     "displayName": "Just a Rubik cube",
-    "version": "0.0.1",
+    "version": "2025.8.18",
     "unity": "2018.1",
     "description": "A rubik cube for your game.\n\nFeel free to contact me in need of help",                      
   "keywords": ["Script","Tool","3D", "Gizmo"],       
