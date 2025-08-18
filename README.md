@@ -9,3 +9,9 @@ D Di Down
 E Ei Equator Horizontal
 M Mi Middle Vertical
 S Si Side Middle
+
+
+You need InputSystem of unity and Tick to make it easy to use:  
+```
+"be.elab.tickcollection": "https://github.com/EloiStree/OpenUPM_TickCollection.git", 
+```
