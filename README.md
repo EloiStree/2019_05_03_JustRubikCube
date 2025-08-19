@@ -21,3 +21,6 @@ Project of the HACK AI 2025: https://github.com/Dionysos199/MetaPCARoboflow
 Hackathon
 Link:
 https://docs.google.com/presentation/d/1L8aw6kKOXSD4R1XeixtD6Ns_GsQ4l6825oxAbVFrmdE/edit?slide=id.g3646a16b4b5_0_327#slide=id.g3646a16b4b5_0_327
+
+
+GDrive:https://drive.google.com/drive/folders/1Zb2ofrV5sO4CW4PPcAy9NB7xQ0Av6YPX  
