@@ -1,6 +1,9 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+
+public enum RubikOfficialColor {  Red, Green, Blue, White, Yellow, Orange}
+
 public class TagRubikCubeFace : TagRubikAbstract
 {
     

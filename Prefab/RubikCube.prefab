@@ -64,7 +64,7 @@ MonoBehaviour:
   m_toRotate: {fileID: 910225187}
   m_mousePositionAtStart: {x: 0, y: 0, z: 0}
   m_isFocused: 0
-  m_cursorOver: 0
+  m_cursorOver: 1
   m_givenMousePixelPosition: {x: 0, y: 0}
   m_givenIsMousePressingRight: 0
   m_previousMousePressingState: 0
@@ -168,6 +168,7 @@ Transform:
   - {fileID: 5218892586911059743}
   - {fileID: 2390718653545323300}
   - {fileID: 7701576383531978594}
+  - {fileID: 8620780442101850751}
   m_Father: {fileID: 3219740103768664363}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3219740102669557113
@@ -591,7 +592,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_affectedRubikCube: {fileID: 3219740104777719390}
-  m_rotationSpeed: 180
+  m_rotationSpeed: 0
   m_leftAngleToRotate: 0
   m_isRotating: 0
   m_inQueue: 0
@@ -3327,9 +3328,11 @@ GameObject:
   - component: {fileID: 3219740104777719390}
   - component: {fileID: 1749838087633975513}
   - component: {fileID: 5283441069691254539}
+  - component: {fileID: 9104557288815904484}
+  - component: {fileID: 7380428978471126469}
   m_Layer: 0
   m_Name: RubikCube
-  m_TagString: MainRubikCube
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3344,7 +3347,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0.0024315047, y: 0.87894285, z: 0.0013193475, w: 0.47691908}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.7040945, y: 1.7040908, z: 1.704095}
+  m_LocalScale: {x: 1.7041028, y: 1.7040905, z: 1.7041032}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3219740103203280571}
@@ -4021,6 +4024,33 @@ MonoBehaviour:
   onCubeChange:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &9104557288815904484
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3219740104777719379}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c591f4e651cc88548b41d7b685377121, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_cube: {fileID: 3219740104777719390}
+--- !u!114 &7380428978471126469
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3219740104777719379}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb06b7b5d6114fb409d065491f574312, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_sequence: 
+  m_sequenceType: 0
 --- !u!1 &3219740104780065356
 GameObject:
   m_ObjectHideFlags: 0
@@ -4381,6 +4411,68 @@ MonoBehaviour:
           m_StringArgument: L L D Ui
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!1 &5672580231419250047
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8620780442101850751}
+  - component: {fileID: 2616362461738731520}
+  m_Layer: 0
+  m_Name: Set With Default face
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8620780442101850751
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5672580231419250047}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 958871845437527737}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2616362461738731520
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5672580231419250047}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4adc815ed013819489c044ffa4a693ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_onTick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5667061429498009934}
+        m_TargetAssemblyTypeName: TagRubikCubeFaceMatDrawer, be.eloistree.justrubikcube
+        m_MethodName: SetWithDefaultColor
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  m_fromStart: 1
+  m_fromEnable: 0
+  m_delayTimeInSeconds: 1
 --- !u!1 &6075370124414905042
 GameObject:
   m_ObjectHideFlags: 0
