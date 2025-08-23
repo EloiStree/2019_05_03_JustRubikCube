@@ -1872,13 +1872,49 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 266372065843831310, guid: a1b5875cb1bd2584da29959d2194d49e, type: 3}
-      propertyPath: m_IsActive
-      value: 0
+    - target: {fileID: 217746499088904873, guid: a1b5875cb1bd2584da29959d2194d49e, type: 3}
+      propertyPath: m_passthrough
+      value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 1830976054886813565, guid: a1b5875cb1bd2584da29959d2194d49e, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.182
+    - target: {fileID: 217746499088904873, guid: a1b5875cb1bd2584da29959d2194d49e, type: 3}
+      propertyPath: m_clickAction.m_Name
+      value: Click
+      objectReference: {fileID: 0}
+    - target: {fileID: 217746499088904873, guid: a1b5875cb1bd2584da29959d2194d49e, type: 3}
+      propertyPath: m_clickPosition.m_Name
+      value: Click Position
+      objectReference: {fileID: 0}
+    - target: {fileID: 217746499088904873, guid: a1b5875cb1bd2584da29959d2194d49e, type: 3}
+      propertyPath: m_clickAction.m_SingletonActionBindings.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 217746499088904873, guid: a1b5875cb1bd2584da29959d2194d49e, type: 3}
+      propertyPath: m_clickPosition.m_SingletonActionBindings.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 217746499088904873, guid: a1b5875cb1bd2584da29959d2194d49e, type: 3}
+      propertyPath: m_clickAction.m_SingletonActionBindings.Array.data[0].m_Id
+      value: 5eddbf79-a410-4416-9536-7ff8facc94a8
+      objectReference: {fileID: 0}
+    - target: {fileID: 217746499088904873, guid: a1b5875cb1bd2584da29959d2194d49e, type: 3}
+      propertyPath: m_clickAction.m_SingletonActionBindings.Array.data[0].m_Path
+      value: <Mouse>/leftButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 217746499088904873, guid: a1b5875cb1bd2584da29959d2194d49e, type: 3}
+      propertyPath: m_clickPosition.m_SingletonActionBindings.Array.data[0].m_Id
+      value: f9041c80-6ca3-4dee-a4c5-5ed91f55abc4
+      objectReference: {fileID: 0}
+    - target: {fileID: 217746499088904873, guid: a1b5875cb1bd2584da29959d2194d49e, type: 3}
+      propertyPath: m_clickAction.m_SingletonActionBindings.Array.data[0].m_Action
+      value: Click
+      objectReference: {fileID: 0}
+    - target: {fileID: 217746499088904873, guid: a1b5875cb1bd2584da29959d2194d49e, type: 3}
+      propertyPath: m_clickPosition.m_SingletonActionBindings.Array.data[0].m_Path
+      value: <Mouse>/position
+      objectReference: {fileID: 0}
+    - target: {fileID: 217746499088904873, guid: a1b5875cb1bd2584da29959d2194d49e, type: 3}
+      propertyPath: m_clickPosition.m_SingletonActionBindings.Array.data[0].m_Action
+      value: Click Position
       objectReference: {fileID: 0}
     - target: {fileID: 2218463729257444016, guid: a1b5875cb1bd2584da29959d2194d49e, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -1892,10 +1928,6 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 727337171}
-    - target: {fileID: 4289803164649934629, guid: a1b5875cb1bd2584da29959d2194d49e, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.211
-      objectReference: {fileID: 0}
     - target: {fileID: 4895027996978799364, guid: a1b5875cb1bd2584da29959d2194d49e, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
@@ -1960,22 +1992,6 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 613127169}
-    - target: {fileID: 8576915458841852530, guid: a1b5875cb1bd2584da29959d2194d49e, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.60225
-      objectReference: {fileID: 0}
-    - target: {fileID: 8576915458841852530, guid: a1b5875cb1bd2584da29959d2194d49e, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.60225
-      objectReference: {fileID: 0}
-    - target: {fileID: 8576915458841852530, guid: a1b5875cb1bd2584da29959d2194d49e, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.60225
-      objectReference: {fileID: 0}
-    - target: {fileID: 8576915458841852530, guid: a1b5875cb1bd2584da29959d2194d49e, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -5.92
-      objectReference: {fileID: 0}
     - target: {fileID: 9028744158549095711, guid: a1b5875cb1bd2584da29959d2194d49e, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 

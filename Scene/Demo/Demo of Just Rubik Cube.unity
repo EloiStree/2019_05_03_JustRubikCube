@@ -10536,18 +10536,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: SetSpeed
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!1001 &979273799
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -23991,6 +23979,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1383873393}
     m_Modifications:
+    - target: {fileID: 3219740103046860480, guid: 54e0a59bd9ee2da429a4b90160e23d38, type: 3}
+      propertyPath: m_rotationSpeed
+      value: 360
+      objectReference: {fileID: 0}
+    - target: {fileID: 3219740103046860480, guid: 54e0a59bd9ee2da429a4b90160e23d38, type: 3}
+      propertyPath: m_leftAngleToRotate
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3219740103768664363, guid: 54e0a59bd9ee2da429a4b90160e23d38, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
